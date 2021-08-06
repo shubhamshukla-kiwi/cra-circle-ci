@@ -11,7 +11,7 @@ import ROUTES from './routes';
 
 import './App.css';
 
-const childFactoryCreator = (classNames: string) => (child: any) =>
+const childFactoryCreator = (classNames: string) => (child: React.ReactElement) =>
   React.cloneElement(child, {
     classNames,
   });
@@ -22,11 +22,11 @@ const childFactoryCreator = (classNames: string) => (child: any) =>
   }
   
   interface IRecipeProps {
-    location: any
+    location: object
     dispatch: Function
   }
 class App extends Component<IRecipeProps, IRecipeState> {
-  constructor(props: any) {
+  constructor(props: IRecipeProps) {
     super(props);
     this.state = {
       transitionKey: false,
@@ -36,7 +36,7 @@ class App extends Component<IRecipeProps, IRecipeState> {
     localStorage.setItem('API_ENDPOINT', API_ENDPOINT);
   }
 
-  componentWillReceiveProps(nextProps: any) {
+  componentWillReceiveProps(nextProps: IRecipeProps) {
     this.setState({ currentKey: nextProps.location.pathname });
     if (
       this.props.location.pathname === '/' &&

@@ -41,7 +41,7 @@ export const validateZip = async(zipCode:string) => {
  * @param {*} itemName 
  * @param {*} item 
  */
-export const setItemLocalStorage = (itemName:string, item:any) => {
+export const setItemLocalStorage = (itemName:string, item:T) => {
   const windowGlobal = typeof window !== 'undefined' && window;
   
   if (windowGlobal) {

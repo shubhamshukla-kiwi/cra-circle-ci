@@ -386,13 +386,13 @@ export class HomePage extends Component {
     return (
       <Layout visibleFooter={false} title='Home' bgColor={bgColor}>
         <HomepageHeader />
-        {/* <Hero fetchZip={()=> {}}/>
+        <Hero fetchZip={()=> {}}/>
         <SeekerLove />
         <Seek />
         <BrandLogo />
         <Review />
         <SeekerWork />
-        <Footer visibleFooter={false} fetchZip={()=> {}} /> */}
+        <Footer visibleFooter={false} fetchZip={()=> {}} />
       </Layout>
     )
   }
