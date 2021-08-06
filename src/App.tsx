@@ -5,7 +5,7 @@ import React, { Component } from 'react';
 import TransitionGroup from 'react-transition-group/TransitionGroup';
 
 import { API_ENDPOINT } from './lib/constants/api';
-import NewCarStart from './containers/new-car-start/new-car-start';
+import HomePage from './containers/home/home';
 import PropsRoute from './lib/helpers/props-route';
 import ROUTES from './routes';
 
@@ -83,7 +83,7 @@ class App extends Component<IRecipeProps, IRecipeState> {
                 <PropsRoute
                   exact
                   path="/"
-                  component={NewCarStart}
+                  component={HomePage}
                   fetchZip={()=> {}}
                   setEmail={()=> {}}
                 />

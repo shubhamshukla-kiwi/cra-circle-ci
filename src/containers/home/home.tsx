@@ -379,7 +379,7 @@ import Footer from "../../components/footer/footer";
 import Seek from "../../components/seek/seek";
 
 
-export class NewCarStart extends Component {
+export class HomePage extends Component {
   render() {
     const bgColor: string = '#f1f1f1';
 
@@ -398,4 +398,4 @@ export class NewCarStart extends Component {
   }
 }
 
-export default NewCarStart;
+export default HomePage;
