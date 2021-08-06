@@ -13,6 +13,7 @@
     "@types/react-dom": "^16.9.0",
     "@types/react-redux": "^7.1.7",
     "classnames": "^2.2.6",
+    "env-cmd": "^10.1.0",
     "lodash": "^4.17.5",
     "moment": "^2.27.0",
     "moment-timezone": "^0.5.33",
@@ -49,7 +50,10 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "build:staging": "env-cmd -f .env.staging npm run-script build",
+    "build:qa": "env-cmd -f .env.qa npm run-script build",
+    "build:dev": "env-cmd -f .env.dev npm run build-css && react-scripts build"
   },
   "eslintConfig": {
     "extends": "react-app"

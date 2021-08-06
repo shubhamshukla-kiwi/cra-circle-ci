@@ -15,7 +15,6 @@ import AgentApp from './AgentApp';
 import App from './App';
 import registerServiceWorker from './registerServiceWorker';
 
-import './polyfills.js';
 import './index.css';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";

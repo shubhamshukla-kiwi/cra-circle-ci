@@ -61,7 +61,7 @@ const SeekerWork = () => {
               <h5>Accurate insurance quotes without the spam.</h5>
               <Form>
                 <FieldGroup>
-                  <span class="icon-location font-icon"></span>
+                  <span className="icon-location font-icon"></span>
                   <InputMask mask="99999" onChange={e => setZipcode(e.target.value)}>
                     {(inputProps) => <HeroField type="text" placeholder="Enter Zip Code" {...inputProps} />}
                   </InputMask>

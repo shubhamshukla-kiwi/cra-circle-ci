@@ -23,7 +23,7 @@ const Seek = () => {
             <Form>
               <ZipContent>
                 <FieldGroup>
-                  <span class="icon-location font-icon"></span>
+                  <span className="icon-location font-icon"></span>
                   <InputMask mask="99999" value={zipcode} onChange={e => setZipcode(e.target.value)}>
                     {(inputProps) => <HeroField type="text" placeholder="Enter Zip Code" {...inputProps} />}
                   </InputMask>

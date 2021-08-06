@@ -30,8 +30,8 @@ const HomepageHeader = () => {
           </Col>
         </Row>
         <Row className="sidemenu-wrap"> 
-        <span class="icon-cross font-icon" onClick={() => setShow(false)}>
-            <span class="path2 font-icon"></span>
+        <span className="icon-cross font-icon" onClick={() => setShow(false)}>
+            <span className="path2 font-icon"></span>
           </span>
           <HeaderList>
         

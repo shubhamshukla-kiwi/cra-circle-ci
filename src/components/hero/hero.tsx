@@ -40,15 +40,15 @@ const Hero = (props) => {
           <Col xs={12} lg={12}>
             <HeroList>
               <HeroItem>
-                <span class="icon-privacy font-icon"></span>
+                <span className="icon-privacy font-icon"></span>
                 <HeroItemCopy>100% Privacy</HeroItemCopy>
               </HeroItem>
               <HeroItem>
-                <span class="icon-verified-agents font-icon"></span>
+                <span className="icon-verified-agents font-icon"></span>
                 <HeroItemCopy>Real Agents</HeroItemCopy>
               </HeroItem>
               <HeroItem>
-                <span class="icon-control font-icon"></span>
+                <span className="icon-control font-icon"></span>
                 <HeroItemCopy>Custom Controls</HeroItemCopy>
               </HeroItem>
             </HeroList>

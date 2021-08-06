@@ -43,10 +43,10 @@ const Review = () => {
             <Slider {...settings}>
               <ReviewItem>
                 <ReviewStars>
-                  <span class="icon-stars font-icon"></span>
-                  <span class="icon-stars font-icon"></span>
-                  <span class="icon-stars font-icon"></span>
-                  <span class="icon-stars font-icon"></span>
+                  <span className="icon-stars font-icon"></span>
+                  <span className="icon-stars font-icon"></span>
+                  <span className="icon-stars font-icon"></span>
+                  <span className="icon-stars font-icon"></span>
                 </ReviewStars>
                 <ReviewContent>
                   Very good experience. Got the settlement done in less than 24 hours.
@@ -61,10 +61,10 @@ const Review = () => {
               </ReviewItem>
               <ReviewItem>
                 <ReviewStars>
-                  <span class="icon-stars font-icon"></span>
-                  <span class="icon-stars font-icon"></span>
-                  <span class="icon-stars font-icon"></span>
-                  <span class="icon-stars font-icon"></span>
+                  <span className="icon-stars font-icon"></span>
+                  <span className="icon-stars font-icon"></span>
+                  <span className="icon-stars font-icon"></span>
+                  <span className="icon-stars font-icon"></span>
                 </ReviewStars>
                 <ReviewContent>
                 Thank you so much for the amazing service.
@@ -79,10 +79,10 @@ const Review = () => {
               </ReviewItem>
               <ReviewItem>
                 <ReviewStars>
-                  <span class="icon-stars font-icon"></span>
-                  <span class="icon-stars font-icon"></span>
-                  <span class="icon-stars font-icon"></span>
-                  <span class="icon-stars font-icon"></span>
+                  <span className="icon-stars font-icon"></span>
+                  <span className="icon-stars font-icon"></span>
+                  <span className="icon-stars font-icon"></span>
+                  <span className="icon-stars font-icon"></span>
                 </ReviewStars>
                 <ReviewContent>
                 Hassle free insurance & quick response. Absolutely best insurance company ever
@@ -97,10 +97,10 @@ const Review = () => {
               </ReviewItem>
               <ReviewItem>
                 <ReviewStars>
-                  <span class="icon-stars font-icon"></span>
-                  <span class="icon-stars font-icon"></span>
-                  <span class="icon-stars font-icon"></span>
-                  <span class="icon-stars font-icon"></span>
+                  <span className="icon-stars font-icon"></span>
+                  <span className="icon-stars font-icon"></span>
+                  <span className="icon-stars font-icon"></span>
+                  <span className="icon-stars font-icon"></span>
                 </ReviewStars>
                 <ReviewContent>
                   Very good experience. Got the settlement done in less than 24 hours.
