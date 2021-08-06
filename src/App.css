@@ -1,0 +1,43 @@
+.app-body {
+  background: linear-gradient(to right bottom, #3880fe, #3c7bfe, #4176fe, #4670fe, #4d6afd, #5165fd, #5560fd, #595bfc, #5b56fd, #5d50fd, #5f4afd, #6244fd);
+  min-height: 100vh;
+  height: auto;
+  width: 100%;
+  padding: 0;
+  position: absolute;
+  overflow: hidden; }
+  .app-body *:not(i):not(.info-icon-no-hover):not(.info-icon-hover):not(.font-icon) {
+    font-family: 'Macho Regular'; }
+  .app-body .gradient-overlay {
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    background-image: linear-gradient(to right bottom, #3880fe, #3c7bfe, #4176fe, #4670fe, #4d6afd, #5165fd, #5560fd, #595bfc, #5b56fd, #5d50fd, #5f4afd, #6244fd); }
+  .app-body video.background-video {
+    position: fixed;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    opacity: 0.4;
+    filter: grayscale(45%) blur(10px);
+    background-image: url("assets/images/marketing/video_placeholder.jpg");
+    background-size: contain;
+    background-position: center;
+    pointer-events: none; }
+    .app-body video.background-video::-webkit-media-controls, .app-body video.background-video::-webkit-media-controls-enclosure {
+      display: none !important; }
+
+@-moz-document url-prefix() {
+  .app-body video.background-video {
+    filter: unset !important;
+    opacity: 0.2; } }
+  .app-body .app-body-transition-group {
+    flex: 1;
+    display: flex; }
+    .app-body .app-body-transition-group .switch-container {
+      width: 100%; }

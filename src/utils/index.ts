@@ -1,0 +1,1 @@
+export { default as parseBirthdate } from './parseBirthdate';

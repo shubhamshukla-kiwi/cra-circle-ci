@@ -1,0 +1,253 @@
+@import './../../lib/constants/_globals';
+
+.slide-left-enter {
+  transform: translateX(100vw);
+  opacity: 0.2;
+}
+
+.slide-left-enter-active {
+  transform: translateX(0);
+  opacity: 1;
+  transition: all 600ms;
+}
+
+.slide-left-exit {
+  position: absolute;
+  margin: auto;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+.slide-left-exit-active {
+  transform: translateX(-100vw);
+  opacity: 0.2;
+  transition: all 600ms;
+}
+
+.slide-right-enter {
+  transform: translateX(-100vw);
+  opacity: 0.2;
+}
+
+.slide-right-enter-active {
+  transform: translateX(0);
+  opacity: 1;
+  transition: all 600ms;
+}
+
+.slide-right-exit {
+  position: absolute;
+  margin: auto;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+.slide-right-exit-active {
+  transform: translateX(100vw);
+  opacity: 0.2;
+  transition: all 600ms;
+}
+
+
+.fade-slide-enter {
+  position: absolute;
+  opacity: 0;
+  left: 100vw;
+  top: 0px;
+  width: 100%;
+}
+
+.fade-slide-enter.fade-slide-enter-active {
+  opacity: 1;
+  transition: opacity 1000ms ease-in, left 1000ms ease-in-out;
+  position: absolute;
+  width: 100%;
+  left: 0px;
+  top: 0px;
+
+
+}
+
+
+.fade-slide-exit {
+  opacity: 1;
+  position: absolute;
+  width: 100%;
+  left: 0px;
+  top: 0px;
+
+}
+
+.fade-slide-exit.fade-slide-exit-active {
+  opacity: 0;
+  transition: opacity 1000ms ease-in, left 1000ms ease-in-out;
+  position: absolute;
+  width: 100%;
+  left: -100vw;
+  top: 0px;
+
+}
+
+.fade-slide-slow-left-enter {
+  position: absolute;
+  opacity: 0;
+  left: 30vw;
+  top: 0px;
+  width: 100%;
+}
+
+.fade-slide-slow-left-enter.fade-slide-slow-left-enter-active {
+  opacity: 1;
+  transition: opacity 400ms ease-in, left 800ms ease-in-out;
+  position: absolute;
+  width: 100%;
+  left: 0px;
+  top: 0px;
+
+}
+
+.fade-slide-slow-left-exit {
+  opacity: 1;
+  position: absolute;
+  width: 100%;
+  left: 0px;
+  top: 0px;
+
+}
+
+.fade-slide-slow-left-exit.fade-slide-slow-left-exit-active {
+  opacity: 0;
+  transition: opacity 400ms ease-in, left 800ms ease-in-out;
+  position: absolute;
+  width: 100%;
+  left: -30vw;
+  top: 0px;
+
+}
+
+.fade-slide-slow-right-enter {
+  position: absolute;
+  opacity: 0;
+  left: -30vw;
+  top: 0px;
+  width: 100%;
+
+}
+
+.fade-slide-slow-right-enter.fade-slide-slow-right-enter-active {
+  opacity: 1;
+  transition: opacity 400ms ease-in, left 800ms ease-in-out;
+  position: absolute;
+  width: 100%;
+  left: 0px;
+  top: 0px;
+
+}
+
+.fade-slide-slow-right-exit {
+  opacity: 1;
+  position: absolute;
+  width: 100%;
+  left: 0px;
+  top: 0px;
+
+}
+
+.fade-slide-slow-right-exit.fade-slide-slow-right-exit-active {
+  opacity: 0;
+  transition: opacity 400ms ease-in, left 800ms ease-in-out;
+  position: absolute;
+  width: 100%;
+  left: 30vw;
+  top: 0px;
+
+}
+
+.fade-enter {
+  opacity: 0;
+
+}
+
+.fade-enter.fade-enter-active {
+  opacity: 1;
+  transition: opacity 500ms ease-in-out;
+  transition-delay: 500ms;
+
+}
+
+
+.fade-exit {
+  opacity: 1;
+  position: absolute;
+
+}
+
+.fade-exit.fade-exit-active {
+  opacity: 0;
+  transition: opacity 200ms ease-in-out;
+  position: absolute;
+  top: 0px;
+
+}
+
+.card-fade-enter {
+  opacity: 0;
+  transform: rotateX(90deg);
+}
+
+.card-fade-enter.card-fade-enter-active {
+  opacity: 1;
+  top: 0px;
+  transform: rotateX(0deg);
+  transition: opacity 600ms, transform 600ms, top 600ms;
+
+}
+
+.card-fade-exit {
+  opacity: 1;
+  position: absolute;
+
+}
+
+.card-fade-exit.card-fade-exit-active {
+  opacity: 0;
+  transition: opacity 200ms ease-in-out;
+  position: absolute;
+  top: 0px;
+}
+
+.fade-up-enter {
+  opacity: 0;
+  z-index: 5 !important;
+  transform: translateX(-90%) scale(.96);
+  width: 411px;
+  transition: all 200ms linear;
+
+  @media (max-width: 768px) {
+    margin: 0 auto;
+  }
+
+  @media (max-width: 479px) {
+    width: 90%;
+  }
+}
+
+.fade-up-enter.fade-up-enter-active {
+  opacity: 0;
+  z-index: 5 !important;
+  width: 411px;
+}
+
+.fade-up-exit {
+  opacity: 1;
+  z-index: 5 !important;
+  transition: all 200ms linear;
+}
+
+.fade-up-exit.fade-up-exit-active {
+  transform: translateX(-90%) scale(.96);
+  opacity: 0;
+  z-index: 5 !important;
+}
