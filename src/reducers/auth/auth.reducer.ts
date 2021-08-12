@@ -5,7 +5,8 @@ import {
     LOG_OUT_SUCCESS,
     REGISTER_REQUEST,
     REGISTER_SUCCESS,
-    REGISTER_FAILURE
+    REGISTER_FAILURE,
+    SAVE_EMAIL
 
 } from '../../lib/constants/actions';
 import {DEFAULT_LOGIN_STATE} from '../../lib/constants/states';
@@ -32,6 +33,14 @@ export function login(state = DEFAULT_LOGIN_STATE, action) {
                 requested: false,
                 loggedIn: false,
                 err: action.payload.err
+            });
+        }
+        case SAVE_EMAIL: {
+            console.log(action);
+            return Object.assign({}, {...state}, {
+                requested: false,
+                loggedIn: true,
+                email: action.payload
             });
         }
         default:

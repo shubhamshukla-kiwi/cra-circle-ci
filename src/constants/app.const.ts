@@ -3,36 +3,30 @@ import { checkIfFilesAreCorrectType, checkIfFilesAreTooBig} from './app.method';
 
 export const SignupSchema = Yup.object().shape({
     firstName: Yup.string()
-      .min(2, 'Too Short!')
-      .max(70, 'Too Long!')
-      .required('Required')
+      .required('Mandatory!')
       .matches(
         /^[a-zA-Z0-9]*$/,
         'Only alphanumeric characters are allowed'
       ),
     lastName: Yup.string()
-      .min(2, 'Too Short!')
-      .max(70, 'Too Long!')
-      .required('Required')
+      .required('Mandatory!')
       .matches(
         /^[a-zA-Z0-9]*$/,
         'Only alphanumeric characters are allowed'
       ),  
     email: Yup.string()
-      .email('Invalid email')
-      .required('Required'),
+      .email('Invalid!')
+      .required('Mandatory!'),
     address: Yup.string()
-      .min(2, 'Too Short!')
-      .max(70, 'Too Long!')
-      .required('Required')
+      .required('Mandatory!')
       .matches(
         /^[a-zA-Z0-9]*$/,
         'Only alphanumeric characters are allowed'
       ),
     state: Yup.string()
-      .required('Required'),
+      .required('Mandatory!'),
     city: Yup.string()
-      .required('Required'),  
+      .required('Mandatory!'),  
     termsCheckbox: Yup.boolean()
     .oneOf([true], 'Please accept terms and condition')
   });
@@ -56,7 +50,7 @@ export const otpValidationSchema = Yup.object().shape({
 
 export const agentSignupSchema = Yup.object().shape({
   file: Yup.mixed()
-         .required('Required')
+         .required('Mandatory!')
          .test('is-correct-file', 'file size is big', checkIfFilesAreTooBig)
          .test(
            'is-big-file',
@@ -64,58 +58,50 @@ export const agentSignupSchema = Yup.object().shape({
            checkIfFilesAreCorrectType
          ),
   firstName: Yup.string()
-    .min(2, 'Too Short!')
-    .max(70, 'Too Long!')
-    .required('Required')
+    .required('Mandatory!')
     .matches(
       /^[a-zA-Z0-9]*$/,
       'Only alphanumeric characters are allowed'
     ),
   lastName: Yup.string()
-    .min(2, 'Too Short!')
-    .max(70, 'Too Long!')
-    .required('Required')
+    .required('Mandatory!')
     .matches(
       /^[a-zA-Z0-9]*$/,
       'Only alphanumeric characters are allowed'
     ),  
   email: Yup.string()
-    .email('Invalid email')
-    .required('Required'),
+    .email('Invalid!')
+    .required('Mandatory!'),
   address: Yup.string()
-    .min(2, 'Too Short!')
-    .max(70, 'Too Long!')
-    .required('Required')
+    .required('Mandatory!')
     .matches(
       /^[a-zA-Z0-9]*$/,
       'Only alphanumeric characters are allowed'
     ),
   bio: Yup.string()
-  .min(2, 'Too Short!')
-  .max(70, 'Too Long!')
-  .required('Required')
+  .required('Mandatory!')
   .matches(
     /^[a-zA-Z0-9]*$/,
     'Only alphanumeric characters are allowed'
   ),
   phone: Yup.string()
-  .required('Required')
+  .required('Mandatory!')
   .matches(
     /^[a-zA-Z0-9]*$/,
     'Only alphanumeric characters are allowed'
   ),
   zipcode: Yup.string()
-  .required('Required')
+  .required('Mandatory!')
   .matches(
     /^[a-zA-Z0-9]*$/,
     'Only alphanumeric characters are allowed'
   ),  
   state: Yup.string()
-    .required('Required'),
+    .required('Mandatory!'),
   city: Yup.string()
-    .required('Required'),
+    .required('Mandatory!'),
   company: Yup.string()
-  .required('Required'),    
+  .required('Mandatory!'),    
   termsCheckbox: Yup.boolean()
   .oneOf([true], 'Please accept terms and condition')
 });

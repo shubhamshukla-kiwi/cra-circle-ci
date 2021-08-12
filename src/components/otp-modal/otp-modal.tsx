@@ -1,20 +1,22 @@
-import React, { Component } from 'react';
+import React from 'react';
 import OnboardingLeft from '../onboarding-left/onboarding-left';
-import { Link } from 'react-router-dom';
+import { connect } from 'react-redux';
+import OTPComponent from './otp';
 
-class OtpModal extends Component {
+interface Props {
+    email : string
+}
 
-    render() {
-
-        return (
-            <div className="otp-wrap screen-container">
+const OtpModal = (props: Props) => {
+    return (
+        <div className="otp-wrap screen-container">
                 <div className="login-screen">
                     <OnboardingLeft />
                     <div className="right-content">
-                        <div className="input-data">
+                        <OTPComponent isVerify={false} />
+                        {/* <div className="input-data">
                             <span className="icon-back-arrow font-icon"></span>
-                            <h4>OTP VERIFICATION</h4>
-                            <p>We just emailed a six-digit code to <span className="mail-link">adrian****90@yahoo.com</span></p>
+    <p>We just emailed a six-digit code to <span className="mail-link">{props.email}</span></p>
                             <p>Please enter the code below to sign in.</p>
                             <div className="input-container">
                                 <div className="form-group">
@@ -53,12 +55,16 @@ class OtpModal extends Component {
                                 <div className="code-txt">Trouble receiving code? <span>Send again</span></div>
                             </div>
                             <Link className="button-primary" to="/">Sign In</Link>
-                        </div>
+                        </div> */}
                     </div>
                 </div>
-            </div>
-        );
-    }
+            </div>)
 }
-export default OtpModal;
+function mapStateToProps(state) {
+    return {
+      email: state.login.email
+    }
+  }
+  
+export default connect(mapStateToProps)(OtpModal);
 

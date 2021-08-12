@@ -1,5 +1,9 @@
 import React, { Component } from 'react';
 import { Formik, ErrorMessage } from 'formik';
+import TextField from '@material-ui/core/TextField';
+import MenuItem from '@material-ui/core/MenuItem';
+
+
 import OnboardingLeft from '../onboarding-left/onboarding-left';
 import VerifyEmail from '../verify-email/VerifyEmail';
 import { Link } from 'react-router-dom';
@@ -39,7 +43,16 @@ class AgentSignupModal extends Component {
         this.setState({ showVerifyModal: false });
     }
     render() {
-
+        const states = [
+            {
+              value: 'CA',
+              label: 'CA',
+            },
+            {
+              value: 'AUS',
+              label: 'AUS',
+            }
+          ];
         return (
             <div className="signup-wrap screen-container">
                 <div className="login-screen">
@@ -97,125 +110,155 @@ class AgentSignupModal extends Component {
                                                       };
                                                     reader.readAsDataURL(event.currentTarget.files[0]);
                                                     }} />
-                                                    <ErrorMessage name="file" />
                                             </div>
+                                            <span className="error-msg"><ErrorMessage name="file" /></span>
                                             <div className="form-row">
                                                 <div className="form-group">
                                                     <label>First Name</label>
-                                                    <input
+                                                    <TextField
                                                         type="name"
-                                                        className="form-control"
+                                                        className={`form-control ${!errors.firstName ? '' : 'error'}`}
                                                         name="firstName"
                                                         onChange={handleChange}
+                                                        label="First Name"
                                                         onBlur={handleBlur}
+                                                        InputProps={{ disableUnderline: true }}
                                                         value={values.firstName} />
-                                                    <ErrorMessage name="firstName" />
+                                                    <span className="error-msg"><ErrorMessage name="firstName" /></span>
                                                 </div>
                                                 <div className="form-group">
                                                     <label>Last Name</label>
-                                                    <input
+                                                    <TextField
                                                         type="name"
-                                                        className="form-control"
+                                                        className={`form-control ${!errors.lastName ? '' : 'error'}`}
                                                         name="lastName"
                                                         onChange={handleChange}
                                                         onBlur={handleBlur}
+                                                        InputProps={{ disableUnderline: true }}
+                                                        label="Last Name"
                                                         value={values.lastName} />
-                                                    <ErrorMessage name="lastName" />
+                                                    <span className="error-msg"><ErrorMessage name="lastName" /></span>
                                                 </div>
                                             </div>
                                             <div className="form-group">
                                                 <label>Email Address</label>
-                                                <input
+                                                <TextField
                                                     type="email"
-                                                    className="form-control"
+                                                    className={`form-control ${!errors.email ? '' : 'error'}`}
                                                     name="email"
                                                     onChange={handleChange}
                                                     onBlur={handleBlur}
+                                                    InputProps={{ disableUnderline: true }}
+                                                    label="Email Address"
                                                     value={values.email} />
-                                                    <ErrorMessage name="email" />
+                                                    <span className="error-msg"><ErrorMessage name="email" /></span>
                                             </div>
                                             <div className="form-group">
                                                 <label>Phone number</label>
-                                                <input
+                                                <TextField
                                                     type="number"
-                                                    className="form-control"
-                                                    name="phone"
+                                                    className={`form-control ${!errors.phone ? '' : 'error'}`}                                                    name="phone"
                                                     onChange={handleChange}
                                                     onBlur={handleBlur}
+                                                    label="Phone number"
+                                                    InputProps={{ disableUnderline: true }}
                                                     value={values.phone} />
-                                                    <ErrorMessage name="phone" />
+                                                    <span className="error-msg"><ErrorMessage name="phone" /></span>
                                             </div>
                                             <div className="form-group">
                                                 <label>Address</label>
-                                                <input
+                                                <TextField
                                                     type="text"
-                                                    className="form-control"
-                                                    name="address"
+                                                    className={`form-control ${!errors.address ? '' : 'error'}`}                                                    name="address"
                                                     onChange={handleChange}
                                                     onBlur={handleBlur}
+                                                    InputProps={{ disableUnderline: true }}
+                                                    label="Address"
                                                     value={values.address} />
-                                                    <ErrorMessage name="address" />
+                                                    <span className="error-msg"><ErrorMessage name="address" /></span>
                                             </div>
                                             <div className="form-group">
-                                                <label>State/Province</label>
-                                                <select
+                                                <TextField
+                                                    select
+                                                    className={`form-control ${!errors.state ? '' : 'error'}`}
+                                                    label="State/Province"
                                                     name="state"
                                                     onChange={handleChange}
                                                     onBlur={handleBlur}
-                                                    value={values.state}>
-                                                    <option value="">Select</option>
-                                                    <option value="CA">CA</option>
-                                                </select>
-                                                <ErrorMessage name="state" />
+                                                    value={values.state}
+                                                    helperText="Please select your state"
+                                                    InputProps={{ disableUnderline: true }}>
+                                                    {states.map((option) => (
+                                                        <MenuItem key={option.value} value={option.value}>
+                                                            {option.label}
+                                                        </MenuItem>
+                                                    ))}
+                                                </TextField>
+                                                <span className="error-msg"><ErrorMessage name="state" /></span>
                                             </div>
                                             <div className="form-row">
                                                 <div className="form-group">
-                                                    <label>City</label>
-                                                    <select
-                                                        name="city"
-                                                        onChange={handleChange}
-                                                        onBlur={handleBlur}
-                                                        value={values.city}>
-                                                        <option value="">Select</option>
-                                                        <option value="CA">CA</option>
-                                                    </select>
-                                                    <ErrorMessage name="city" />
+                                                <TextField
+                                                    select
+                                                    className={`form-control ${!errors.city ? '' : 'error'}`}
+                                                    label="City"
+                                                    name="city"
+                                                    onChange={handleChange}
+                                                    onBlur={handleBlur}
+                                                    value={values.city}
+                                                    helperText="Please select your city"
+                                                    InputProps={{ disableUnderline: true }}>
+                                                    {states.map((option) => (
+                                                        <MenuItem key={option.value} value={option.value}>
+                                                            {option.label}
+                                                        </MenuItem>
+                                                    ))}
+                                                </TextField>
+                                                <span className="error-msg"><ErrorMessage name="city" /></span>
                                                 </div>
                                                 <div className="form-group">
                                                     <label>Zipcode</label>
-                                                    <input
+                                                    <TextField
                                                         type="number"
-                                                        className="form-control"
-                                                        name="zipcode"
+                                                        className={`form-control ${!errors.zipcode ? '' : 'error'}`}                                                        name="zipcode"
                                                         onChange={handleChange}
                                                         onBlur={handleBlur}
+                                                        InputProps={{ disableUnderline: true }}
+                                                        label="Zipcode"
                                                         value={values.zipcode} />
-                                                        <ErrorMessage name="zipcode" />
+                                                    <span className="error-msg"><ErrorMessage name="zipcode" /></span>
                                                 </div>
                                             </div>
                                             <div className="form-group">
                                                 <label>Tell us about yourself</label>
-                                                <input
+                                                <TextField
                                                     type="text"
-                                                    className="form-control"
-                                                    name="bio"
+                                                    className={`form-control ${!errors.bio ? '' : 'error'}`}                                                    name="bio"
                                                     onChange={handleChange}
                                                     onBlur={handleBlur}
+                                                    label="Tell us about yourself"
+                                                    InputProps={{ disableUnderline: true }}
                                                     value={values.bio} />
-                                                    <ErrorMessage name="bio" />
+                                                    <span className="error-msg"><ErrorMessage name="bio" /></span>
                                             </div>
                                             <div className="form-group">
-                                                <select 
+                                            <TextField
+                                                    select
+                                                    className={`form-control ${!errors.company ? '' : 'error'}`}
+                                                    label="Company"
                                                     name="company"
                                                     onChange={handleChange}
                                                     onBlur={handleBlur}
-                                                    value={values.company}>
-                                                    <option value="">Select</option>
-                                                    <option value="1">Cubicles insurance.co</option>
-                                                    <option value="2">Cubicles insurance.co</option>
-                                                </select>
-                                                <label>Company name</label>
-                                                <ErrorMessage name="company" />
+                                                    value={values.company}
+                                                    helperText="Please select your company"
+                                                    InputProps={{ disableUnderline: true }}>
+                                                    {states.map((option) => (
+                                                        <MenuItem key={option.value} value={option.value}>
+                                                            {option.label}
+                                                        </MenuItem>
+                                                    ))}
+                                                </TextField>
+                                                <span className="error-msg"><ErrorMessage name="company" /></span>
                                             </div>
                                         </div>
                                         <div className="custom-checkbox agree-txt">
@@ -227,7 +270,7 @@ class AgentSignupModal extends Component {
                                                 onBlur={handleBlur}
                                                 value={values.termsCheckbox} />
                                             <label htmlFor="style-checkbox">I agree to Seekr’s Terms of service & Privacy Policy.</label>
-                                            <ErrorMessage name="termsCheckbox" />
+                                            <span className="error-msg"><ErrorMessage name="termsCheckbox" /></span>
                                         </div>
                                         <button className="button-primary" onClick={handleSubmit}>Create a new account</button>
                                         <ReactModal
@@ -250,7 +293,7 @@ class AgentSignupModal extends Component {
                                                 <p>{values.bio}</p>
                                             </div>
                                             <div className="co-logo">
-                                                <img src=""></img>
+                                                <img alt="company" src=""></img>
                                                 <span>{values.company}</span>
                                             </div>
                                             <div className="button-wrap">

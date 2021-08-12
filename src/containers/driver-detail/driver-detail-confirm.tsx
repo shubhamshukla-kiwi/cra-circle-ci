@@ -1,4 +1,3 @@
-import _ from 'lodash';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import React, { Component } from 'react';
@@ -84,7 +83,7 @@ class DriverDetailConfirm extends Component {
   componentDidUpdate(prevProps) {
     const newDrivers = JSON.stringify(this.props.drivers.drivers);
     const drivers = JSON.stringify(prevProps.drivers.drivers);
-    if (drivers != newDrivers) {
+    if (drivers !== newDrivers) {
       this.validateDrivers();
     }
   }
@@ -136,7 +135,6 @@ class DriverDetailConfirm extends Component {
             </button>
           </Link>
         );
-        break;
       case radioStates.affirmative:
         return (
           <ConditionalLink to="/new-car/vehicles" disabled={disabled}>
@@ -151,10 +149,8 @@ class DriverDetailConfirm extends Component {
             </button>
           </ConditionalLink>
         );
-        break;
       default:
         return null;
-        break;
     }
   }
 

@@ -1,4 +1,3 @@
-import _ from 'lodash';
 import React, { Component } from 'react';
 import TransitionGroup from 'react-transition-group/TransitionGroup';
 import { Link } from 'react-router-dom';

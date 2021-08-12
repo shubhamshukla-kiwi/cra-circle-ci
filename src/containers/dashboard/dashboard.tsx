@@ -17,23 +17,9 @@ class Dashboard extends Component {
         this.state = {
             show: false
         }
-        // this.props.dispatch(getUserRfqRequest());
     }
-    // const [show, setShow] = React.useState();
     render() {
-        // if (!this.props.loggedIn) {
-        //     return <Redirect to="/login"/>
-        // }
-
         return (
-            // <div className={this.props.navigationDrawerState.open ? 'dashboard dashboard-open' : 'dashboard'}>
-            //     {!this.props.login.loggedIn ? <Redirect to="/login"/> : null}
-            //     <NavigationTop>
-            //         <Link to="/dashboard/quotes">Quotes</Link>
-            //     </NavigationTop>
-            //     <NavigationBottom/>
-            //     <CustomerDashboard/>
-            // </div>
             <div className="container">
                 <div className="dashboard-container">
                     <Header 

@@ -64,7 +64,7 @@ class Header extends Component {
                                 })
                             }}>
                                 adrian992yahoo.com
-                                <span class="icon-down-arrow font-icon"></span>
+                                <span className="icon-down-arrow font-icon"></span>
                             </div>
                             {this.state.showBox &&
                                 <div className="dropdown">
@@ -158,7 +158,7 @@ class Header extends Component {
                             <button className="button-primary">Update</button>
                         </div>
                     </form>
-                    <button className="close-icon" onClick={this.handleCloseModal}><span class="icon-cross"><span class="path2"></span></span></button>
+                    <button className="close-icon" onClick={this.handleCloseModal}><span className="icon-cross"><span className="path2"></span></span></button>
                 </ReactModal>
                 <ReactModal
                     isOpen={this.state.showEditModal}
@@ -267,7 +267,7 @@ class Header extends Component {
                                     className="form-control"
                                 />
                             </div>
-                            <div class="form-group">
+                            <div className="form-group">
                                 <select>
                                     <option value="">Select</option>
                                     <option value="1">Cubicles insurance.co</option>

@@ -88,7 +88,7 @@ const SeekerWork = () => {
               <Form>
                 <FieldGroup>
                   <span className="icon-location font-icon"></span>
-                  <InputMask mask="99999" onChange={onChangeHandler}>
+                  <InputMask mask="99999" value={zipcode} onChange={onChangeHandler}>
                     {(inputProps) => <HeroField type="text" placeholder="Enter Zip Code" {...inputProps} />}
                   </InputMask>
                 </FieldGroup>

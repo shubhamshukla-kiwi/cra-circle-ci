@@ -34,7 +34,7 @@ import PropsRoute from './lib/helpers/props-route';
 import { ZipCodeProvider} from './contexts/ZipCodeContext/ZipCodeContext'
 import ROUTES from './routes';
 
-import './App.css';
+import './App.scss';
 
 const childFactoryCreator = (classNames: string) => (child: React.ReactElement) =>
   React.cloneElement(child, {
@@ -135,7 +135,7 @@ class App extends Component<IRecipeProps, IRecipeState> {
                 <Route path="/car-plan" component={CarPlan} />
                 <Route path="/car-detail-success" component={CarDetailSuccess} />
                 <Route path="/agent-add-card" component={AgentAddCard} />
-                <Route path="/dashboard-empty" component={DashboardEmpty} />
+                <Route path="/dashboard" component={DashboardEmpty} />
                 <Route path="/agent-sign-up" component={AgentSignUp} />
                 <Route path="/agent-dashboard" component={AgentDashboard} />
                 <Route path="/agent-payment" component={AgentPayment} />

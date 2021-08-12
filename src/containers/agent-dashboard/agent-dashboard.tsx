@@ -5,7 +5,6 @@ import Header from '../../components/header/header';
 import OnboardingFooter from '../../components/onboarding-footer/onboarding-footer';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import 'react-tabs/style/react-tabs.css';
-import { Link } from 'react-router-dom';
 import ReactModal from 'react-modal';
 import DefaultVehicle from '../../assets/images/homepage/dashboard-vehicle.png';
 import DefaultProfile from '../../assets/images/homepage/dashboard-profile.png';

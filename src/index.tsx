@@ -14,9 +14,10 @@ import AgentApp from './AgentApp';
 import App from './App';
 import registerServiceWorker from './registerServiceWorker';
 
-import './index.css';
+import './index.scss';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import { setPlatform } from './utils';
 
 const isLocalhost = window.location.hostname.match(/localhost|127\.0\.0\.1/g);
 const [subdomain] = window.location.hostname.split('.');
@@ -29,7 +30,7 @@ const agentPortal =
 
 
 if (agentPortal) {
-  localStorage.setItem('portal', 'agent');
+  setPlatform('agent');
   const store = configureAgentStore();
   ReactDOM.render(
     <Provider store={store.store}>
@@ -43,7 +44,7 @@ if (agentPortal) {
   );
   registerServiceWorker();
 } else {
-  localStorage.setItem('portal', 'client');
+  setPlatform('client');
   const store = configureStore();
   ReactDOM.render(
     <Provider store={store.store}>

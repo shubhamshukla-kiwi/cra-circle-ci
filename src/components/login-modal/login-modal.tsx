@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { withRouter, Link } from 'react-router-dom';
 import OnboardingLeft from '../onboarding-left/onboarding-left';
+import { saveEmail } from '../../actions';
+import { isClient } from '../../utils';
 
 class LoginModal extends Component {
     constructor(props) {
@@ -17,6 +19,7 @@ class LoginModal extends Component {
             failedLogin: false,
             failedRegister: false,
         };
+        this.saveData = this.saveData.bind(this);
     }
 
     handleEmailChange(event) {
@@ -24,7 +27,8 @@ class LoginModal extends Component {
     }
 
     saveData() {
-        // this.props.dispatch()
+    this.props.dispatch(saveEmail(this.state.email))
+    console.log('dispatched');
     }
 
     handlePasswordChange(event) {
@@ -83,7 +87,7 @@ class LoginModal extends Component {
     }
 
     render() {
-        const portal = localStorage.getItem('portal');
+        const isClientUser = isClient();
         return (
             <div
                 className="login-modal screen-container"
@@ -107,10 +111,10 @@ class LoginModal extends Component {
                                     />
                                 </div>
                             </div>
-                            {portal === 'client' && <Link className="button-primary" to="/otp">
+                            {isClientUser && <Link onClick={this.saveData} className="button-primary" to="/otp">
                                 Sign In via OTP
                             </Link>}
-                            {portal === 'agent' && <Link className="button-primary" to="/agent/otp">
+                            {!isClientUser && <Link onClick={this.saveData} className="button-primary" to="/agent/otp">
                                 Sign In via OTP
                             </Link>}
                         </div>
