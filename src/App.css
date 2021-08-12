@@ -41,3 +41,8 @@
     display: flex; }
     .app-body .app-body-transition-group .switch-container {
       width: 100%; }
+
+.btn-disabled {
+opacity: 0.5;
+}
+      

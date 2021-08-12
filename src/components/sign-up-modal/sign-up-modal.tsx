@@ -15,26 +15,21 @@ class SignupModal extends Component {
             showVerifyModal: false,
             userData: null
         };
-
-        this.handleOpenModal = this.handleOpenModal.bind(this);
-        this.handleCloseModal = this.handleCloseModal.bind(this);
-        this.handleVerifyModal = this.handleVerifyModal.bind(this);
-        this.handleVerifyCloseModal = this.handleVerifyCloseModal.bind(this);
     }
 
-    handleOpenModal() {
+    handleOpenModal = () => {
         this.setState({ showModal: true });
     }
 
-    handleCloseModal() {
+    handleCloseModal = () => {
         this.setState({ showModal: false });
     }
 
-    handleVerifyModal() {
+    handleVerifyModal = () => {
         this.setState({ showVerifyModal: true });
         this.handleCloseModal();
     }
-    handleVerifyCloseModal() {
+    handleVerifyCloseModal = () => {
         this.setState({ showVerifyModal: false });
     }
     render() {
@@ -46,10 +41,10 @@ class SignupModal extends Component {
                     <div className="right-content">
                         <Formik
                             initialValues={{
-                                firstName: 'shubham',
-                                lastName: 'shukla',
-                                email: 'shubham@yopmail.com',
-                                address: 'next',
+                                firstName: '',
+                                lastName: '',
+                                email: '',
+                                address: '',
                                 state: '',
                                 city: '',
                                 termsCheckbox: false

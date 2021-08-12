@@ -84,6 +84,7 @@ const Hero = (props) => {
                 </FieldGroup>
                 <HeroButton 
                 disabled={!isZipCodeValid}
+                className={!isZipCodeValid?'btn-disabled':''}
                 onClick={onClickGetStartedHandler}
                 >
                   Get Started Now
