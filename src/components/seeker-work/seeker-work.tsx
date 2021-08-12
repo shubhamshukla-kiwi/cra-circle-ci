@@ -1,4 +1,5 @@
-import React, { useState } from "react"
+import React, { useState, useContext, useEffect } from "react"
+import { useHistory } from "react-router-dom"
 import styled from "styled-components"
 import { Col, Row } from "react-styled-flexboxgrid"
 import howWorks from './../../assets/images/homepage/how-works.png'
@@ -7,11 +8,36 @@ import preference from './../../assets/images/homepage/preference.jpg'
 import vehicle from './../../assets/images/homepage/vehicle.png'
 import quotes from './../../assets/images/homepage/quotes.jpg'
 import driver from './../../assets/images/homepage/driver.jpg'
+import {ZipCodeContext} from '../../contexts/ZipCodeContext/ZipCodeContext'
 import InputMask from 'react-input-mask'
 
 
 const SeekerWork = () => {
-  const [zipcode, setZipcode] = useState(97);
+  useEffect(() => {
+    cleanData();
+  }, []);
+  const [zipcode, setZip] = useState("");
+  const history = useHistory();
+  const [isLoading, setIsLoading] = useState(false);
+  const {
+    cleanData,
+    fetchZipCode,
+    isZipCodeSupported,
+    isZipCodeValid,
+  } = useContext(ZipCodeContext);
+
+  const onChangeHandler: InputMaskProps['onChange'] = (event) => {
+    const { value } = event.target;
+    setZip(value);
+    fetchZipCode(value);
+  };
+
+  const onClickGetStartedHandler = (event) => {
+    event.preventDefault();
+    const url = isZipCodeSupported ? '/sign-up' : '/coming-soon';
+    history.push(url);
+  };
+
   return (
     <div className="how-works-wrapper">
       <Container className="inner-container">
@@ -62,11 +88,11 @@ const SeekerWork = () => {
               <Form>
                 <FieldGroup>
                   <span className="icon-location font-icon"></span>
-                  <InputMask mask="99999" onChange={e => setZipcode(e.target.value)}>
+                  <InputMask mask="99999" onChange={onChangeHandler}>
                     {(inputProps) => <HeroField type="text" placeholder="Enter Zip Code" {...inputProps} />}
                   </InputMask>
                 </FieldGroup>
-                <HeroButton type="submit">
+                <HeroButton onClick={onClickGetStartedHandler}>
                   Get Started
                 </HeroButton>
               </Form>

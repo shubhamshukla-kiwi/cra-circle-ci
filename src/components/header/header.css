@@ -1,0 +1,404 @@
+.client-defaults .g-default-input, .header-component .g-default-input,
+.client-defaults input[type='text'],
+.header-component input[type='text'],
+.client-defaults input[type='email'],
+.header-component input[type='email'],
+.client-defaults input[type='password'],
+.header-component input[type='password'], .client-defaults h1, .header-component h1, .client-defaults h2, .header-component h2, .client-defaults h3, .header-component h3, .client-defaults h4, .header-component h4, .client-defaults p, .header-component p {
+  color: #ffffff;
+  font-weight: 300;
+  font-family: "Open Sans", sans-serif; }
+
+.client-defaults .g-default-input, .header-component .g-default-input,
+.client-defaults input[type='text'],
+.header-component input[type='text'],
+.client-defaults input[type='email'],
+.header-component input[type='email'],
+.client-defaults input[type='password'],
+.header-component input[type='password'] {
+  font-weight: 400;
+  background-color: #ffffff;
+  font-size: 1em;
+  padding: 15px 20px;
+  border-radius: 2px;
+  margin: 10px 8px;
+  border: 1px solid #ffffff; }
+  @media (max-width: 500px) {
+    .client-defaults .g-default-input, .header-component .g-default-input,
+    .client-defaults input[type='text'],
+    .header-component input[type='text'],
+    .client-defaults input[type='email'],
+    .header-component input[type='email'],
+    .client-defaults input[type='password'],
+    .header-component input[type='password'] {
+      padding: 12px 12px; } }
+  .client-defaults .g-default-input:-webkit-autofill, .header-component .g-default-input:-webkit-autofill,
+  .client-defaults input:-webkit-autofill[type='text'],
+  .header-component input:-webkit-autofill[type='text'],
+  .client-defaults input:-webkit-autofill[type='email'],
+  .header-component input:-webkit-autofill[type='email'],
+  .client-defaults input:-webkit-autofill[type='password'],
+  .header-component input:-webkit-autofill[type='password'], .client-defaults .g-default-input:-webkit-autofill:hover, .header-component .g-default-input:-webkit-autofill:hover,
+  .client-defaults input:-webkit-autofill:hover[type='text'],
+  .header-component input:-webkit-autofill:hover[type='text'],
+  .client-defaults input:-webkit-autofill:hover[type='email'],
+  .header-component input:-webkit-autofill:hover[type='email'],
+  .client-defaults input:-webkit-autofill:hover[type='password'],
+  .header-component input:-webkit-autofill:hover[type='password'],
+  .client-defaults .g-default-input:-webkit-autofill:focus .g-default-input:-webkit-autofill,
+  .client-defaults input:-webkit-autofill:focus[type='text'] .g-default-input:-webkit-autofill,
+  .client-defaults input:-webkit-autofill:focus[type='email'] .g-default-input:-webkit-autofill,
+  .client-defaults input:-webkit-autofill:focus[type='password'] .g-default-input:-webkit-autofill,
+  .header-component .g-default-input:-webkit-autofill:focus .g-default-input:-webkit-autofill,
+  .header-component input:-webkit-autofill:focus[type='text'] .g-default-input:-webkit-autofill,
+  .header-component input:-webkit-autofill:focus[type='email'] .g-default-input:-webkit-autofill,
+  .header-component input:-webkit-autofill:focus[type='password'] .g-default-input:-webkit-autofill,
+  .client-defaults .g-default-input:-webkit-autofill:focus input:-webkit-autofill[type='text'],
+  .client-defaults input:-webkit-autofill:focus[type='text'] input:-webkit-autofill[type='text'],
+  .client-defaults input:-webkit-autofill:focus[type='email'] input:-webkit-autofill[type='text'],
+  .client-defaults input:-webkit-autofill:focus[type='password'] input:-webkit-autofill[type='text'],
+  .header-component .g-default-input:-webkit-autofill:focus input:-webkit-autofill[type='text'],
+  .header-component input:-webkit-autofill:focus[type='text'] input:-webkit-autofill[type='text'],
+  .header-component input:-webkit-autofill:focus[type='email'] input:-webkit-autofill[type='text'],
+  .header-component input:-webkit-autofill:focus[type='password'] input:-webkit-autofill[type='text'],
+  .client-defaults .g-default-input:-webkit-autofill:focus input:-webkit-autofill[type='email'],
+  .client-defaults input:-webkit-autofill:focus[type='text'] input:-webkit-autofill[type='email'],
+  .client-defaults input:-webkit-autofill:focus[type='email'] input:-webkit-autofill[type='email'],
+  .client-defaults input:-webkit-autofill:focus[type='password'] input:-webkit-autofill[type='email'],
+  .header-component .g-default-input:-webkit-autofill:focus input:-webkit-autofill[type='email'],
+  .header-component input:-webkit-autofill:focus[type='text'] input:-webkit-autofill[type='email'],
+  .header-component input:-webkit-autofill:focus[type='email'] input:-webkit-autofill[type='email'],
+  .header-component input:-webkit-autofill:focus[type='password'] input:-webkit-autofill[type='email'],
+  .client-defaults .g-default-input:-webkit-autofill:focus input:-webkit-autofill[type='password'],
+  .client-defaults input:-webkit-autofill:focus[type='text'] input:-webkit-autofill[type='password'],
+  .client-defaults input:-webkit-autofill:focus[type='email'] input:-webkit-autofill[type='password'],
+  .client-defaults input:-webkit-autofill:focus[type='password'] input:-webkit-autofill[type='password'],
+  .header-component .g-default-input:-webkit-autofill:focus input:-webkit-autofill[type='password'],
+  .header-component input:-webkit-autofill:focus[type='text'] input:-webkit-autofill[type='password'],
+  .header-component input:-webkit-autofill:focus[type='email'] input:-webkit-autofill[type='password'],
+  .header-component input:-webkit-autofill:focus[type='password'] input:-webkit-autofill[type='password'] {
+    -webkit-box-shadow: inset 0 0 0px 9999px #ffffff !important;
+    -webkit-text-fill-color: #3e547d !important;
+    transition: background-color 5000s ease-in-out 0s; }
+  .client-defaults .g-default-input:focus, .header-component .g-default-input:focus,
+  .client-defaults input:focus[type='text'],
+  .header-component input:focus[type='text'],
+  .client-defaults input:focus[type='email'],
+  .header-component input:focus[type='email'],
+  .client-defaults input:focus[type='password'],
+  .header-component input:focus[type='password'] {
+    outline: none; }
+
+.client-defaults .g-default-input, .header-component .g-default-input,
+.client-defaults input[type='text'],
+.header-component input[type='text'],
+.client-defaults input[type='email'],
+.header-component input[type='email'],
+.client-defaults input[type='password'],
+.header-component input[type='password'] {
+  min-width: 0;
+  color: #3e547d; }
+  .client-defaults .g-default-input::placeholder, .header-component .g-default-input::placeholder,
+  .client-defaults input[type='text']::placeholder,
+  .header-component input[type='text']::placeholder,
+  .client-defaults input[type='email']::placeholder,
+  .header-component input[type='email']::placeholder,
+  .client-defaults input[type='password']::placeholder,
+  .header-component input[type='password']::placeholder {
+    color: rgba(62, 84, 125, 0.7); }
+  .client-defaults .g-default-input[disabled], .header-component .g-default-input[disabled],
+  .client-defaults input[type='text'][disabled],
+  .header-component input[type='text'][disabled],
+  .client-defaults input[type='email'][disabled],
+  .header-component input[type='email'][disabled],
+  .client-defaults input[type='password'][disabled],
+  .header-component input[type='password'][disabled] {
+    opacity: .7;
+    color: rgba(62, 84, 125, 0.7); }
+
+.client-defaults h1, .header-component h1 {
+  font-size: 1.9em;
+  margin: 0.4em 0; }
+  @media (max-width: 500px) {
+    .client-defaults h1, .header-component h1 {
+      font-size: 1.767em; } }
+
+.client-defaults h2, .header-component h2 {
+  font-size: 1.2em;
+  font-weight: 400; }
+  @media (max-width: 500px) {
+    .client-defaults h2, .header-component h2 {
+      font-size: 1.116em; } }
+
+.client-defaults h3, .header-component h3 {
+  font-size: 1em;
+  font-weight: 400;
+  margin: 0.5em 0; }
+  @media (max-width: 500px) {
+    .client-defaults h3, .header-component h3 {
+      font-size: 0.93em; } }
+
+.client-defaults h4, .header-component h4 {
+  font-size: 0.85em;
+  text-transform: uppercase;
+  font-weight: 400;
+  margin: 0.3em 0; }
+  @media (max-width: 500px) {
+    .client-defaults h4, .header-component h4 {
+      font-size: 0.7905em; } }
+
+.client-defaults p, .header-component p {
+  font-size: 1em;
+  margin: 0.5em 0; }
+  @media (max-width: 500px) {
+    .client-defaults p, .header-component p {
+      font-size: 0.93em; } }
+
+.client-defaults h1.text-dark, .header-component h1.text-dark, .client-defaults h2.text-dark, .header-component h2.text-dark, .client-defaults h3.text-dark, .header-component h3.text-dark, .client-defaults h4.text-dark, .header-component h4.text-dark, .client-defaults p.text-dark, .header-component p.text-dark {
+  color: #3e547d; }
+
+.client-defaults button, .header-component button {
+  line-height: 1.3em;
+  font-weight: 400;
+  background-color: #ffffff;
+  color: #3e547d;
+  font-size: 0.93em;
+  text-transform: uppercase;
+  padding: 12px 20px;
+  border-radius: 2px;
+  margin: 10px 8px;
+  width: 240px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 0;
+  margin: 10px 8px;
+  cursor: pointer;
+  transition: all 0.3s;
+  border-radius: 9999px;
+  border: 2px solid #ffffff; }
+  @media (max-width: 500px) {
+    .client-defaults button, .header-component button {
+      width: 135px; } }
+  .client-defaults button.button-primary, .header-component button.button-primary {
+    background-color: #ffffff;
+    color: #3e547d; }
+  .client-defaults button.button-secondary, .header-component button.button-secondary {
+    background-color: transparent;
+    color: #ffffff; }
+  .client-defaults button:focus, .header-component button:focus {
+    outline: 0; }
+  .client-defaults button:active, .header-component button:active {
+    opacity: 0.9; }
+  .client-defaults button.button-small, .header-component button.button-small {
+    max-width: 80px; }
+
+.client-defaults .botton-container-vertical, .header-component .botton-container-vertical {
+  display: flex;
+  flex-direction: column;
+  align-items: center; }
+  .client-defaults .botton-container-vertical button, .header-component .botton-container-vertical button {
+    width: 240px; }
+
+.client-defaults .header-container, .header-component .header-container {
+  text-align: center;
+  margin-bottom: 20px;
+  max-width: 700px;
+  width: 100%;
+  padding: 0 30px; }
+  .client-defaults .header-container h1, .header-component .header-container h1 {
+    color: white; }
+  @media (max-width: 500px) {
+    .client-defaults .header-container, .header-component .header-container {
+      padding: 0px 20px; } }
+  .client-defaults .header-container p, .header-component .header-container p {
+    opacity: 0.7; }
+
+.client-defaults .input-container, .header-component .input-container {
+  max-width: 550px;
+  width: 100%;
+  margin-bottom: 40px;
+  padding: 0 15px; }
+  .client-defaults .input-container .row > *, .header-component .input-container .row > * {
+    flex: 1; }
+
+.client-defaults .row, .header-component .row {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: stretch; }
+  .client-defaults .row > *:first-child, .header-component .row > *:first-child {
+    margin-left: 0; }
+  .client-defaults .row > *:last-child, .header-component .row > *:last-child {
+    margin-right: 0; }
+  .client-defaults .row.centered-row, .header-component .row.centered-row {
+    justify-content: center;
+    align-items: center; }
+
+.client-defaults [data-tooltip], .header-component [data-tooltip] {
+  position: relative; }
+  .client-defaults [data-tooltip]:hover::after, .header-component [data-tooltip]:hover::after {
+    box-shadow: 0px 10px 25px 0px rgba(0, 0, 0, 0.3);
+    content: attr(data-tooltip);
+    position: absolute;
+    bottom: calc(100% + 10px);
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #3e547d;
+    white-space: normal;
+    color: black;
+    width: 400px;
+    display: flex;
+    font-weight: 400;
+    font-family: "Open Sans", sans-serif;
+    font-size: 0.85em;
+    padding: 13px;
+    border-radius: 15px;
+    z-index: 1000;
+    font-family: 'Macho Regular' !important; }
+  .client-defaults [data-tooltip]:hover::before, .header-component [data-tooltip]:hover::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 11px 7px 0 7px;
+    border-color: #3e547d transparent transparent transparent;
+    bottom: calc(100% + 3px);
+    top: auto;
+    margin: auto; }
+
+.client-defaults .header, .header-component .header {
+  height: 70px;
+  min-height: 45px;
+  background-color: #353535;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 30px; }
+  .client-defaults .header .header-inner, .header-component .header .header-inner {
+    width: 100%;
+    max-width: 1440px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center; }
+  .client-defaults .header .header-info, .header-component .header .header-info {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 220px; }
+    @media (max-width: 500px) {
+      .client-defaults .header .header-info, .header-component .header .header-info {
+        width: auto; } }
+    .client-defaults .header .header-info a p, .header-component .header .header-info a p, .client-defaults .header .header-info p, .header-component .header .header-info p {
+      text-transform: uppercase;
+      font-size: 0.85em;
+      color: white; }
+    .client-defaults .header .header-info .logout, .header-component .header .header-info .logout {
+      border: 1px solid rgba(0, 0, 0, 0);
+      border-radius: 3px;
+      cursor: pointer;
+      padding: 0px 10px;
+      transition: border 0.3s; }
+    .client-defaults .header .header-info .logout, .header-component .header .header-info .logout {
+      border: 1px solid rgba(0, 0, 0, 0);
+      border-radius: 3px;
+      cursor: pointer;
+      padding: 0px 10px;
+      transition: border 0.3s; }
+    .client-defaults .header .header-info .header-link:hover, .header-component .header .header-info .header-link:hover {
+      border: 1px solid white; }
+  .client-defaults .header a p, .header-component .header a p {
+    text-transform: uppercase;
+    font-size: 0.85em;
+    color: white; }
+  .client-defaults .header .logo-container, .header-component .header .logo-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center; }
+    .client-defaults .header .logo-container .logo-icon, .header-component .header .logo-container .logo-icon {
+      min-width: 40px;
+      width: 40px;
+      fill: #3e547d;
+      margin-right: 10px; }
+    .client-defaults .header .logo-container p, .header-component .header .logo-container p {
+      font-size: 1.2em;
+      font-weight: 300; }
+
+.client-defaults .navigation-button-row, .header-component .navigation-button-row {
+  max-width: 520px;
+  padding: 0 15px;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center; }
+  .client-defaults .navigation-button-row a button, .header-component .navigation-button-row a button {
+    margin: 0; }
+  .client-defaults .navigation-button-row a:first-child, .header-component .navigation-button-row a:first-child {
+    margin-right: 10px; }
+  .client-defaults .navigation-button-row a:last-child, .header-component .navigation-button-row a:last-child {
+    margin-left: 10px; }
+  .client-defaults .navigation-button-row a:first-child:last-child, .header-component .navigation-button-row a:first-child:last-child {
+    margin-right: 0;
+    margin-left: 0; }
+
+.client-defaults .section-graphic, .header-component .section-graphic {
+  height: 75px;
+  min-height: 75px;
+  fill: #ffffff;
+  margin: 15px; }
+  @media (max-width: 500px) {
+    .client-defaults .section-graphic, .header-component .section-graphic {
+      height: 69.75px;
+      min-height: 69.75px;
+      fill: #ffffff;
+      margin: 13.95px; } }
+
+.client-defaults .progress-circle-row, .header-component .progress-circle-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin: 6px;
+  min-height: 12px; }
+  @media (max-width: 500px) {
+    .client-defaults .progress-circle-row, .header-component .progress-circle-row {
+      margin: 5.58px;
+      min-height: 11.16px; } }
+  .client-defaults .progress-circle-row .driver-progress-circle, .header-component .progress-circle-row .driver-progress-circle {
+    height: 12px;
+    width: 12px;
+    margin: 0 8px;
+    border-radius: 100%;
+    background-color: rgba(255, 255, 255, 0.5); }
+    @media (max-width: 500px) {
+      .client-defaults .progress-circle-row .driver-progress-circle, .header-component .progress-circle-row .driver-progress-circle {
+        height: 11.16px;
+        width: 11.16px;
+        margin: 0 7.44px; } }
+    .client-defaults .progress-circle-row .driver-progress-circle.circle-active, .header-component .progress-circle-row .driver-progress-circle.circle-active {
+      background-color: #ffffff; }
+
+.client-defaults .loading-container, .header-component .loading-container {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center; }
+
+.header-component {
+  width: 100%;
+  max-width: 1200px;
+  margin-bottom: 30px; }
+  .header-component .header {
+    height: auto;
+    min-height: auto; }
+  .header-component .menu {
+    display: none; }
+    @media (max-width: 768px) {
+      .header-component .menu {
+        display: block; } }

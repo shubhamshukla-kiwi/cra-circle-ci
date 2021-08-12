@@ -1,0 +1,60 @@
+.privacy-container {
+  color: white;
+  padding-top: 40px;
+  padding-bottom: 40px; }
+  .privacy-container .container {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 800px; }
+  .privacy-container .paper {
+    background-color: white; }
+  .privacy-container .title {
+    text-align: center;
+    max-width: 700;
+    margin-left: auto;
+    margin-right: auto; }
+    .privacy-container .title h1 {
+      font-weight: 600; }
+    .privacy-container .title p {
+      font-size: 10pt;
+      margin: 0% 15% 30px 15%; }
+  .privacy-container .back-button {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    height: 45px;
+    width: 105px;
+    z-index: 99;
+    border: 1px solid #ffffff;
+    border-radius: 45px;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center; }
+  .privacy-container .section-block {
+    padding: 1% 5% 2% 5%;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: white;
+    max-width: 800px; }
+    .privacy-container .section-block h3 {
+      color: #646464;
+      font-weight: 400;
+      font-size: 18pt; }
+    .privacy-container .section-block h5 {
+      color: #646464;
+      font-size: 14pt;
+      text-decoration: underline; }
+    .privacy-container .section-block p {
+      color: black;
+      font-weight: 300; }
+  .privacy-container .link {
+    color: black;
+    text-decoration: underline; }
+  .privacy-container .link:visited,
+  .privacy-container .link:hover {
+    color: darkgray; }
+  .privacy-container .footer-section {
+    text-align: center; }
+    .privacy-container .footer-section p {
+      font-size: 8pt; }

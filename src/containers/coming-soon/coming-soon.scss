@@ -1,0 +1,43 @@
+@import './../../lib/constants/_globals';
+@import 'containers/new-car/new-car.scss';
+
+.coming-soon {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  overflow: scroll;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  background: url('../../assets/images/background.webp') center center / cover no-repeat !important;
+
+
+  .section-graphic {
+    width: 100px;
+    height: 100px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    overflow: visible;
+    fill: $color-white;
+  }
+
+  .header {
+    font-size: $font-header;
+    color: $white;
+    padding: $padding-small;
+  }
+
+  .info {
+    font-size: $font-regular;
+    color: $white;
+  }
+
+  a {
+    padding-top: $padding-small;
+    color: $white;
+  }
+}

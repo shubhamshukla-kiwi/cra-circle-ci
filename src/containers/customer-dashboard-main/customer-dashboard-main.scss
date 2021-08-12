@@ -1,0 +1,50 @@
+@import './../../lib/constants/_globals';
+@import './../../lib/constants/_client-defaults';
+
+.customer-dashboard-main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px 0px;
+  width: 50%;
+
+  .dashboard-navigation {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: flex-start;
+  }
+
+  .dashboard-navigation-button {
+    display: flex;
+    padding: 0px 20px 0px 20px;
+  }
+
+  .hidden {
+    display: hidden;
+  }
+
+
+  .waiting {
+    border: 1px solid white;
+    border-radius: 5px;
+    margin: 15%;
+    max-width: 600px;
+
+    p {
+      font-size: 18px;
+      padding: 10px;
+    }
+  }
+
+
+  .selected {
+    background-color: #00a0d1;
+    color: $white;
+  }
+
+  h1, p {
+    margin: 0px;
+    text-align: center;
+  }
+}

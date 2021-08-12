@@ -1,0 +1,462 @@
+.client-defaults .g-default-input, .oops .g-default-input,
+.client-defaults input[type='text'],
+.oops input[type='text'],
+.client-defaults input[type='email'],
+.oops input[type='email'],
+.client-defaults input[type='password'],
+.oops input[type='password'], .client-defaults h1, .oops h1, .client-defaults h2, .oops h2, .client-defaults h3, .oops h3, .client-defaults h4, .oops h4, .client-defaults p, .oops p {
+  color: #ffffff;
+  font-weight: 300;
+  font-family: "Open Sans", sans-serif; }
+
+.client-defaults .g-default-input, .oops .g-default-input,
+.client-defaults input[type='text'],
+.oops input[type='text'],
+.client-defaults input[type='email'],
+.oops input[type='email'],
+.client-defaults input[type='password'],
+.oops input[type='password'] {
+  font-weight: 400;
+  background-color: #ffffff;
+  font-size: 1em;
+  padding: 15px 20px;
+  border-radius: 2px;
+  margin: 10px 8px;
+  border: 1px solid #ffffff; }
+  @media (max-width: 500px) {
+    .client-defaults .g-default-input, .oops .g-default-input,
+    .client-defaults input[type='text'],
+    .oops input[type='text'],
+    .client-defaults input[type='email'],
+    .oops input[type='email'],
+    .client-defaults input[type='password'],
+    .oops input[type='password'] {
+      padding: 12px 12px; } }
+  .client-defaults .g-default-input:-webkit-autofill, .oops .g-default-input:-webkit-autofill,
+  .client-defaults input:-webkit-autofill[type='text'],
+  .oops input:-webkit-autofill[type='text'],
+  .client-defaults input:-webkit-autofill[type='email'],
+  .oops input:-webkit-autofill[type='email'],
+  .client-defaults input:-webkit-autofill[type='password'],
+  .oops input:-webkit-autofill[type='password'], .client-defaults .g-default-input:-webkit-autofill:hover, .oops .g-default-input:-webkit-autofill:hover,
+  .client-defaults input:-webkit-autofill:hover[type='text'],
+  .oops input:-webkit-autofill:hover[type='text'],
+  .client-defaults input:-webkit-autofill:hover[type='email'],
+  .oops input:-webkit-autofill:hover[type='email'],
+  .client-defaults input:-webkit-autofill:hover[type='password'],
+  .oops input:-webkit-autofill:hover[type='password'],
+  .client-defaults .g-default-input:-webkit-autofill:focus .g-default-input:-webkit-autofill,
+  .client-defaults input:-webkit-autofill:focus[type='text'] .g-default-input:-webkit-autofill,
+  .client-defaults input:-webkit-autofill:focus[type='email'] .g-default-input:-webkit-autofill,
+  .client-defaults input:-webkit-autofill:focus[type='password'] .g-default-input:-webkit-autofill,
+  .oops .g-default-input:-webkit-autofill:focus .g-default-input:-webkit-autofill,
+  .oops input:-webkit-autofill:focus[type='text'] .g-default-input:-webkit-autofill,
+  .oops input:-webkit-autofill:focus[type='email'] .g-default-input:-webkit-autofill,
+  .oops input:-webkit-autofill:focus[type='password'] .g-default-input:-webkit-autofill,
+  .client-defaults .g-default-input:-webkit-autofill:focus input:-webkit-autofill[type='text'],
+  .client-defaults input:-webkit-autofill:focus[type='text'] input:-webkit-autofill[type='text'],
+  .client-defaults input:-webkit-autofill:focus[type='email'] input:-webkit-autofill[type='text'],
+  .client-defaults input:-webkit-autofill:focus[type='password'] input:-webkit-autofill[type='text'],
+  .oops .g-default-input:-webkit-autofill:focus input:-webkit-autofill[type='text'],
+  .oops input:-webkit-autofill:focus[type='text'] input:-webkit-autofill[type='text'],
+  .oops input:-webkit-autofill:focus[type='email'] input:-webkit-autofill[type='text'],
+  .oops input:-webkit-autofill:focus[type='password'] input:-webkit-autofill[type='text'],
+  .client-defaults .g-default-input:-webkit-autofill:focus input:-webkit-autofill[type='email'],
+  .client-defaults input:-webkit-autofill:focus[type='text'] input:-webkit-autofill[type='email'],
+  .client-defaults input:-webkit-autofill:focus[type='email'] input:-webkit-autofill[type='email'],
+  .client-defaults input:-webkit-autofill:focus[type='password'] input:-webkit-autofill[type='email'],
+  .oops .g-default-input:-webkit-autofill:focus input:-webkit-autofill[type='email'],
+  .oops input:-webkit-autofill:focus[type='text'] input:-webkit-autofill[type='email'],
+  .oops input:-webkit-autofill:focus[type='email'] input:-webkit-autofill[type='email'],
+  .oops input:-webkit-autofill:focus[type='password'] input:-webkit-autofill[type='email'],
+  .client-defaults .g-default-input:-webkit-autofill:focus input:-webkit-autofill[type='password'],
+  .client-defaults input:-webkit-autofill:focus[type='text'] input:-webkit-autofill[type='password'],
+  .client-defaults input:-webkit-autofill:focus[type='email'] input:-webkit-autofill[type='password'],
+  .client-defaults input:-webkit-autofill:focus[type='password'] input:-webkit-autofill[type='password'],
+  .oops .g-default-input:-webkit-autofill:focus input:-webkit-autofill[type='password'],
+  .oops input:-webkit-autofill:focus[type='text'] input:-webkit-autofill[type='password'],
+  .oops input:-webkit-autofill:focus[type='email'] input:-webkit-autofill[type='password'],
+  .oops input:-webkit-autofill:focus[type='password'] input:-webkit-autofill[type='password'] {
+    -webkit-box-shadow: inset 0 0 0px 9999px #ffffff !important;
+    -webkit-text-fill-color: #3e547d !important;
+    transition: background-color 5000s ease-in-out 0s; }
+  .client-defaults .g-default-input:focus, .oops .g-default-input:focus,
+  .client-defaults input:focus[type='text'],
+  .oops input:focus[type='text'],
+  .client-defaults input:focus[type='email'],
+  .oops input:focus[type='email'],
+  .client-defaults input:focus[type='password'],
+  .oops input:focus[type='password'] {
+    outline: none; }
+
+.client-defaults .g-default-input, .oops .g-default-input,
+.client-defaults input[type='text'],
+.oops input[type='text'],
+.client-defaults input[type='email'],
+.oops input[type='email'],
+.client-defaults input[type='password'],
+.oops input[type='password'] {
+  min-width: 0;
+  color: #3e547d; }
+  .client-defaults .g-default-input::placeholder, .oops .g-default-input::placeholder,
+  .client-defaults input[type='text']::placeholder,
+  .oops input[type='text']::placeholder,
+  .client-defaults input[type='email']::placeholder,
+  .oops input[type='email']::placeholder,
+  .client-defaults input[type='password']::placeholder,
+  .oops input[type='password']::placeholder {
+    color: rgba(62, 84, 125, 0.7); }
+  .client-defaults .g-default-input[disabled], .oops .g-default-input[disabled],
+  .client-defaults input[type='text'][disabled],
+  .oops input[type='text'][disabled],
+  .client-defaults input[type='email'][disabled],
+  .oops input[type='email'][disabled],
+  .client-defaults input[type='password'][disabled],
+  .oops input[type='password'][disabled] {
+    opacity: .7;
+    color: rgba(62, 84, 125, 0.7); }
+
+.client-defaults h1, .oops h1 {
+  font-size: 1.9em;
+  margin: 0.4em 0; }
+  @media (max-width: 500px) {
+    .client-defaults h1, .oops h1 {
+      font-size: 1.767em; } }
+
+.client-defaults h2, .oops h2 {
+  font-size: 1.2em;
+  font-weight: 400; }
+  @media (max-width: 500px) {
+    .client-defaults h2, .oops h2 {
+      font-size: 1.116em; } }
+
+.client-defaults h3, .oops h3 {
+  font-size: 1em;
+  font-weight: 400;
+  margin: 0.5em 0; }
+  @media (max-width: 500px) {
+    .client-defaults h3, .oops h3 {
+      font-size: 0.93em; } }
+
+.client-defaults h4, .oops h4 {
+  font-size: 0.85em;
+  text-transform: uppercase;
+  font-weight: 400;
+  margin: 0.3em 0; }
+  @media (max-width: 500px) {
+    .client-defaults h4, .oops h4 {
+      font-size: 0.7905em; } }
+
+.client-defaults p, .oops p {
+  font-size: 1em;
+  margin: 0.5em 0; }
+  @media (max-width: 500px) {
+    .client-defaults p, .oops p {
+      font-size: 0.93em; } }
+
+.client-defaults h1.text-dark, .oops h1.text-dark, .client-defaults h2.text-dark, .oops h2.text-dark, .client-defaults h3.text-dark, .oops h3.text-dark, .client-defaults h4.text-dark, .oops h4.text-dark, .client-defaults p.text-dark, .oops p.text-dark {
+  color: #3e547d; }
+
+.client-defaults button, .oops button {
+  line-height: 1.3em;
+  font-weight: 400;
+  background-color: #ffffff;
+  color: #3e547d;
+  font-size: 0.93em;
+  text-transform: uppercase;
+  padding: 12px 20px;
+  border-radius: 2px;
+  margin: 10px 8px;
+  width: 240px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 0;
+  margin: 10px 8px;
+  cursor: pointer;
+  transition: all 0.3s;
+  border-radius: 9999px;
+  border: 2px solid #ffffff; }
+  @media (max-width: 500px) {
+    .client-defaults button, .oops button {
+      width: 135px; } }
+  .client-defaults button.button-primary, .oops button.button-primary {
+    background-color: #ffffff;
+    color: #3e547d; }
+  .client-defaults button.button-secondary, .oops button.button-secondary {
+    background-color: transparent;
+    color: #ffffff; }
+  .client-defaults button:focus, .oops button:focus {
+    outline: 0; }
+  .client-defaults button:active, .oops button:active {
+    opacity: 0.9; }
+  .client-defaults button.button-small, .oops button.button-small {
+    max-width: 80px; }
+
+.client-defaults .botton-container-vertical, .oops .botton-container-vertical {
+  display: flex;
+  flex-direction: column;
+  align-items: center; }
+  .client-defaults .botton-container-vertical button, .oops .botton-container-vertical button {
+    width: 240px; }
+
+.client-defaults .header-container, .oops .header-container {
+  text-align: center;
+  margin-bottom: 20px;
+  max-width: 700px;
+  width: 100%;
+  padding: 0 30px; }
+  .client-defaults .header-container h1, .oops .header-container h1 {
+    color: white; }
+  @media (max-width: 500px) {
+    .client-defaults .header-container, .oops .header-container {
+      padding: 0px 20px; } }
+  .client-defaults .header-container p, .oops .header-container p {
+    opacity: 0.7; }
+
+.client-defaults .input-container, .oops .input-container {
+  max-width: 550px;
+  width: 100%;
+  margin-bottom: 40px;
+  padding: 0 15px; }
+  .client-defaults .input-container .row > *, .oops .input-container .row > * {
+    flex: 1; }
+
+.client-defaults .row, .oops .row {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: stretch; }
+  .client-defaults .row > *:first-child, .oops .row > *:first-child {
+    margin-left: 0; }
+  .client-defaults .row > *:last-child, .oops .row > *:last-child {
+    margin-right: 0; }
+  .client-defaults .row.centered-row, .oops .row.centered-row {
+    justify-content: center;
+    align-items: center; }
+
+.client-defaults [data-tooltip], .oops [data-tooltip] {
+  position: relative; }
+  .client-defaults [data-tooltip]:hover::after, .oops [data-tooltip]:hover::after {
+    box-shadow: 0px 10px 25px 0px rgba(0, 0, 0, 0.3);
+    content: attr(data-tooltip);
+    position: absolute;
+    bottom: calc(100% + 10px);
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #3e547d;
+    white-space: normal;
+    color: black;
+    width: 400px;
+    display: flex;
+    font-weight: 400;
+    font-family: "Open Sans", sans-serif;
+    font-size: 0.85em;
+    padding: 13px;
+    border-radius: 15px;
+    z-index: 1000;
+    font-family: 'Macho Regular' !important; }
+  .client-defaults [data-tooltip]:hover::before, .oops [data-tooltip]:hover::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 11px 7px 0 7px;
+    border-color: #3e547d transparent transparent transparent;
+    bottom: calc(100% + 3px);
+    top: auto;
+    margin: auto; }
+
+.client-defaults .header, .oops .header {
+  height: 70px;
+  min-height: 45px;
+  background-color: #353535;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 30px; }
+  .client-defaults .header .header-inner, .oops .header .header-inner {
+    width: 100%;
+    max-width: 1440px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center; }
+  .client-defaults .header .header-info, .oops .header .header-info {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 220px; }
+    @media (max-width: 500px) {
+      .client-defaults .header .header-info, .oops .header .header-info {
+        width: auto; } }
+    .client-defaults .header .header-info a p, .oops .header .header-info a p, .client-defaults .header .header-info p, .oops .header .header-info p {
+      text-transform: uppercase;
+      font-size: 0.85em;
+      color: white; }
+    .client-defaults .header .header-info .logout, .oops .header .header-info .logout {
+      border: 1px solid rgba(0, 0, 0, 0);
+      border-radius: 3px;
+      cursor: pointer;
+      padding: 0px 10px;
+      transition: border 0.3s; }
+    .client-defaults .header .header-info .logout, .oops .header .header-info .logout {
+      border: 1px solid rgba(0, 0, 0, 0);
+      border-radius: 3px;
+      cursor: pointer;
+      padding: 0px 10px;
+      transition: border 0.3s; }
+    .client-defaults .header .header-info .header-link:hover, .oops .header .header-info .header-link:hover {
+      border: 1px solid white; }
+  .client-defaults .header a p, .oops .header a p {
+    text-transform: uppercase;
+    font-size: 0.85em;
+    color: white; }
+  .client-defaults .header .logo-container, .oops .header .logo-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center; }
+    .client-defaults .header .logo-container .logo-icon, .oops .header .logo-container .logo-icon {
+      min-width: 40px;
+      width: 40px;
+      fill: #3e547d;
+      margin-right: 10px; }
+    .client-defaults .header .logo-container p, .oops .header .logo-container p {
+      font-size: 1.2em;
+      font-weight: 300; }
+
+.client-defaults .navigation-button-row, .oops .navigation-button-row {
+  max-width: 520px;
+  padding: 0 15px;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center; }
+  .client-defaults .navigation-button-row a button, .oops .navigation-button-row a button {
+    margin: 0; }
+  .client-defaults .navigation-button-row a:first-child, .oops .navigation-button-row a:first-child {
+    margin-right: 10px; }
+  .client-defaults .navigation-button-row a:last-child, .oops .navigation-button-row a:last-child {
+    margin-left: 10px; }
+  .client-defaults .navigation-button-row a:first-child:last-child, .oops .navigation-button-row a:first-child:last-child {
+    margin-right: 0;
+    margin-left: 0; }
+
+.client-defaults .section-graphic, .oops .section-graphic {
+  height: 75px;
+  min-height: 75px;
+  fill: #ffffff;
+  margin: 15px; }
+  @media (max-width: 500px) {
+    .client-defaults .section-graphic, .oops .section-graphic {
+      height: 69.75px;
+      min-height: 69.75px;
+      fill: #ffffff;
+      margin: 13.95px; } }
+
+.client-defaults .progress-circle-row, .oops .progress-circle-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin: 6px;
+  min-height: 12px; }
+  @media (max-width: 500px) {
+    .client-defaults .progress-circle-row, .oops .progress-circle-row {
+      margin: 5.58px;
+      min-height: 11.16px; } }
+  .client-defaults .progress-circle-row .driver-progress-circle, .oops .progress-circle-row .driver-progress-circle {
+    height: 12px;
+    width: 12px;
+    margin: 0 8px;
+    border-radius: 100%;
+    background-color: rgba(255, 255, 255, 0.5); }
+    @media (max-width: 500px) {
+      .client-defaults .progress-circle-row .driver-progress-circle, .oops .progress-circle-row .driver-progress-circle {
+        height: 11.16px;
+        width: 11.16px;
+        margin: 0 7.44px; } }
+    .client-defaults .progress-circle-row .driver-progress-circle.circle-active, .oops .progress-circle-row .driver-progress-circle.circle-active {
+      background-color: #ffffff; }
+
+.client-defaults .loading-container, .oops .loading-container {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center; }
+
+.oops {
+  width: 100vw;
+  height: 100vh; }
+  @media only screen and (min-width: 400px) {
+    .oops .oops-message h1 {
+      font-size: 150px !important; } }
+  @media only screen and (min-width: 600px) {
+    .oops .seeker-logo {
+      width: 500px !important; }
+    .oops .home-button {
+      width: 300px !important; } }
+  .oops .scroll-container {
+    height: 100%;
+    width: 100%;
+    overflow-y: scroll; }
+  .oops .oops-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    min-height: fit-content;
+    margin-top: -20px;
+    padding-bottom: 70px; }
+    .oops .oops-content .oops-message {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+      text-align: center;
+      padding: 0px 50px;
+      margin-bottom: 30px; }
+      .oops .oops-content .oops-message h1 {
+        font-size: 130px;
+        letter-spacing: 0.1em;
+        font-weight: bold;
+        margin: 0px;
+        margin-top: -60px; }
+      .oops .oops-content .oops-message .seeker-logo {
+        fill: #ffffff;
+        width: 100%;
+        min-width: 250px; }
+    .oops .oops-content .home-button {
+      width: 100%;
+      padding-left: 20px;
+      padding-right: 20px; }
+      .oops .oops-content .home-button button {
+        -webkit-box-align: center !important;
+        align-items: center !important;
+        -webkit-box-pack: center !important;
+        justify-content: center !important;
+        background-color: #fcd344 !important;
+        box-sizing: border-box !important;
+        color: #5761fb !important;
+        cursor: pointer !important;
+        display: flex !important;
+        border: 0px !important;
+        border-radius: 0px 16px 0px 0px !important;
+        font-weight: 600 !important;
+        font-size: 19px !important;
+        line-height: 89.69% !important;
+        letter-spacing: -0.055em !important;
+        height: 55px !important;
+        margin: 1rem 7px !important;
+        min-width: 167px !important;
+        opacity: 1 !important;
+        padding: 18px 10px 20px !important;
+        position: relative !important;
+        text-transform: uppercase !important; }

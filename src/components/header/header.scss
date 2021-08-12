@@ -1,0 +1,19 @@
+@import './../../lib/constants/_globals';
+@import './../../lib/constants/_client-defaults';
+
+.header-component {
+  width: 100%;
+  max-width: 1200px;
+  margin-bottom: 30px;
+  .header{
+    height: auto;
+    min-height: auto;
+  }
+  @extend .client-defaults;
+  .menu{
+    display: none;
+    @media (max-width: 768px){
+      display: block;
+    }
+  }
+}

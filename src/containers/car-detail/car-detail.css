@@ -1,0 +1,232 @@
+.car-details-wrapper .btn-selection {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 60px; }
+  @media (max-width: 768px) {
+    .car-details-wrapper .btn-selection {
+      flex-wrap: wrap; } }
+  .car-details-wrapper .btn-selection .button-transparent {
+    width: 268px; }
+    @media (max-width: 768px) {
+      .car-details-wrapper .btn-selection .button-transparent {
+        width: 100%;
+        margin-bottom: 20px; } }
+  .car-details-wrapper .btn-selection .button-primary {
+    margin-top: 0px;
+    margin-left: 10px;
+    width: 198px; }
+    @media (max-width: 768px) {
+      .car-details-wrapper .btn-selection .button-primary {
+        width: 100%;
+        margin-left: 0px; } }
+
+.car-details-wrapper .form-group {
+  margin-bottom: 35px; }
+
+.plan-details-wrapper .header-container-row {
+  margin-top: 20px; }
+
+.plan-details-wrapper .price-plan-wrap {
+  display: flex;
+  margin-top: 30px; }
+  .plan-details-wrapper .price-plan-wrap ul {
+    list-style: none;
+    padding-top: 20px; }
+  .plan-details-wrapper .price-plan-wrap .price-content {
+    width: 150px; }
+    @media (max-width: 768px) {
+      .plan-details-wrapper .price-plan-wrap .price-content {
+        display: none; } }
+    .plan-details-wrapper .price-plan-wrap .price-content ul li {
+      font-size: 16px;
+      margin-bottom: 15px;
+      font-family: "Macho-Medium" !important;
+      min-height: 50px; }
+  .plan-details-wrapper .price-plan-wrap .coverage-info {
+    font-size: 16px;
+    font-style: italic;
+    color: #486cfd;
+    display: flex;
+    align-items: center;
+    text-decoration: underline;
+    font-family: "Macho-Semi" !important;
+    height: 49px; }
+    .plan-details-wrapper .price-plan-wrap .coverage-info img {
+      padding-top: 6px;
+      margin-right: 6px; }
+  .plan-details-wrapper .price-plan-wrap .price-data {
+    display: flex;
+    width: calc(100% - 150px);
+    justify-content: space-between;
+    margin-left: 48px; }
+    @media (max-width: 768px) {
+      .plan-details-wrapper .price-plan-wrap .price-data {
+        width: 100%;
+        margin-left: 0px;
+        flex-wrap: wrap; } }
+    .plan-details-wrapper .price-plan-wrap .price-data .pricing-table {
+      width: 33.33%;
+      margin-left: 1px; }
+      @media (max-width: 768px) {
+        .plan-details-wrapper .price-plan-wrap .price-data .pricing-table {
+          width: 100%;
+          margin-bottom: 20px; } }
+      .plan-details-wrapper .price-plan-wrap .price-data .pricing-table .header {
+        background-color: #ddf1e3;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 15px 3px;
+        height: 49px; }
+        .plan-details-wrapper .price-plan-wrap .price-data .pricing-table .header .pricing-title {
+          font-size: 13px;
+          font-family: "Macho-Semi" !important;
+          text-transform: uppercase;
+          letter-spacing: 2.79px;
+          padding-left: 10px; }
+        .plan-details-wrapper .price-plan-wrap .price-data .pricing-table .header .custom-radio-btn {
+          margin-bottom: 0px; }
+        .plan-details-wrapper .price-plan-wrap .price-data .pricing-table .header .custom-radio-btn input:checked + label,
+        .plan-details-wrapper .price-plan-wrap .price-data .pricing-table .header .custom-radio-btn input:not(:checked) + label {
+          padding-left: 0px;
+          margin-right: 28px; }
+          .plan-details-wrapper .price-plan-wrap .price-data .pricing-table .header .custom-radio-btn input:checked + label:before,
+          .plan-details-wrapper .price-plan-wrap .price-data .pricing-table .header .custom-radio-btn input:not(:checked) + label:before {
+            background: transparent;
+            border: 1px solid #90ba9d;
+            top: -15px;
+            width: 18px;
+            height: 18px; }
+          .plan-details-wrapper .price-plan-wrap .price-data .pricing-table .header .custom-radio-btn input:checked + label:after,
+          .plan-details-wrapper .price-plan-wrap .price-data .pricing-table .header .custom-radio-btn input:not(:checked) + label:after {
+            top: -11px;
+            left: 7px;
+            width: 5px;
+            height: 10px; }
+        .plan-details-wrapper .price-plan-wrap .price-data .pricing-table .header .custom-radio-btn input:checked + label:before {
+          background-color: #23a54b; }
+      .plan-details-wrapper .price-plan-wrap .price-data .pricing-table .table-list {
+        border-right: 1px solid #dfdfdf;
+        text-align: center; }
+        @media (max-width: 768px) {
+          .plan-details-wrapper .price-plan-wrap .price-data .pricing-table .table-list {
+            border: 1px solid #dfdfdf;
+            position: relative;
+            padding-top: 80px; } }
+        .plan-details-wrapper .price-plan-wrap .price-data .pricing-table .table-list li {
+          font-size: 16px;
+          font-weight: normal;
+          margin-bottom: 15px;
+          min-height: 50px; }
+          @media (max-width: 768px) {
+            .plan-details-wrapper .price-plan-wrap .price-data .pricing-table .table-list li {
+              font-size: 14px; } }
+          .plan-details-wrapper .price-plan-wrap .price-data .pricing-table .table-list li.customise-btn {
+            width: 86px;
+            height: 25px;
+            border-radius: 5px;
+            background-color: #e9e9e9;
+            margin: 0px auto 10px;
+            font-size: 14px;
+            font-family: "Macho-Semi" !important;
+            min-height: auto;
+            cursor: pointer; }
+            @media (max-width: 768px) {
+              .plan-details-wrapper .price-plan-wrap .price-data .pricing-table .table-list li.customise-btn {
+                position: absolute;
+                top: 20px;
+                left: 0px;
+                right: 0px;
+                width: calc(100% - 40px);
+                margin: 0px 20px;
+                height: 30px; } }
+          .plan-details-wrapper .price-plan-wrap .price-data .pricing-table .table-list li h5 {
+            display: none; }
+            @media (max-width: 768px) {
+              .plan-details-wrapper .price-plan-wrap .price-data .pricing-table .table-list li h5 {
+                display: block;
+                font-size: 13px;
+                font-family: "Macho-Medium" !important; } }
+      .plan-details-wrapper .price-plan-wrap .price-data .pricing-table:last-child .table-list {
+        border-right: 0px; }
+      .plan-details-wrapper .price-plan-wrap .price-data .pricing-table.selected-plan {
+        border: 1px solid #23a54b; }
+        .plan-details-wrapper .price-plan-wrap .price-data .pricing-table.selected-plan .header {
+          border-bottom: 1px solid #23a54b; }
+        .plan-details-wrapper .price-plan-wrap .price-data .pricing-table.selected-plan .table-list {
+          border-right: 0px; }
+
+.plan-details-wrapper .button-primary {
+  width: 314px !important;
+  margin-top: 45px; }
+  @media (max-width: 768px) {
+    .plan-details-wrapper .button-primary {
+      width: 100% !important; } }
+  .plan-details-wrapper .button-primary .btn-txt {
+    margin-top: -5px; }
+  .plan-details-wrapper .button-primary .font-icon {
+    font-size: 15px;
+    margin-left: 10px; }
+
+.success-modal {
+  min-height: 67vh;
+  position: relative; }
+  .success-modal .car-success-wrapper {
+    background-color: #fff;
+    padding: 37px 46px;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+    position: absolute;
+    width: 100%;
+    max-width: 830px;
+    border-radius: 4px;
+    box-shadow: 0 32px 34px 0 rgba(0, 0, 0, 0.08); }
+    @media (max-width: 768px) {
+      .success-modal .car-success-wrapper {
+        padding: 20px;
+        text-align: center; } }
+    .success-modal .car-success-wrapper h5 {
+      font-size: 14px;
+      font-family: "Macho-Semi" !important;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      margin-top: 18px; }
+      @media (max-width: 768px) {
+        .success-modal .car-success-wrapper h5 {
+          margin-top: 0px; } }
+    .success-modal .car-success-wrapper p {
+      font-size: 14px;
+      font-weight: normal;
+      line-height: 18px;
+      margin-bottom: 37px; }
+    .success-modal .car-success-wrapper h4 {
+      font-size: 22px;
+      font-family: "Macho-Medium" !important;
+      margin-bottom: 53px; }
+      @media (max-width: 768px) {
+        .success-modal .car-success-wrapper h4 {
+          font-size: 18px;
+          line-height: 23px;
+          margin-bottom: 33px; } }
+    .success-modal .car-success-wrapper .btn-wrapper {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center; }
+      @media (max-width: 768px) {
+        .success-modal .car-success-wrapper .btn-wrapper {
+          flex-wrap: wrap;
+          flex-direction: column-reverse; } }
+      .success-modal .car-success-wrapper .btn-wrapper .button-primary {
+        max-width: 302px; }
+        @media (max-width: 768px) {
+          .success-modal .car-success-wrapper .btn-wrapper .button-primary {
+            margin-bottom: 26px; } }
+      .success-modal .car-success-wrapper .btn-wrapper .button-txt {
+        color: #ff5454;
+        font-size: 18px;
+        font-weight: 600;
+        margin-right: 50px; }
+        @media (max-width: 768px) {
+          .success-modal .car-success-wrapper .btn-wrapper .button-txt {
+            margin-right: 0px; } }

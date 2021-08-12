@@ -1,0 +1,129 @@
+.calendar-col input {
+  background-image: url("../../../src/assets/images/homepage/calendar.svg");
+  background-repeat: no-repeat;
+  background-position: right 0px bottom 15px;
+  cursor: pointer; }
+
+.moredriver-details-wrapper {
+  padding: 40px !important; }
+  @media (max-width: 768px) {
+    .moredriver-details-wrapper {
+      padding: 15px !important; } }
+  .moredriver-details-wrapper .icon-back-arrow {
+    cursor: pointer;
+    margin-bottom: 44px;
+    display: block; }
+  .moredriver-details-wrapper .detail-list {
+    margin-bottom: 40px; }
+    .moredriver-details-wrapper .detail-list h4 {
+      font-size: 22px;
+      font-family: "Macho-Semi" !important;
+      max-width: 530px;
+      line-height: 28px;
+      margin-bottom: 15px; }
+      @media (max-width: 768px) {
+        .moredriver-details-wrapper .detail-list h4 {
+          font-size: 18px; } }
+    .moredriver-details-wrapper .detail-list h6 {
+      margin-top: -15px;
+      font-size: 14px;
+      font-weight: normal;
+      color: #252525;
+      margin-bottom: 15px; }
+  .moredriver-details-wrapper .header-container-row {
+    margin-top: 0px; }
+
+.select-data {
+  display: flex; }
+  .select-data .custom-checkbox-circle {
+    margin-right: 42px; }
+
+.driver-incident-details-wrapper {
+  margin-top: 20px; }
+  .driver-incident-details-wrapper .check-driver-details {
+    border-radius: 5px;
+    background-color: rgba(14, 172, 78, 0.1);
+    display: flex;
+    align-items: center;
+    padding: 12px 19px;
+    justify-content: space-between;
+    margin-bottom: 40px; }
+    .driver-incident-details-wrapper .check-driver-details p {
+      font-family: "Macho-Semi" !important; }
+    .driver-incident-details-wrapper .check-driver-details .custom-radio-btn {
+      margin-bottom: 0px; }
+      .driver-incident-details-wrapper .check-driver-details .custom-radio-btn input:checked + label:before,
+      .driver-incident-details-wrapper .check-driver-details .custom-radio-btn input:not(:checked) + label:before {
+        top: -15px;
+        width: 20px;
+        height: 20px;
+        background: transparent;
+        border: 1px solid #0eac4e; }
+      .driver-incident-details-wrapper .check-driver-details .custom-radio-btn input:checked + label,
+      .driver-incident-details-wrapper .check-driver-details .custom-radio-btn input:not(:checked) + label {
+        margin-right: 17px;
+        padding-left: 0px; }
+      .driver-incident-details-wrapper .check-driver-details .custom-radio-btn input:checked + label:after,
+      .driver-incident-details-wrapper .check-driver-details .custom-radio-btn input:not(:checked) + label:after {
+        top: -11px;
+        left: 7.6px;
+        width: 5px;
+        height: 11px; }
+      .driver-incident-details-wrapper .check-driver-details .custom-radio-btn input:checked + label:before {
+        background-color: #23a54b; }
+  @media (max-width: 768px) {
+    .driver-incident-details-wrapper .detail-list .form-row {
+      flex-wrap: nowrap; } }
+  .driver-incident-details-wrapper .header-top {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 40px;
+    align-items: center; }
+    .driver-incident-details-wrapper .header-top h4 {
+      font-size: 22px;
+      font-weight: normal; }
+      @media (max-width: 992px) {
+        .driver-incident-details-wrapper .header-top h4 {
+          font-size: 18px; } }
+      @media (max-width: 768px) {
+        .driver-incident-details-wrapper .header-top h4 {
+          font-size: 16px;
+          line-height: 20px; } }
+    .driver-incident-details-wrapper .header-top span.more-txt {
+      font-size: 13px;
+      cursor: pointer;
+      font-family: "Macho-Semi" !important;
+      color: #23a54b;
+      width: 75px;
+      text-align: right; }
+  .driver-incident-details-wrapper .delete-spn {
+    padding-top: 37px;
+    cursor: pointer;
+    width: 10%; }
+    @media (max-width: 992px) {
+      .driver-incident-details-wrapper .delete-spn {
+        margin-right: 20px; } }
+  .driver-incident-details-wrapper .btn-selection {
+    display: flex;
+    justify-content: flex-end; }
+    @media (max-width: 768px) {
+      .driver-incident-details-wrapper .btn-selection {
+        flex-wrap: wrap; } }
+    .driver-incident-details-wrapper .btn-selection .button-transparent {
+      width: 268px; }
+      @media (max-width: 768px) {
+        .driver-incident-details-wrapper .btn-selection .button-transparent {
+          width: 100%;
+          margin-bottom: 20px; } }
+    .driver-incident-details-wrapper .btn-selection .button-primary {
+      margin-top: 0px;
+      margin-left: 10px;
+      width: 245px; }
+      @media (max-width: 768px) {
+        .driver-incident-details-wrapper .btn-selection .button-primary {
+          width: 100%;
+          margin: 0px; } }
+  .driver-incident-details-wrapper .form-row .form-group {
+    width: 60%; }
+    .driver-incident-details-wrapper .form-row .form-group.calendar-col {
+      width: 40%; }
