@@ -78,13 +78,13 @@ class SignupModal extends Component {
                                             <label>First Name</label>
                                             <input
                                                 type="name"
-                                                className="form-control"
+                                                className="form-control error"
                                                 name="firstName"
                                                 onChange={handleChange}
                                                 onBlur={handleBlur}
                                                 value={values.firstName}
                                             />
-                                            <ErrorMessage name="firstName" />
+                                            <span className="error-msg"><ErrorMessage name="firstName" /></span>
                                         </div>
                                         <div className="form-group">
                                             <label>Last Name</label>
@@ -96,7 +96,7 @@ class SignupModal extends Component {
                                                 onBlur={handleBlur}
                                                 value={values.lastName}
                                             />
-                                            <ErrorMessage name="lastName" />
+                                            <span className="error-msg"><ErrorMessage name="lastName" /></span>
                                         </div>
                                     </div>
                                     <div className="form-group">
@@ -109,7 +109,7 @@ class SignupModal extends Component {
                                             onBlur={handleBlur}
                                             value={values.email}
                                         />
-                                        <ErrorMessage name="email" />
+                                        <span className="error-msg"><ErrorMessage name="email" /></span>
                                     </div>
                                     <div className="form-group">
                                         <label>Address</label>
@@ -121,7 +121,7 @@ class SignupModal extends Component {
                                             onBlur={handleBlur}
                                             value={values.address}
                                         />
-                                        <ErrorMessage name="address" />
+                                        <span className="error-msg"><ErrorMessage name="address" /></span>
                                     </div>
                                     <div className="form-row">
                                         <div className="form-group">
@@ -134,7 +134,7 @@ class SignupModal extends Component {
                                                 <option value="">Select</option>
                                                 <option value="CA">CA</option>
                                             </select>
-                                            <ErrorMessage name="state" />
+                                            <span className="error-msg"><ErrorMessage name="state" /></span>
                                         </div>
                                         <div className="form-group">
                                             <label>City</label>
@@ -147,7 +147,7 @@ class SignupModal extends Component {
                                                 <option value="">Select</option>
                                                 <option value="NY">NY</option>
                                             </select>
-                                            <ErrorMessage name="city" />
+                                            <span className="error-msg"><ErrorMessage name="city" /></span>
                                         </div>
                                     </div>
                                 </div>
@@ -161,7 +161,7 @@ class SignupModal extends Component {
                                         value={values.termsCheckbox}
                                     />
                                     <label htmlFor="style-checkbox">I agree to Seekr’s Terms of service & Privacy Policy.</label>
-                                    <ErrorMessage name="termsCheckbox" />
+                                    <span className="error-msg"><ErrorMessage name="termsCheckbox" /></span>
                                 </div>
                                 <button className="button-primary" onClick={handleSubmit}>Create a new account</button>
                                 <ReactModal

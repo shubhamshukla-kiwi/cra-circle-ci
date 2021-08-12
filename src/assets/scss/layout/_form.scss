@@ -29,6 +29,9 @@
     &:focus-visible {
       outline: none;
     }
+    &.error{
+      border-bottom: 1px solid #ff5454;
+    }
   }
   select {
     padding: 20px 0px 0px;
