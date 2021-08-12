@@ -30,7 +30,8 @@ const Hero = (props) => {
     fetchZipCode(value);
   };
 
-  const onClickGetStartedHandler = () => {
+  const onClickGetStartedHandler = (event) => {
+    event.preventDefault();
     const url = isZipCodeSupported ? '/sign-up' : '/coming-soon';
     history.push(url);
   };
