@@ -15,6 +15,11 @@ class SignupModal extends Component {
             showVerifyModal: false,
             userData: null
         };
+
+        this.handleOpenModal = this.handleOpenModal.bind(this);
+        this.handleCloseModal = this.handleCloseModal.bind(this);
+        this.handleVerifyModal = this.handleVerifyModal.bind(this);
+        this.handleVerifyCloseModal = this.handleVerifyCloseModal.bind(this);
     }
 
     handleOpenModal = () => {
@@ -29,7 +34,7 @@ class SignupModal extends Component {
         this.setState({ showVerifyModal: true });
         this.handleCloseModal();
     }
-    handleVerifyCloseModal = () => {
+    handleVerifyCloseModal= () => {
         this.setState({ showVerifyModal: false });
     }
     render() {
