@@ -12,7 +12,7 @@ class OtpModal extends Component {
                     <OnboardingLeft />
                     <div className="right-content">
                         <div className="input-data">
-                            <span class="icon-back-arrow font-icon"></span>
+                            <span className="icon-back-arrow font-icon"></span>
                             <h4>OTP VERIFICATION</h4>
                             <p>We just emailed a six-digit code to <span className="mail-link">adrian****90@yahoo.com</span></p>
                             <p>Please enter the code below to sign in.</p>

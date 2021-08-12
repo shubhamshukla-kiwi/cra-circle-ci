@@ -1,6 +1,4 @@
 import {call, put, takeLatest} from 'redux-saga/effects';
-import Api from '../../lib/helpers/Api'
-import {API_ENDPOINT} from '../../lib/constants/api'
 
 import {
     REGISTER_REQUEST,

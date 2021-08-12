@@ -13,13 +13,14 @@ class OnboardingHeader extends Component {
       }
 
     render() {
-
+        const portal = localStorage.getItem('portal');
         return (
             <div className="header-logo">
                 <div className="screen-container">
                     <img className="loginLogo" src={logo} alt="logo" />
                     {this.props.loggedIn ? <Redirect to="/dashboard" /> : null}
-                    {this.state.showSignin && <h5>Already have an account? <Link to="/login">Sign In</Link></h5>}
+                    {this.state.showSignin && portal === 'client' && <h5>Already have an account? <Link to="/login">Sign In</Link></h5>}
+                    {this.state.showSignin && portal === 'agent' && <h5>Already have an account? <Link to="/agent/login">Sign In</Link></h5>}
                 </div>
                 
             </div>

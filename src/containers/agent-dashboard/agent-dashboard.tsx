@@ -27,7 +27,6 @@ class AgentDashboard extends Component {
             showConnectionModal: false,
             showArchivedModal: false,
         }
-        this.props.dispatch(getUserRfqRequest());
         this.handleOpenModal = this.handleOpenModal.bind(this);
         this.handleCloseModal = this.handleCloseModal.bind(this);
         this.handlePendingOpenModal = this.handlePendingOpenModal.bind(this);
@@ -112,7 +111,7 @@ class AgentDashboard extends Component {
                             <div className="top-head">
                                 <h5>Augustus Edwards</h5>
                                 <div className="rating-star">
-                                    <span class="font-icon icon-stars"></span>
+                                    <span className="font-icon icon-stars"></span>
                                     4.8
                                 </div>
                             </div>
@@ -135,7 +134,7 @@ class AgentDashboard extends Component {
                                     <CardWrapper>
                                         <Card>
                                             <CardHeader>
-                                                <h5>Adrian Dawson <span class="font-icon icon-forward-arrow"></span></h5>
+                                                <h5>Adrian Dawson <span className="font-icon icon-forward-arrow"></span></h5>
                                                 <span>Requesting for Quote</span>
                                             </CardHeader>
                                             <CardContent>
@@ -162,7 +161,7 @@ class AgentDashboard extends Component {
                                         </Card>
                                         <Card>
                                             <CardHeader>
-                                                <h5>Adrian Dawson <span class="font-icon icon-forward-arrow"></span></h5>
+                                                <h5>Adrian Dawson <span className="font-icon icon-forward-arrow"></span></h5>
                                                 <span>Requesting for Quote</span>
                                             </CardHeader>
                                             <CardContent>
@@ -189,7 +188,7 @@ class AgentDashboard extends Component {
                                         </Card>
                                         <Card>
                                             <CardHeader>
-                                                <h5>Adrian Dawson <span class="font-icon icon-forward-arrow"></span></h5>
+                                                <h5>Adrian Dawson <span className="font-icon icon-forward-arrow"></span></h5>
                                                 <span>Requesting for Quote</span>
                                             </CardHeader>
                                             <CardContent>
@@ -258,7 +257,7 @@ class AgentDashboard extends Component {
                                                 </div>
                                                 <div className="details-txt" onClick={this.handlePendingOpenModal}>
                                                     <span>See details</span>
-                                                    <span class="font-icon icon-forward-arrow"></span>
+                                                    <span className="font-icon icon-forward-arrow"></span>
                                                 </div>
                                             </CardFooter>
                                         </Card>
@@ -300,7 +299,7 @@ class AgentDashboard extends Component {
                                                 </div>
                                                 <div className="details-txt">
                                                     <span>See details</span>
-                                                    <span class="font-icon icon-forward-arrow"></span>
+                                                    <span className="font-icon icon-forward-arrow"></span>
                                                 </div>
                                             </CardFooter>
                                         </Card>
@@ -342,7 +341,7 @@ class AgentDashboard extends Component {
                                                 </div>
                                                 <div className="details-txt">
                                                     <span>See details</span>
-                                                    <span class="font-icon icon-forward-arrow"></span>
+                                                    <span className="font-icon icon-forward-arrow"></span>
                                                 </div>
                                             </CardFooter>
                                         </Card>
@@ -389,7 +388,7 @@ class AgentDashboard extends Component {
                                                 </div>
                                                 <div className="details-txt" onClick={this.handleConnectionOpenModal}>
                                                     <span>See details</span>
-                                                    <span class="font-icon icon-forward-arrow"></span>
+                                                    <span className="font-icon icon-forward-arrow"></span>
                                                 </div>
                                             </CardFooter>
                                         </Card>
@@ -434,7 +433,7 @@ class AgentDashboard extends Component {
                                                 </div>
                                                 <div className="details-txt">
                                                     <span>See details</span>
-                                                    <span class="font-icon icon-forward-arrow"></span>
+                                                    <span className="font-icon icon-forward-arrow"></span>
                                                 </div>
                                             </CardFooter>
                                         </Card>
@@ -475,7 +474,7 @@ class AgentDashboard extends Component {
                                                 </div>
                                                 <div className="details-txt">
                                                     <span>See details</span>
-                                                    <span class="font-icon icon-forward-arrow"></span>
+                                                    <span className="font-icon icon-forward-arrow"></span>
                                                 </div>
                                             </CardFooter>
                                         </Card>
@@ -522,7 +521,7 @@ class AgentDashboard extends Component {
                                                 </div>
                                                 <div className="details-txt" onClick={this.handleArchivedOpenModal}>
                                                     <span>See details</span>
-                                                    <span class="font-icon icon-forward-arrow"></span>
+                                                    <span className="font-icon icon-forward-arrow"></span>
                                                 </div>
                                             </CardFooter>
                                         </Card>
@@ -563,7 +562,7 @@ class AgentDashboard extends Component {
                                                 </div>
                                                 <div className="details-txt">
                                                     <span>See details</span>
-                                                    <span class="font-icon icon-forward-arrow"></span>
+                                                    <span className="font-icon icon-forward-arrow"></span>
                                                 </div>
                                             </CardFooter>
                                         </Card>
@@ -604,7 +603,7 @@ class AgentDashboard extends Component {
                                                 </div>
                                                 <div className="details-txt">
                                                     <span>See details</span>
-                                                    <span class="font-icon icon-forward-arrow"></span>
+                                                    <span className="font-icon icon-forward-arrow"></span>
                                                 </div>
                                             </CardFooter>
                                         </Card>
@@ -714,7 +713,7 @@ class AgentDashboard extends Component {
                                 </div>
                             </div>
                         </div>
-                        <button className="close-icon" onClick={this.handleCloseModal}><span class="icon-cross"><span class="path2"></span></span></button>
+                        <button className="close-icon" onClick={this.handleCloseModal}><span className="icon-cross"><span className="path2"></span></span></button>
                     </ReactModal>
 
                     {/* Pending Request Modal */}
@@ -830,7 +829,7 @@ class AgentDashboard extends Component {
                                 </div>
                             </div>
                         </div>
-                        <button className="close-icon" onClick={this.handlePendingCloseModal}><span class="icon-cross"><span class="path2"></span></span></button>
+                        <button className="close-icon" onClick={this.handlePendingCloseModal}><span className="icon-cross"><span className="path2"></span></span></button>
                     </ReactModal>
 
                     {/* Connection Modal */}
@@ -947,7 +946,7 @@ class AgentDashboard extends Component {
                                 </div>
                             </div>
                         </div>
-                        <button className="close-icon" onClick={this.handleConnectionCloseModal}><span class="icon-cross"><span class="path2"></span></span></button>
+                        <button className="close-icon" onClick={this.handleConnectionCloseModal}><span className="icon-cross"><span className="path2"></span></span></button>
                     </ReactModal>
 
                     {/* Archived Modal */}
@@ -1060,7 +1059,7 @@ class AgentDashboard extends Component {
                                 </div>
                             </div>
                         </div>
-                        <button className="close-icon" onClick={this.handleArchivedCloseModal}><span class="icon-cross"><span class="path2"></span></span></button>
+                        <button className="close-icon" onClick={this.handleArchivedCloseModal}><span className="icon-cross"><span className="path2"></span></span></button>
                     </ReactModal>
                     <OnboardingFooter />
                 </div>
@@ -1071,12 +1070,7 @@ class AgentDashboard extends Component {
 
 
 function mapStateToProps(state) {
-    return {
-        navigationDrawerState: state.navigationDrawerState,
-        loginRequested: state.login.loginRequested,
-        loggedIn: state.login.loggedIn,
-        login: state.login
-    }
+    return {}
 }
 
 const Row = styled.div`

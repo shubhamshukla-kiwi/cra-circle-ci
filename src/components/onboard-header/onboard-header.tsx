@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import OnboardingLeft from '../onboarding-left/onboarding-left';
 import { Link } from 'react-router-dom';
 import logo from '../../assets/images/seekr-logo.png';
 

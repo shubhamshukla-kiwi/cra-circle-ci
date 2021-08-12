@@ -1,11 +1,9 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux';
-import { Redirect, Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import logoWhite from './../../assets/images/seekr-logo.png'
 import dashboardMenu from './../../assets/images/homepage/dashboard-menu.svg'
 import Dropdown from './../../assets/images/homepage/dropdown.png'
 import profileDefault from './../../assets/images/homepage/edit-profile.png';
-import { logOutRequest } from '../../actions/session';
 import './header.css';
 import ReactModal from 'react-modal';
 

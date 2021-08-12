@@ -8,7 +8,6 @@ import ReactDOM from 'react-dom';
 import {
   CLIENT_GOOGLE_ANALYTICS_DEBUG,
   CLIENT_GOOGLE_ANALYTICS_ID,
-  FACEBOOK_PIXEL_ID,
 } from './constants/env';
 import { configureStore, configureAgentStore } from './configureStore';
 import AgentApp from './AgentApp';
@@ -30,6 +29,7 @@ const agentPortal =
 
 
 if (agentPortal) {
+  localStorage.setItem('portal', 'agent');
   const store = configureAgentStore();
   ReactDOM.render(
     <Provider store={store.store}>
@@ -43,6 +43,7 @@ if (agentPortal) {
   );
   registerServiceWorker();
 } else {
+  localStorage.setItem('portal', 'client');
   const store = configureStore();
   ReactDOM.render(
     <Provider store={store.store}>

@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
-import { Col, Row } from "react-styled-flexboxgrid";
+import { Row } from "react-styled-flexboxgrid";
 import Header from '../../components/header/header';
 import OnboardingFooter from '../../components/onboarding-footer/onboarding-footer';
 import './dashboard.css';

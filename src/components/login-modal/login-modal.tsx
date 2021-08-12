@@ -19,28 +19,12 @@ class LoginModal extends Component {
         };
     }
 
-    componentWillReceiveProps(nextProps) {
-        if (
-            this.props.login.requested === true &&
-            this.props.login.loggedIn === false &&
-            nextProps.login.requested === false &&
-            nextProps.login.loggedIn === false
-        ) {
-            this.setState({ failedLogin: true });
-        }
-
-        if (
-            this.props.register.registerRequested === true &&
-            this.props.register.loggedIn === false &&
-            nextProps.register.registerRequested === false &&
-            nextProps.register.loggedIn === false
-        ) {
-            this.setState({ failedRegister: true });
-        }
-    }
-
     handleEmailChange(event) {
         this.setState({ email: event.target.value });
+    }
+
+    saveData() {
+        // this.props.dispatch()
     }
 
     handlePasswordChange(event) {
@@ -99,8 +83,7 @@ class LoginModal extends Component {
     }
 
     render() {
-        const disabled = this.passwordValid() ? "" : "disabilly";
-        const valid = this.passwordValid() ? "" : "invalid";
+        const portal = localStorage.getItem('portal');
         return (
             <div
                 className="login-modal screen-container"
@@ -124,12 +107,12 @@ class LoginModal extends Component {
                                     />
                                 </div>
                             </div>
-                            <Link className="button-primary" to="/otp">
+                            {portal === 'client' && <Link className="button-primary" to="/otp">
                                 Sign In via OTP
-                            </Link>
-                            <Link className="button-transparent" to="/password-login">
-                                Sign In via Password
-                            </Link>
+                            </Link>}
+                            {portal === 'agent' && <Link className="button-primary" to="/agent/otp">
+                                Sign In via OTP
+                            </Link>}
                         </div>
                     </div>
                 </div>
@@ -139,12 +122,7 @@ class LoginModal extends Component {
 }
 
 function mapStateToProps(state) {
-    return {
-        loginRequested: state.login.loginRequested,
-        loggedIn: state.login.loggedIn,
-        login: state.login,
-        register: state.register,
-    };
+    return {};
 }
 
 export default withRouter(connect(mapStateToProps)(LoginModal));

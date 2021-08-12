@@ -34,7 +34,7 @@ class VerifyEmail extends Component {
         event.preventDefault();
     }
     render() {
-
+        const portal = localStorage.getItem('portal');
         return (
             <div>
             <ReactModal
@@ -57,8 +57,13 @@ class VerifyEmail extends Component {
                             onSubmit={(values, { setSubmitting }) => {
                                 console.log(values)
                                 setSubmitting(false);
-                                this.props.dispatch(registerRequest(this.props.userData))
-                                this.props.history.push("/new-car");
+                                if(portal === 'client') {
+                                    this.props.dispatch(registerRequest(this.props.userData))
+                                    this.props.history.push("/new-car");
+                                } else {
+                                    this.props.history.push('/agent/agent-dashboard')
+                                }
+
                             }}
                         >
                             {({

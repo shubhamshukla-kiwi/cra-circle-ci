@@ -1,4 +1,8 @@
 import React, { Component } from 'react';
+import TextField from '@material-ui/core/TextField';
+import MenuItem from '@material-ui/core/MenuItem';
+
+
 import OnboardingLeft from '../onboarding-left/onboarding-left';
 import VerifyEmail from '../verify-email/VerifyEmail';
 import { Link } from 'react-router-dom';
@@ -38,7 +42,16 @@ class SignupModal extends Component {
         this.setState({ showVerifyModal: false });
     }
     render() {
-
+        const states = [
+            {
+              value: 'CA',
+              label: 'CA',
+            },
+            {
+              value: 'AUS',
+              label: 'AUS',
+            }
+          ];
         return (
             <div className="signup-wrap screen-container">
                 <div className="login-screen">
@@ -69,31 +82,32 @@ class SignupModal extends Component {
                                 handleBlur,
                                 handleSubmit,
                                 isSubmitting,
-                                /* and other goodies */
                             }) => (<div className="input-data">
                                 <h4>Sign Up</h4>
                                 <div className="input-container">
                                     <div className="form-row">
                                         <div className="form-group">
                                             <label>First Name</label>
-                                            <input
+                                             <TextField
                                                 type="name"
                                                 className="form-control"
                                                 name="firstName"
                                                 onChange={handleChange}
                                                 onBlur={handleBlur}
+                                                label="First Name"
                                                 value={values.firstName}
                                             />
                                             <ErrorMessage name="firstName" />
                                         </div>
                                         <div className="form-group">
                                             <label>Last Name</label>
-                                            <input
+                                             <TextField
                                                 type="name"
                                                 className="form-control"
                                                 name="lastName"
                                                 onChange={handleChange}
                                                 onBlur={handleBlur}
+                                                label="Last Name"
                                                 value={values.lastName}
                                             />
                                             <ErrorMessage name="lastName" />
@@ -101,43 +115,60 @@ class SignupModal extends Component {
                                     </div>
                                     <div className="form-group">
                                         <label>Email Address</label>
-                                        <input
+                                         <TextField
                                             type="email"
                                             className="form-control"
                                             name="email"
                                             onChange={handleChange}
                                             onBlur={handleBlur}
+                                            label="Email Address"
                                             value={values.email}
                                         />
                                         <ErrorMessage name="email" />
                                     </div>
                                     <div className="form-group">
                                         <label>Address</label>
-                                        <input
+                                         <TextField
                                             type="text"
                                             className="form-control"
                                             name="address"
                                             onChange={handleChange}
                                             onBlur={handleBlur}
                                             value={values.address}
+                                            label="Address"
                                         />
                                         <ErrorMessage name="address" />
                                     </div>
                                     <div className="form-row">
                                         <div className="form-group">
-                                            <label>State/Province</label>
-                                            <select
+                                            {/* <label>State/Province</label> */}
+                                            {/* <select
                                                 name="state"
                                                 onChange={handleChange}
                                                 onBlur={handleBlur}
                                                 value={values.state}>
                                                 <option value="">Select</option>
                                                 <option value="CA">CA</option>
-                                            </select>
+                                            </select> */}
+                                                <TextField
+                                                    select
+                                                    label="State/Province"
+                                                    name="state"
+                                                    onChange={handleChange}
+                                                    onBlur={handleBlur}
+                                                    value={values.state}
+                                                    helperText="Please select your state"
+                                                >
+                                                    {states.map((option) => (
+                                                        <MenuItem key={option.value} value={option.value}>
+                                                            {option.label}
+                                                        </MenuItem>
+                                                    ))}
+                                                </TextField>
                                             <ErrorMessage name="state" />
                                         </div>
                                         <div className="form-group">
-                                            <label>City</label>
+                                            {/* <label>City</label>
                                             <select
                                                 name="city"
                                                 onChange={handleChange}
@@ -146,7 +177,22 @@ class SignupModal extends Component {
                                             >
                                                 <option value="">Select</option>
                                                 <option value="NY">NY</option>
-                                            </select>
+                                            </select> */}
+                                            <TextField
+                                            select
+                                            label="City"
+                                            name="city"
+                                            onChange={handleChange}
+                                            onBlur={handleBlur}
+                                            value={values.city}
+                                            helperText="Please select your city"
+                                        >
+                                            {states.map((option) => (
+                                                <MenuItem key={option.value} value={option.value}>
+                                                    {option.label}
+                                                </MenuItem>
+                                            ))}
+                                        </TextField>
                                             <ErrorMessage name="city" />
                                         </div>
                                     </div>
