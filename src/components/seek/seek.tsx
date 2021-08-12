@@ -1,12 +1,37 @@
-import React, { useState } from "react"
+import React, { useState, useContext, useEffect } from "react"
+import { useHistory } from "react-router-dom"
+
 import styled from "styled-components"
 import { Col, Row } from "react-styled-flexboxgrid"
 import InputMask from 'react-input-mask'
 import phoneImg from './../../assets/images/homepage/quotes.png'
+import {ZipCodeContext} from '../../contexts/ZipCodeContext/ZipCodeContext'
 
 
 const Seek = () => {
-  const [zipcode, setZipcode] = useState();
+  useEffect(() => {
+    cleanData();
+  }, []);
+  const [zipcode, setZip] = useState("");
+  const history = useHistory();
+  const [isLoading, setIsLoading] = useState(false);
+  const {
+    cleanData,
+    fetchZipCode,
+    isZipCodeSupported,
+    isZipCodeValid,
+  } = useContext(ZipCodeContext);
+
+  const onChangeHandler: InputMaskProps['onChange'] = (event) => {
+    const { value } = event.target;
+    setZip(value);
+    fetchZipCode(value);
+  };
+
+  const onClickGetStartedHandler = () => {
+    const url = isZipCodeSupported ? '/sign-up' : '/coming-soon';
+    history.push(url);
+  };
   return (
     <div className="seek-quotes-wrap">
       <Container>
@@ -24,11 +49,11 @@ const Seek = () => {
               <ZipContent>
                 <FieldGroup>
                   <span className="icon-location font-icon"></span>
-                  <InputMask mask="99999" value={zipcode} onChange={e => setZipcode(e.target.value)}>
+                  <InputMask mask="99999" value={zipcode} onChange={onChangeHandler}>
                     {(inputProps) => <HeroField type="text" placeholder="Enter Zip Code" {...inputProps} />}
                   </InputMask>
                 </FieldGroup>
-                <HeroButton type="submit">
+                <HeroButton onClick={onClickGetStartedHandler}>
                   Get Started Now
                 </HeroButton>
               </ZipContent>

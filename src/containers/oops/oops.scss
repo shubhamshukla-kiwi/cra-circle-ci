@@ -1,0 +1,97 @@
+@import './../../lib/constants/_globals';
+@import './../../lib/constants/_client-defaults';
+
+.oops {
+  @extend .client-defaults;
+  width: 100vw;
+  height: 100vh;
+
+  @media only screen and (min-width: 400px) {
+    .oops-message h1 {
+      font-size: 150px !important;
+    }
+  }
+
+  @media only screen and (min-width: 600px) {
+    .seeker-logo {
+      width: 500px !important;
+    }
+
+    .home-button {
+      width: 300px !important;
+    }
+  }
+
+  .scroll-container {
+    height: 100%;
+    width: 100%;
+    overflow-y: scroll;
+  }
+
+  .oops-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    min-height: fit-content;
+    margin-top: -20px;
+    padding-bottom: 70px;
+
+    .oops-message {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+      text-align: center;
+      padding: 0px 50px;
+      margin-bottom: 30px;
+
+      h1 {
+        font-size: 130px;
+        letter-spacing: 0.1em;
+        font-weight: bold;
+        margin: 0px;
+        margin-top: -60px;
+      }
+
+      .seeker-logo {
+        fill: $color-white;
+        width: 100%;
+        min-width: 250px;
+      }
+    }
+
+    .home-button {
+      width: 100%;
+      padding-left: 20px;
+      padding-right: 20px;
+
+      button {
+        -webkit-box-align: center !important;
+        align-items: center !important;
+        -webkit-box-pack: center !important;
+        justify-content: center !important;
+        background-color: $color-yellow !important;
+        box-sizing: border-box !important;
+        color: rgb(87, 97, 251) !important;
+        cursor: pointer !important;
+        display: flex !important;
+        border: 0px !important;
+        border-radius: 0px 16px 0px 0px !important;
+        font-weight: 600 !important;
+        font-size: 19px !important;
+        line-height: 89.69% !important;
+        letter-spacing: -0.055em !important;
+        height: 55px !important;
+        margin: 1rem 7px !important;
+        min-width: 167px !important;
+        opacity: 1 !important;
+        padding: 18px 10px 20px !important;
+        position: relative !important;
+        text-transform: uppercase !important;
+      }
+    }
+  }
+}

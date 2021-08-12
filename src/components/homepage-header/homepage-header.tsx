@@ -24,7 +24,7 @@ const HomepageHeader = () => {
                 Who we are
               </List>
               <List className="login-btn">
-                <Link className="button-transparent" to="/dashboard">Login</Link>
+                <Link className="button-transparent" to="/login">Login</Link>
               </List>
             </HeaderList>
           </Col>

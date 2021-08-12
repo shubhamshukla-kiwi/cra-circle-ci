@@ -1,28 +1,41 @@
-import React, { useState } from "react"
+import React, { useState, useContext, useEffect } from "react"
 import styled from "styled-components"
 import { Col, Row } from 'react-styled-flexboxgrid'
 import InputMask from 'react-input-mask'
 import zipIcon from './../../assets/images/homepage/location.svg'
 import heroBgImg from './../../assets/images/homepage/home-banner.png'
+import {ZipCodeContext} from '../../contexts/ZipCodeContext/ZipCodeContext'
 
 
 import Loading from '../loading2/loading'
-import { setItemLocalStorage } from "../../helpers"
+import { useHistory } from "react-router-dom"
 
 const Hero = (props) => {
-  const [zipcode, setZipcode] = useState();
+  useEffect(() => {
+    cleanData();
+  }, []);
+  const [zipcode, setZip] = useState("");
+  const history = useHistory();
   const [isLoading, setIsLoading] = useState(false);
+  const {
+    cleanData,
+    fetchZipCode,
+    isZipCodeSupported,
+    isZipCodeValid,
+  } = useContext(ZipCodeContext);
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    if (zipcode && String(zipcode).length === 5) {
-      setIsLoading(true);
-      props.fetchZip(zipcode);
-      setItemLocalStorage('zip', zipcode);
-      props.history.push("new-car/preferences");
-      setIsLoading(false);
-    }
-  }
+  const onChangeHandler: InputMaskProps['onChange'] = (event) => {
+    const { value } = event.target;
+    setZip(value);
+    fetchZipCode(value);
+  };
+
+  const onClickGetStartedHandler = () => {
+    const url = isZipCodeSupported ? '/sign-up' : '/coming-soon';
+    history.push(url);
+  };
+
+  
 
   return (
     <HeroContainer>
@@ -56,15 +69,22 @@ const Hero = (props) => {
         </Row>
         <Row center="xs">
           <Col xs={12}>
-            <Form onSubmit={handleSubmit}>
+            <Form>
               <ZipContent>
                 <FieldGroup>
                   <FieldIcon src={zipIcon} alt="zip" width={14} height={20} />
-                  <InputMask mask="99999" value={zipcode} onChange={e => setZipcode(e.target.value)}>
-                    {(inputProps) => <HeroField type="text" placeholder="Enter Zip Code" {...inputProps} />}
+                  <InputMask mask="99999" 
+                    value={zipcode}
+                    onChange={onChangeHandler}
+                    >
+                    {(inputProps) => 
+                    <HeroField type="text" placeholder="Enter Zip Code" {...inputProps} />}
                   </InputMask>
                 </FieldGroup>
-                <HeroButton type="submit">
+                <HeroButton 
+                disabled={!isZipCodeValid}
+                onClick={onClickGetStartedHandler}
+                >
                   Get Started Now
                 </HeroButton>
               </ZipContent>

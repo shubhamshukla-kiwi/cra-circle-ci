@@ -1,0 +1,24 @@
+.loading-circle {
+  border-radius: 50%;
+  border: 2px solid white;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  -webkit-animation: rotate 1.5s linear infinite;
+  -moz-animation: rotate 1.5s linear infinite;
+  -ms-animation: rotate 1.5s linear infinite;
+  -o-animation: rotate 1.5s linear infinite;
+  animation: rotate 1.5s linear infinite; }
+  .loading-circle .dot {
+    height: 8px;
+    width: 8px;
+    background-color: #ffffff;
+    border-radius: 50%;
+    position: absolute;
+    top: -5px; }
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg); }
+  100% {
+    transform: rotate(360deg); } }
