@@ -92,7 +92,10 @@ const SeekerWork = () => {
                     {(inputProps) => <HeroField type="text" placeholder="Enter Zip Code" {...inputProps} />}
                   </InputMask>
                 </FieldGroup>
-                <HeroButton onClick={onClickGetStartedHandler}>
+                <HeroButton 
+                disabled={!isZipCodeValid}
+                onClick={onClickGetStartedHandler}
+                className={!isZipCodeValid?'btn-disabled':''}>
                   Get Started
                 </HeroButton>
               </Form>
