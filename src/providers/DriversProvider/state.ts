@@ -1,5 +1,3 @@
-import { getItemLocalStorage, setFormatDriver } from '../../helpers';
-
 export const types = {
   SET_ZIP: 'SET_ZIP',
   SET_CREATED_DRIVER: 'SET_CREATED_DRIVER',

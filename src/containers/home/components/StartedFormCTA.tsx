@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import ConditionalLink from '../../../components/conditional-link/conditional-link';
 
 const StartedFormCTA = ({ lastPathname }) => {

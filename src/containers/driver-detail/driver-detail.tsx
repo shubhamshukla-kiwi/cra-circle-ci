@@ -1,7 +1,3 @@
-import _ from 'lodash';
-import { connect } from 'react-redux';
-import { Switch, withRouter } from 'react-router-dom';
-import CSSTransition from 'react-transition-group/CSSTransition';
 import React, { Component } from 'react';
 import TransitionGroup from 'react-transition-group/TransitionGroup';
 import { Link } from 'react-router-dom';
@@ -10,192 +6,9 @@ import TabNavigator from '../../components/tab-navigator/tab-navigator';
 import OnboardHeader from '../../components/onboard-header/onboard-header';
 import driverImg from '../../assets/images/homepage/signup-3.png';
 import OnboardingFooter from '../../components/onboarding-footer/onboarding-footer';
-// TODO: Refactor -- see car-detail.js, tab-navigator.js
-// const childFactoryCreator = (classNames) => (child) =>
-//   React.cloneElement(child, {
-//     classNames,
-//   });
+
 
 class DriverDetail extends Component {
-  // constructor(props) {
-  //   super(props);
-  //   this.routes = [
-  //     '/new-car/drivers',
-  //     '/new-car/drivers/more-info',
-  //     '/new-car/drivers/accidents',
-  //     '/new-car/drivers/confirm',
-  //   ];
-  //   const initialTransitionKey = this.routes.includes(
-  //     this.props.location.pathname
-  //   )
-  //     ? this.props.location.pathname
-  //     : this.routes[0];
-  //   this.state = {
-  //     accidentDetails: 'accidentDetails',
-  //     accidentType: 'accidentType',
-  //     choosingAccident: false,
-  //     choosingViolation: false,
-  //     goingTo: 'car-detail',
-  //     transitionClassName: 'slide-left',
-  //     transitionKey: initialTransitionKey,
-  //     transitioning: false,
-  //     violationDetails: 'violationDetails',
-  //     violationType: 'violationType',
-  //     year2: 'year',
-  //     year: 'year',
-  //   };
-  // }
-
-  // componentWillReceiveProps(nextProps) {
-  //   // TODO: Refactor -- see car-detail.js, tab-navigator.js
-  //   if (this.props.location.pathname !== nextProps.location.pathname) {
-  //     const transitionKey = this.routes.includes(nextProps.location.pathname)
-  //       ? nextProps.location.pathname
-  //       : this.state.transitionKey;
-  //     const transitionClassName =
-  //       this.routes.indexOf(this.props.location.pathname) <
-  //       this.routes.indexOf(nextProps.location.pathname)
-  //         ? 'slide-left'
-  //         : 'slide-right';
-  //     this.setState({ transitionClassName, transitionKey });
-  //   }
-  // }
-
-  // componentDidUpdate(prevProps, prevState) {}
-
-  // handleChooseExistingDriver() {}
-
-  // handleCreateNewDriver() {
-  //   if (this.props.fieldsEditable) {
-  //     this.props.dispatch(
-  //       postUserDriverRequest(this.props.rfqs.rfqs.attributes.token)
-  //     );
-  //   }
-  // }
-
-  // handleUpdateDriver(event) {
-  //   if (this.props.fieldsEditable) {
-  //     this.props.dispatch(
-  //       updateDriver({
-  //         id: this.props.drivers.drivers[this.props.drivers.currentDriver].data
-  //           .id,
-  //         change: {
-  //           name: event.target.name,
-  //           value: event.target.value,
-  //         },
-  //       })
-  //     );
-  //   }
-  // }
-
-  // handleResetDriver(driver) {
-  //   Object.keys(driver.data.attributes).forEach((key) => {
-  //     this.props.dispatch(
-  //       updateDriver({
-  //         id: driver.data.id,
-  //         change: {
-  //           name: key,
-  //           value: driver.data.attributes[key],
-  //         },
-  //       })
-  //     );
-  //   });
-  // }
-
-  // handleUpdateUserDriverRequest() {
-  //   if (this.props.fieldsEditable) {
-  //     this.props.dispatch(
-  //       updateUserDriverRequest({
-  //         quote_token: this.props.rfqs.rfqs.attributes.token,
-  //         item: this.props.drivers.drivers[this.props.drivers.currentDriver],
-  //       })
-  //     );
-  //   }
-  // }
-
-  // handleCancelDriver() {
-  //   if (this.props.fieldsEditable) {
-  //     this.props.dispatch(
-  //       deleteUserDriverRequest({
-  //         quote_token: this.props.rfqs.rfqs.attributes.token,
-  //         item: this.props.drivers.drivers[this.props.drivers.currentDriver],
-  //       })
-  //     );
-  //   }
-  // }
-
-  // handleGetLatLongRequest() {
-  //   if (this.props.fieldsEditable) {
-  //     const address = this.props.drivers.drivers[
-  //       this.props.drivers.currentDriver
-  //     ].data.attributes.address;
-  //     const city = this.props.drivers.drivers[this.props.drivers.currentDriver]
-  //       .data.attributes.city;
-  //     const state = this.props.drivers.drivers[this.props.drivers.currentDriver]
-  //       .data.attributes.state;
-  //     this.props.dispatch(
-  //       getLatLongRequest({
-  //         address,
-  //         city,
-  //         state,
-  //         key: this.props.lat_long.key,
-  //         currentDriver: this.props.drivers.currentDriver,
-  //         quote_token: this.props.rfqs.rfqs.attributes.token,
-  //       })
-  //     );
-  //   }
-  // }
-
-  // handleAddAccident(accident_type, accident_detail, year) {
-  //   if (this.props.fieldsEditable) {
-  //     this.props.dispatch(
-  //       postUserAccidentRequest({
-  //         data: {
-  //           attributes: {
-  //             year,
-  //             accident_detail,
-  //             accident_type,
-  //             rfq_driver_id: parseInt(
-  //               this.props.drivers.drivers[this.props.drivers.currentDriver]
-  //                 .data.id
-  //             ),
-  //             rfq_id: parseInt(this.props.rfqs.rfqs.id),
-  //           },
-  //           type: 'rfq_accident',
-  //         },
-  //         rfq_token: this.props.rfqs.rfqs.attributes.token,
-  //       })
-  //     );
-  //   }
-  // }
-
-  // handleRemoveAccident(accident) {
-  //   if (this.props.fieldsEditable) {
-  //     this.props.dispatch(
-  //       deleteUserAccidentRequest({
-  //         accident: accident,
-  //         rfq_token: this.props.rfqs.rfqs.attributes.token,
-  //       })
-  //     );
-  //   }
-  // }
-
-  // handleTransitionEnter = () => {
-  //   this.setState({ transitioning: true });
-  //   setTimeout(
-  //     function () {
-  //       this.setState({ transitioning: false });
-  //     }.bind(this),
-  //     1000
-  //   );
-  // };
-
-  // handleTransitionExited = () => {
-  //   this.setState({ transitioning: false });
-  // };
-  // handleInputChange(event) {
-  //   this.props.updateDriver(event);
-  // }
   constructor(props) {
       super(props);
       this.state = {
@@ -203,9 +16,7 @@ class DriverDetail extends Component {
       }
   }
   setValue(e){
-    console.log(e);
     let {value} = e.target;
-    console.log(value);
 this.setState({
   stateSelect: value,
 

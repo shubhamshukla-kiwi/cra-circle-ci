@@ -55,7 +55,7 @@ class MoreDriverDetailA extends Component {
                                                     <label>Category</label>
                                                 </div>
                                                 <div className="delete-spn">
-                                                    <img src={cross}></img>
+                                                    <img alt="delete" src={cross}></img>
                                                 </div>
                                             </div>
                                         </div>
@@ -81,7 +81,7 @@ class MoreDriverDetailA extends Component {
                                                     <label>Category</label>
                                                 </div>
                                                 <div className="delete-spn">
-                                                    <img src={cross}></img>
+                                                    <img alt="delete" src={cross}></img>
                                                 </div>
                                             </div>
                                         </div>
@@ -107,7 +107,7 @@ class MoreDriverDetailA extends Component {
                                                     <label>Category</label>
                                                 </div>
                                                 <div className="delete-spn">
-                                                    <img src={cross}></img>
+                                                    <img alt="delete" src={cross}></img>
                                                 </div>
                                             </div>
                                         </div>

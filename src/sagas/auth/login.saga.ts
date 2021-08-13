@@ -1,6 +1,6 @@
 import {call, put, takeLatest} from 'redux-saga/effects';
 import Api from '../../lib/helpers/Api'
-import {API_ENDPOINT, SELF_URL} from '../../lib/constants/api';
+import {API_ENDPOINT} from '../../lib/constants/api';
 import _ from 'lodash';
 
 import {

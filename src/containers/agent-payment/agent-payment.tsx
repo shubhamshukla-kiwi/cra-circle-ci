@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux';
 import styled from "styled-components"
 import Header from '../../components/header/header';
 import OnboardingFooter from '../../components/onboarding-footer/onboarding-footer';

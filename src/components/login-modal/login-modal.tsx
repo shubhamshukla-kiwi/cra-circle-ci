@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { withRouter, Link } from 'react-router-dom';
 import OnboardingLeft from '../onboarding-left/onboarding-left';
+import { saveEmail } from '../../actions';
+import { isClient } from '../../utils';
 
 class LoginModal extends Component {
     constructor(props) {
@@ -17,30 +19,15 @@ class LoginModal extends Component {
             failedLogin: false,
             failedRegister: false,
         };
-    }
-
-    componentWillReceiveProps(nextProps) {
-        if (
-            this.props.login.requested === true &&
-            this.props.login.loggedIn === false &&
-            nextProps.login.requested === false &&
-            nextProps.login.loggedIn === false
-        ) {
-            this.setState({ failedLogin: true });
-        }
-
-        if (
-            this.props.register.registerRequested === true &&
-            this.props.register.loggedIn === false &&
-            nextProps.register.registerRequested === false &&
-            nextProps.register.loggedIn === false
-        ) {
-            this.setState({ failedRegister: true });
-        }
+        this.saveData = this.saveData.bind(this);
     }
 
     handleEmailChange(event) {
         this.setState({ email: event.target.value });
+    }
+
+    saveData() {
+    this.props.dispatch(saveEmail(this.state.email))
     }
 
     handlePasswordChange(event) {
@@ -99,8 +86,7 @@ class LoginModal extends Component {
     }
 
     render() {
-        const disabled = this.passwordValid() ? "" : "disabilly";
-        const valid = this.passwordValid() ? "" : "invalid";
+        const isClientUser = isClient();
         return (
             <div
                 className="login-modal screen-container"
@@ -124,12 +110,12 @@ class LoginModal extends Component {
                                     />
                                 </div>
                             </div>
-                            <Link className="button-primary" to="/otp">
+                            {isClientUser && <Link onClick={this.saveData} className="button-primary" to="/otp">
                                 Sign In via OTP
-                            </Link>
-                            <Link className="button-transparent" to="/password-login">
-                                Sign In via Password
-                            </Link>
+                            </Link>}
+                            {!isClientUser && <Link onClick={this.saveData} className="button-primary" to="/agent/otp">
+                                Sign In via OTP
+                            </Link>}
                         </div>
                     </div>
                 </div>
@@ -139,12 +125,7 @@ class LoginModal extends Component {
 }
 
 function mapStateToProps(state) {
-    return {
-        loginRequested: state.login.loginRequested,
-        loggedIn: state.login.loggedIn,
-        login: state.login,
-        register: state.register,
-    };
+    return {};
 }
 
 export default withRouter(connect(mapStateToProps)(LoginModal));

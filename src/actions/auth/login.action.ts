@@ -2,6 +2,7 @@ import {
     LOGIN_REQUEST,
     LOGIN_SUCCESS,
     LOGIN_FAILURE,
+    SAVE_EMAIL
 } from '../../lib/constants/actions';
 
 export function loginRequest(payload) {
@@ -21,5 +22,12 @@ export function loginSuccess(payload) {
 export function loginFailure() {
     return {
         type: LOGIN_FAILURE,
+    }
+}
+
+export function saveEmail(email) {
+    return {
+        type: SAVE_EMAIL,
+        payload: email
     }
 }

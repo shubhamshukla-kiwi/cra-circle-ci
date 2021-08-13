@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Switch, withRouter, Link } from 'react-router-dom';
+import { withRouter } from 'react-router-dom';
 import './tab-navigator.css';
 import Edit from '../../assets/images/homepage/edit.svg'
 import User from '../../assets/images/homepage/user.svg'

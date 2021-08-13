@@ -4,7 +4,6 @@ import React, { Component } from 'react';
 
 
 import AgentDetail from '../agent-detail/agent-detail';
-import LoadingCircle from '../../components/loading-circle/loading-circle';
 import TabNavigator from '../../components/tab-navigator/tab-navigator';
 import OnboardHeader from '../../components/onboard-header/onboard-header';
 import OnboardingFooter from '../../components/onboarding-footer/onboarding-footer';

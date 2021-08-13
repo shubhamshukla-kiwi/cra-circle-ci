@@ -30,4 +30,4 @@ const rootReducer = persistReducer(
 
 
 // export default rootReducer
-export default reducer;
+export default rootReducer;

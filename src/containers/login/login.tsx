@@ -57,12 +57,7 @@ class Login extends Component {
 }
 
 function mapStateToProps(state) {
-  return {
-    loggedIn: state.login.loggedIn,
-    login: state.login,
-    loginRequested: state.login.loginRequested,
-    register: state.register,
-  };
+  return {};
 }
 
 export default connect(mapStateToProps)(Login);

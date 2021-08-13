@@ -1,1 +1,1 @@
-export { default as parseBirthdate } from './parseBirthdate';
+export * from './data';
