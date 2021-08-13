@@ -36,7 +36,6 @@ export function login(state = DEFAULT_LOGIN_STATE, action) {
             });
         }
         case SAVE_EMAIL: {
-            console.log(action);
             return Object.assign({}, {...state}, {
                 requested: false,
                 loggedIn: true,
@@ -56,7 +55,6 @@ export function register(state = DEFAULT_LOGIN_STATE, action) {
             });
         }
         case REGISTER_SUCCESS: {
-            console.log(action)
             return Object.assign({}, {...state}, {
                 registerRequested: false,
                 loggedIn: true,

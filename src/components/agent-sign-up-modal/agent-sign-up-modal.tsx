@@ -75,7 +75,6 @@ class AgentSignupModal extends Component {
                             }}
                             validationSchema={agentSignupSchema}
                             onSubmit={(values, { setSubmitting }) => {
-                                console.log(values)
                                 setSubmitting(false);
                                 this.setState({userData: values});
                                 this.handleOpenModal();

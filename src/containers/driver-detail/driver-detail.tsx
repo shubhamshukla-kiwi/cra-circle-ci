@@ -16,9 +16,7 @@ class DriverDetail extends Component {
       }
   }
   setValue(e){
-    console.log(e);
     let {value} = e.target;
-    console.log(value);
 this.setState({
   stateSelect: value,
 

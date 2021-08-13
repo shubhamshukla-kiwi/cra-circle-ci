@@ -28,7 +28,6 @@ class LoginModal extends Component {
 
     saveData() {
     this.props.dispatch(saveEmail(this.state.email))
-    console.log('dispatched');
     }
 
     handlePasswordChange(event) {

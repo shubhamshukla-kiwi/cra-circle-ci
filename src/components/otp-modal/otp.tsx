@@ -35,7 +35,6 @@ const OTPComponent = ({isVerify, dispatch, email}: Props) => {
                 }}
                 validationSchema={otpValidationSchema}
                 onSubmit={(values, { setSubmitting }) => {
-                    console.log(values)
                     setSubmitting(false);
                     if (isClientUser) {
                         // dispatch(registerRequest(userData))

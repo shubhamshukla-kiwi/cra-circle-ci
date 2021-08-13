@@ -26,7 +26,6 @@ export function loginFailure() {
 }
 
 export function saveEmail(email) {
-    console.log('called')
     return {
         type: SAVE_EMAIL,
         payload: email

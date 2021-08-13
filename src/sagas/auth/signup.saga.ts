@@ -33,7 +33,6 @@ const executeRegisterUser = (payload) => {
 function* registerUser(payload) {
     try {
         const register = yield call(executeRegisterUser, payload);
-        console.log(register);
         if (register.payload) {
             yield put({tyoe: REGISTER_SUCCESS, payload: Object.assign({}, {...register.payload})});
             yield put({type: LOGIN_SUCCESS, payload: Object.assign({}, {...register.payload})});

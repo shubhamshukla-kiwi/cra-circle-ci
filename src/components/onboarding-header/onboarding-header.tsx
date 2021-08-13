@@ -10,7 +10,6 @@ class OnboardingHeader extends Component {
           showSignin: !!this.props.showSignin
           
         };
-        console.log(props, this.state);
       }
 
     render() {
