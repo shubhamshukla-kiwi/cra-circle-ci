@@ -96,6 +96,11 @@ export const agentSignupSchema = Yup.object().shape({
       /^[a-zA-Z0-9]*$/,
       'Only alphanumeric characters are allowed'
     ),
+  licneseNumber: Yup.string()
+    .matches(
+      /^[a-zA-Z0-9]*$/,
+      'Only alphanumeric characters are allowed'
+    ),  
   state: Yup.string()
     .required('Mandatory!'),
   city: Yup.string()

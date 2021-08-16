@@ -30,7 +30,8 @@ export const initialAgentSignupValue = {
   city: '',
   company: '',
   bio: '',
-  termsCheckbox: false
+  termsCheckbox: false,
+  licneseNumber: ''
 };
 
 
