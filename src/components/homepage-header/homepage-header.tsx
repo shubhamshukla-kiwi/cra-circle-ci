@@ -10,7 +10,7 @@ const HomepageHeader = () => {
   return (
     <div className={show ? "show header-wrap" : "header-wrap"}>
       <Container className="inner-container">
-        <Row xs="center">
+        <Row xs="center" className="header-list-rw">
           <Col xs={4} md={6}>
             <Image src={hamburger} alt="hamburger" className="hamburger-icon" onClick={() => setShow(!show)} />
             <Image src={seekrLogo} alt="logo" />
@@ -47,6 +47,7 @@ const HomepageHeader = () => {
     </div>
   )
 }
+
 
 const Image = styled.img`
   height: 100%;

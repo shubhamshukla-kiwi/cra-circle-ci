@@ -264,7 +264,7 @@
     .inner-container {
         height: 100%;
     }
-    .sc-gtsrHT {
+    .header-list-rw {
         height: 100%;
         align-items: center;
         img {
@@ -273,6 +273,9 @@
                 width: 75px;
             }
         }
+    }
+    .top-header{
+        justify-content: flex-end;
     }
     .sc-dlnjwi {
         display: flex;
