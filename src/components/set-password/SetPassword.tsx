@@ -40,7 +40,7 @@ class SetPassword extends Component {
                     </div>
                 </div>
             </div>
-                <button className="close-icon" onClick={this.props.handleSetPasswordCloseModal}><span class="icon-cross"><span class="path2"></span></span></button>
+                <button className="close-icon" onClick={this.props.handleSetPasswordCloseModal}><span className="icon-cross"><span className="path2"></span></span></button>
             </ReactModal>
         );
     }

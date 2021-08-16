@@ -96,14 +96,6 @@ class NewCar extends Component {
         </div>
       );
     }
-  //     return (
-  //       <div className="new-car-container">
-  //         <div className="loading-container">
-  //           <LoadingCircle />
-  //         </div>
-  //       </div>
-  //     );
-  // }
 }
 
 function mapStateToProps(state) {

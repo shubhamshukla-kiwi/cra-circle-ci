@@ -1,97 +1,53 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import TextField from '@material-ui/core/TextField';
 import { withRouter, Link } from 'react-router-dom';
+import { Formik, ErrorMessage } from 'formik';
 import OnboardingLeft from '../onboarding-left/onboarding-left';
 import { saveEmail } from '../../actions';
 import { isClient } from '../../utils';
+import { OTPLoginSchema } from '../../constants/formikSchemaValidation';
+import { initialLoginValue } from '../../constants/formikValue';
 
 class LoginModal extends Component {
     constructor(props) {
         super(props);
-        var email;
-        this.props.email ? (email = this.props.email) : (email = '');
-        this.state = {
-            password: '',
-            password2: '',
-            email: email,
-            activeScreen: this.props.activeScreen,
-            allowSwitch: this.props.allowSwitch,
-            failedLogin: false,
-            failedRegister: false,
-        };
         this.saveData = this.saveData.bind(this);
     }
+    isClientUser = isClient();
 
-    handleEmailChange(event) {
-        this.setState({ email: event.target.value });
+    saveData(email) {
+    this.props.dispatch(saveEmail(email))
+    localStorage.setItem('isAuthenticated', true);
     }
-
-    saveData() {
-    this.props.dispatch(saveEmail(this.state.email))
-    }
-
-    handlePasswordChange(event) {
-        this.setState({ password: event.target.value });
-    }
-
-    handlePassword2Change(event) {
-        this.setState({ password2: event.target.value });
-    }
-
-    handleLoginEnter(event) {
-        if (event.key === "Enter") {
-            this.props.handleLogin(this.state.email, this.state.password);
-        }
-    }
-
-    handleRegisterEnter(event) {
-        if (event.key === "Enter") {
-            this.props.handleRegister(this.state.email, this.state.password);
-        }
-    }
-
-    switchScreens() {
-        if (this.state.allowSwitch) {
-            switch (this.state.activeScreen) {
-                case 'login':
-                    this.setState({ activeScreen: 'register', password: '', password2: '' });
-                    break;
-                case 'register':
-                    this.setState({ activeScreen: 'login' });
-                    break;
-                default:
-            }
-        }
-    }
-
-    passwordValid() {
-        if (this.state.password === this.state.password2) {
-            return true;
+    navigate = () => {
+        if(this.isClientUser) {
+            this.props.history.push('/otp');
         } else {
-            return false;
-        }
-    }
-
-    getErr() {
-        if (this.props.login.err !== undefined) {
-            return this.props.login.err[0].detail.split(';').map(error => {
-                return <text>{error}</text>
-            })
-        }
-        if (this.props.register.err !== undefined) {
-            return this.props.register.err[0].detail.split(';').map(error => {
-                return <text>{error}</text>
-            })
+            this.props.history.push('/agent/otp');
         }
     }
 
     render() {
-        const isClientUser = isClient();
         return (
-            <div
-                className="login-modal screen-container"
-                data-screen={this.state.activeScreen}
+            <Formik
+                initialValues={initialLoginValue}
+                validationSchema={OTPLoginSchema}
+                onSubmit={(values, { setSubmitting }) => {
+                    setSubmitting(false);
+                    this.saveData(values.email);
+                    this.navigate();
+                }}
             >
+                {({
+                    values,
+                    errors,
+                    handleChange,
+                    handleSubmit,
+                    isSubmitting,
+                    /* and other goodies */
+                }) => (
+            <div className="login-modal screen-container">
                 <div className="login-screen">
                     <OnboardingLeft />
                     <div className="right-content">
@@ -102,24 +58,29 @@ class LoginModal extends Component {
                             <div className="input-container">
                                 <div className="form-group">
                                     <label>Email Address</label>
-                                    <input
-                                        value={this.state.email}
-                                        onChange={this.handleEmailChange.bind(this)}
+                                    <TextField
+                                        label="Email Address"
+                                        value={values.email}
+                                        name="email"
+                                        onChange={handleChange}
+                                        InputProps={{ disableUnderline: true }}
                                         type="email"
-                                        className="form-control"
-                                    />
+                                        className={`form-control ${!errors.email ? '' : 'error'}`}
+                                        />
+                                 <span className="error-msg"><ErrorMessage name="email" /></span>
                                 </div>
                             </div>
-                            {isClientUser && <Link onClick={this.saveData} className="button-primary" to="/otp">
+                            {this.isClientUser && <Link onClick={handleSubmit} className="button-primary" to="/otp">
                                 Sign In via OTP
                             </Link>}
-                            {!isClientUser && <Link onClick={this.saveData} className="button-primary" to="/agent/otp">
+                            {!this.isClientUser && <Link onClick={handleSubmit} className="button-primary" to="/agent/otp">
                                 Sign In via OTP
                             </Link>}
                         </div>
                     </div>
                 </div>
-            </div>
+            </div>)}
+            </Formik>
         );
     }
 }

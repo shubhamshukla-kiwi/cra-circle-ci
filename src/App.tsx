@@ -3,11 +3,12 @@ import { Route, Switch, Redirect, withRouter } from 'react-router-dom';
 import CSSTransition from 'react-transition-group/CSSTransition';
 import React, { Component } from 'react';
 import TransitionGroup from 'react-transition-group/TransitionGroup';
+import DateFnsUtils from '@date-io/date-fns';
+import {MuiPickersUtilsProvider} from "@material-ui/pickers";
 
 import { API_ENDPOINT } from './lib/constants/api';
 import HomePage from './containers/home/home';
 import Login from './containers/login/login';
-import Dashboard from './containers/dashboard/dashboard';
 import ComingSoon from './containers/coming-soon/coming-soon';
 import SignUp from './containers/sign-up/sign-up'
 
@@ -35,6 +36,8 @@ import { ZipCodeProvider} from './contexts/ZipCodeContext/ZipCodeContext'
 import ROUTES from './routes';
 
 import './App.scss';
+import ProtectedRoute from './components/common/protectedRoute';
+import { logout } from './actions';
 
 const childFactoryCreator = (classNames: string) => (child: React.ReactElement) =>
   React.cloneElement(child, {
@@ -93,6 +96,7 @@ class App extends Component<IRecipeProps, IRecipeState> {
     return (
       <div className="app-body">
       <ZipCodeProvider>
+      <MuiPickersUtilsProvider utils={DateFnsUtils}>
         <div className="gradient-overlay" />
         <TransitionGroup
           className="app-body-transition-group"
@@ -114,7 +118,6 @@ class App extends Component<IRecipeProps, IRecipeState> {
                   setEmail={()=> {}}
                 />
                 <Route path="/login" component={Login} />
-                <Route path="/dashboard" component={Dashboard} />
                 <Route path="/new-car" component={NewCar} />
                 <Route path="/coming-soon" component={ComingSoon} />
                 {/* <Route path="/confirm/:token" component={ConfirmEmail} /> */}
@@ -135,7 +138,7 @@ class App extends Component<IRecipeProps, IRecipeState> {
                 <Route path="/car-plan" component={CarPlan} />
                 <Route path="/car-detail-success" component={CarDetailSuccess} />
                 <Route path="/agent-add-card" component={AgentAddCard} />
-                <Route path="/dashboard" component={DashboardEmpty} />
+                <ProtectedRoute path="/dashboard" component={DashboardEmpty} />
                 <Route path="/agent-sign-up" component={AgentSignUp} />
                 <Route path="/agent-dashboard" component={AgentDashboard} />
                 <Route path="/agent-payment" component={AgentPayment} />
@@ -143,6 +146,7 @@ class App extends Component<IRecipeProps, IRecipeState> {
             </div>
           </CSSTransition>
         </TransitionGroup>
+        </MuiPickersUtilsProvider>
         </ZipCodeProvider>
       </div>
     );

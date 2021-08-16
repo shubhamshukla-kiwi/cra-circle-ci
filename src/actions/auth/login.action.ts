@@ -2,7 +2,8 @@ import {
     LOGIN_REQUEST,
     LOGIN_SUCCESS,
     LOGIN_FAILURE,
-    SAVE_EMAIL
+    SAVE_EMAIL,
+    USER_LOGOUT
 } from '../../lib/constants/actions';
 
 export function loginRequest(payload) {
@@ -25,9 +26,15 @@ export function loginFailure() {
     }
 }
 
-export function saveEmail(email) {
+export function saveEmail(email: string) {
     return {
         type: SAVE_EMAIL,
         payload: email
+    }
+}
+
+export function logout(): void {
+    return {
+        type: USER_LOGOUT,
     }
 }

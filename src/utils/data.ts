@@ -14,10 +14,6 @@ export const isClient = (): boolean => {
     return role === 'client' ? true: false;
 }
 
-export const isLoggedIn = () => {
-    if(isClient()) {
-        return configureStore().store.getState().login.loggedIn;
-    } else {
-        return configureAgentStore().store.getState().login.loggedIn;
-    }
+export const isLoggedIn = (): boolean => {
+    return localStorage.getItem('isAuthenticated')
 }

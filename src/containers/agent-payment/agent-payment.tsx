@@ -60,7 +60,7 @@ class AgentPayment extends Component {
                             <div className="top-head">
                                 <h5>Augustus Edwards</h5>
                                 <div className="rating-star">
-                                    <span class="font-icon icon-stars"></span>
+                                    <span className="font-icon icon-stars"></span>
                                     4.8
                                 </div>
                             </div>
@@ -71,7 +71,7 @@ class AgentPayment extends Component {
                     <Row className="payment-wrapper">
                         <div className="back-btn">
                             <a href="/agent-dashboard">
-                                <span class="icon-back-arrow font-icon"></span>
+                                <span className="icon-back-arrow font-icon"></span>
                                 Back to Dashbaord
                             </a>
                         </div>

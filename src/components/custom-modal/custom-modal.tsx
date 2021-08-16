@@ -91,10 +91,10 @@ class CustomModal extends Component {
                         </div>
                         <Link className="button-primary" to="/">
                             <span className="btn-txt">Save custom & send request for quotes</span>
-                            <span class="icon-forward-arrow font-icon"></span>
+                            <span className="icon-forward-arrow font-icon"></span>
                         </Link>
                     </div>
-                    <button className="close-icon" onClick={this.props.handleCloseModal}><span class="icon-cross"><span class="path2"></span></span></button>
+                    <button className="close-icon" onClick={this.props.handleCloseModal}><span className="icon-cross"><span className="path2"></span></span></button>
                 </ReactModal>
 
             </div>

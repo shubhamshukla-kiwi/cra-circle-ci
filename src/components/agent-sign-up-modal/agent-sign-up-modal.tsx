@@ -10,7 +10,8 @@ import { Link } from 'react-router-dom';
 import ReactModal from 'react-modal';
 import uploadPhoto from './../../assets/images/homepage/upload-photo.svg';
 import profileDefault from './../../assets/images/homepage/modal-profile.png';
-import { agentSignupSchema } from '../../constants/app.const';
+import { agentSignupSchema } from '../../constants/formikSchemaValidation';
+import { initialAgentSignupValue } from '../../constants/formikValue';
 
 
 ReactModal.setAppElement('#root');
@@ -59,20 +60,7 @@ class AgentSignupModal extends Component {
                     <OnboardingLeft />
                     <div className="right-content">
                         <Formik
-                            initialValues={{
-                                file: null,
-                                firstName: '',
-                                lastName: '',
-                                zipcode: '',
-                                email: '',
-                                phone: '',
-                                address: '',
-                                state: '',
-                                city: '',
-                                company: '',
-                                bio: '',
-                                termsCheckbox: false
-                            }}
+                            initialValues={initialAgentSignupValue}
                             validationSchema={agentSignupSchema}
                             onSubmit={(values, { setSubmitting }) => {
                                 setSubmitting(false);
@@ -185,7 +173,6 @@ class AgentSignupModal extends Component {
                                                     onChange={handleChange}
                                                     onBlur={handleBlur}
                                                     value={values.state}
-                                                    helperText="Please select your state"
                                                     InputProps={{ disableUnderline: true }}>
                                                     {states.map((option) => (
                                                         <MenuItem key={option.value} value={option.value}>
@@ -205,7 +192,6 @@ class AgentSignupModal extends Component {
                                                     onChange={handleChange}
                                                     onBlur={handleBlur}
                                                     value={values.city}
-                                                    helperText="Please select your city"
                                                     InputProps={{ disableUnderline: true }}>
                                                     {states.map((option) => (
                                                         <MenuItem key={option.value} value={option.value}>
@@ -249,7 +235,6 @@ class AgentSignupModal extends Component {
                                                     onChange={handleChange}
                                                     onBlur={handleBlur}
                                                     value={values.company}
-                                                    helperText="Please select your company"
                                                     InputProps={{ disableUnderline: true }}>
                                                     {states.map((option) => (
                                                         <MenuItem key={option.value} value={option.value}>
