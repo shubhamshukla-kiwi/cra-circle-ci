@@ -5,7 +5,6 @@ import {Switch, Route, withRouter} from 'react-router-dom';
 import TransitionGroup from 'react-transition-group/TransitionGroup';
 import CSSTransition from 'react-transition-group/CSSTransition';
 import CustomerDashboardMain from '../customer-dashboard-main/customer-dashboard-main.js'
-import CustomerDashboardPolicies from '../customer-dashboard-policies/customer-dashboard-policies.js'
 
 class CustomerDashboard extends Component {
     constructor(props) {

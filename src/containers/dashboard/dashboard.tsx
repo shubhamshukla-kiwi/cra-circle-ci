@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
-import { Col, Row } from "react-styled-flexboxgrid";
+import { Row } from "react-styled-flexboxgrid";
 import Header from '../../components/header/header';
 import OnboardingFooter from '../../components/onboarding-footer/onboarding-footer';
 import './dashboard.css';
@@ -17,23 +17,9 @@ class Dashboard extends Component {
         this.state = {
             show: false
         }
-        // this.props.dispatch(getUserRfqRequest());
     }
-    // const [show, setShow] = React.useState();
     render() {
-        // if (!this.props.loggedIn) {
-        //     return <Redirect to="/login"/>
-        // }
-
         return (
-            // <div className={this.props.navigationDrawerState.open ? 'dashboard dashboard-open' : 'dashboard'}>
-            //     {!this.props.login.loggedIn ? <Redirect to="/login"/> : null}
-            //     <NavigationTop>
-            //         <Link to="/dashboard/quotes">Quotes</Link>
-            //     </NavigationTop>
-            //     <NavigationBottom/>
-            //     <CustomerDashboard/>
-            // </div>
             <div className="container">
                 <div className="dashboard-container">
                     <Header 
@@ -43,8 +29,8 @@ class Dashboard extends Component {
                     <Row className="row">
                         <div className="dashboard-left">
                             <div className="profile-container">
-                            <span class="icon-cross font-icon" onClick={()=>this.setState({show: !this.state.show})}>
-                                <span class="path2 font-icon"></span>
+                            <span className="icon-cross font-icon" onClick={()=>this.setState({show: !this.state.show})}>
+                                <span className="path2 font-icon"></span>
                             </span>
                                 <img alt="Seeker icon" src={seekerIcon} />
                                 <div className="profile-content">

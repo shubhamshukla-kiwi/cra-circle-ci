@@ -100,11 +100,11 @@ class AgentSlider extends Component {
                       <Image src={placeholder} alt="user" className="user-icon"></Image>
                     </AgentSliderImage>
                     <AgentSliderStars>
-                      <span class="icon-stars font-icon active"></span>
-                      <span class="icon-stars font-icon active"></span>
-                      <span class="icon-stars font-icon active"></span>
-                      <span class="icon-stars font-icon"></span>
-                      <span class="icon-stars font-icon"></span>
+                      <span className="icon-stars font-icon active"></span>
+                      <span className="icon-stars font-icon active"></span>
+                      <span className="icon-stars font-icon active"></span>
+                      <span className="icon-stars font-icon"></span>
+                      <span className="icon-stars font-icon"></span>
                     </AgentSliderStars>
                     <Author>
                       <AuthorDetail>
@@ -118,7 +118,7 @@ class AgentSlider extends Component {
                     <AgentLink>
                       <a >
                         $599.00/mo
-                                              <span class="icon-forward-arrow font-icon"></span>
+                                              <span className="icon-forward-arrow font-icon"></span>
                       </a>
                     </AgentLink>
                     <ButtonButton>
@@ -141,11 +141,11 @@ class AgentSlider extends Component {
                       <FeedbackContainer>
                         <FeedbackText>Give Feedback</FeedbackText>
                         <AgentSliderStars>
-                          <span class="icon-stars font-icon"></span>
-                          <span class="icon-stars font-icon"></span>
-                          <span class="icon-stars font-icon"></span>
-                          <span class="icon-stars font-icon"></span>
-                          <span class="icon-stars font-icon"></span>
+                          <span className="icon-stars font-icon"></span>
+                          <span className="icon-stars font-icon"></span>
+                          <span className="icon-stars font-icon"></span>
+                          <span className="icon-stars font-icon"></span>
+                          <span className="icon-stars font-icon"></span>
                         </AgentSliderStars>
                       </FeedbackContainer>
                     </ConnectedContainer>
@@ -161,11 +161,11 @@ class AgentSlider extends Component {
                       <Image src={placeholder} alt="user" className="user-icon"></Image>
                     </AgentSliderImage>
                     <AgentSliderStars>
-                      <span class="icon-stars font-icon active"></span>
-                      <span class="icon-stars font-icon active"></span>
-                      <span class="icon-stars font-icon active"></span>
-                      <span class="icon-stars font-icon"></span>
-                      <span class="icon-stars font-icon"></span>
+                      <span className="icon-stars font-icon active"></span>
+                      <span className="icon-stars font-icon active"></span>
+                      <span className="icon-stars font-icon active"></span>
+                      <span className="icon-stars font-icon"></span>
+                      <span className="icon-stars font-icon"></span>
                     </AgentSliderStars>
                     <Author>
                       <AuthorDetail>
@@ -179,7 +179,7 @@ class AgentSlider extends Component {
                     <AgentLink>
                       <a>
                         $599.00/mo
-                      <span class="icon-forward-arrow font-icon"></span>
+                      <span className="icon-forward-arrow font-icon"></span>
                       </a>
                     </AgentLink>
                     <ButtonButton className="d-none">{/* remove "d-none" when you need to show Button */}
@@ -202,11 +202,11 @@ class AgentSlider extends Component {
                       <FeedbackContainer onClick={this.handleFeedbackOpenModal}>
                         <FeedbackText>Give Feedback</FeedbackText>
                         <AgentSliderStars>
-                          <span class="icon-stars font-icon"></span>
-                          <span class="icon-stars font-icon"></span>
-                          <span class="icon-stars font-icon"></span>
-                          <span class="icon-stars font-icon"></span>
-                          <span class="icon-stars font-icon"></span>
+                          <span className="icon-stars font-icon"></span>
+                          <span className="icon-stars font-icon"></span>
+                          <span className="icon-stars font-icon"></span>
+                          <span className="icon-stars font-icon"></span>
+                          <span className="icon-stars font-icon"></span>
                         </AgentSliderStars>
                       </FeedbackContainer>
                     </ConnectedContainer>
@@ -221,11 +221,11 @@ class AgentSlider extends Component {
                       <Image src={placeholder} alt="user" className="user-icon"></Image>
                     </AgentSliderImage>
                     <AgentSliderStars>
-                      <span class="icon-stars font-icon active"></span>
-                      <span class="icon-stars font-icon active"></span>
-                      <span class="icon-stars font-icon active"></span>
-                      <span class="icon-stars font-icon"></span>
-                      <span class="icon-stars font-icon"></span>
+                      <span className="icon-stars font-icon active"></span>
+                      <span className="icon-stars font-icon active"></span>
+                      <span className="icon-stars font-icon active"></span>
+                      <span className="icon-stars font-icon"></span>
+                      <span className="icon-stars font-icon"></span>
                     </AgentSliderStars>
                     <Author>
                       <AuthorDetail>
@@ -239,7 +239,7 @@ class AgentSlider extends Component {
                     <AgentLink>
                       <a>
                         $599.00/mo
-                                                <span class="icon-forward-arrow font-icon"></span>
+                                                <span className="icon-forward-arrow font-icon"></span>
                       </a>
                     </AgentLink>
                     <ButtonButton>
@@ -262,11 +262,11 @@ class AgentSlider extends Component {
                       <FeedbackContainer>
                         <FeedbackText>Give Feedback</FeedbackText>
                         <AgentSliderStars>
-                          <span class="icon-stars font-icon"></span>
-                          <span class="icon-stars font-icon"></span>
-                          <span class="icon-stars font-icon"></span>
-                          <span class="icon-stars font-icon"></span>
-                          <span class="icon-stars font-icon"></span>
+                          <span className="icon-stars font-icon"></span>
+                          <span className="icon-stars font-icon"></span>
+                          <span className="icon-stars font-icon"></span>
+                          <span className="icon-stars font-icon"></span>
+                          <span className="icon-stars font-icon"></span>
                         </AgentSliderStars>
                       </FeedbackContainer>
                     </ConnectedContainer>
@@ -281,11 +281,11 @@ class AgentSlider extends Component {
                       <Image src={placeholder} alt="user" className="user-icon"></Image>
                     </AgentSliderImage>
                     <AgentSliderStars>
-                      <span class="icon-stars font-icon active"></span>
-                      <span class="icon-stars font-icon active"></span>
-                      <span class="icon-stars font-icon active"></span>
-                      <span class="icon-stars font-icon"></span>
-                      <span class="icon-stars font-icon"></span>
+                      <span className="icon-stars font-icon active"></span>
+                      <span className="icon-stars font-icon active"></span>
+                      <span className="icon-stars font-icon active"></span>
+                      <span className="icon-stars font-icon"></span>
+                      <span className="icon-stars font-icon"></span>
                     </AgentSliderStars>
                     <Author>
                       <AuthorDetail>
@@ -299,7 +299,7 @@ class AgentSlider extends Component {
                     <AgentLink>
                       <a>
                         $599.00/mo
-                                            <span class="icon-forward-arrow font-icon"></span>
+                                            <span className="icon-forward-arrow font-icon"></span>
                       </a>
                     </AgentLink>
                     <ButtonButton className="d-none">{/* remove "d-none" when you need to show Button */}
@@ -322,11 +322,11 @@ class AgentSlider extends Component {
                       <FeedbackContainer>
                         <FeedbackText>Give Feedback</FeedbackText>
                         <AgentSliderStars>
-                          <span class="icon-stars font-icon"></span>
-                          <span class="icon-stars font-icon"></span>
-                          <span class="icon-stars font-icon"></span>
-                          <span class="icon-stars font-icon"></span>
-                          <span class="icon-stars font-icon"></span>
+                          <span className="icon-stars font-icon"></span>
+                          <span className="icon-stars font-icon"></span>
+                          <span className="icon-stars font-icon"></span>
+                          <span className="icon-stars font-icon"></span>
+                          <span className="icon-stars font-icon"></span>
                         </AgentSliderStars>
                       </FeedbackContainer>
                     </ConnectedContainer>
@@ -354,15 +354,15 @@ class AgentSlider extends Component {
             <div className="connected-text">Great! You are now connected</div>
             <div className="connected-detail">Please select your prefered method for communication.</div>
             <CheckboxSpace>
-              <div class="form-group custom-radio-btn">
+              <div className="form-group custom-radio-btn">
                 <input type="radio" id="email" name="radio-group" />
                 <label for="email">Email</label>
               </div>
-              <div class="form-group custom-radio-btn">
+              <div className="form-group custom-radio-btn">
                 <input type="radio" id="call" name="radio-group" checked />
                 <label for="call">Call</label>
               </div>
-              <div class="form-group custom-radio-btn">
+              <div className="form-group custom-radio-btn">
                 <input type="radio" id="message" name="radio-group" />
                 <label for="message">Message</label>
               </div>
@@ -375,15 +375,15 @@ class AgentSlider extends Component {
                   <input type="text" className="form-control" placeholder="Phone number" />
                 </div>
                 <div className="custom-radio-container">
-                  <div class="form-group custom-radio-btn">
+                  <div className="form-group custom-radio-btn">
                     <input type="radio" id="slot1" name="radio-group" checked />
                     <label for="slot1">08:00-11:00 am</label>
                   </div>
-                  <div class="form-group custom-radio-btn">
+                  <div className="form-group custom-radio-btn">
                     <input type="radio" id="slot2" name="radio-group" />
                     <label for="slot2">11:00-02:00 pm</label>
                   </div>
-                  <div class="form-group custom-radio-btn">
+                  <div className="form-group custom-radio-btn">
                     <input type="radio" id="slot3" name="radio-group" />
                     <label for="slot3">02:00-05:00 pm</label>
                   </div>
@@ -401,7 +401,7 @@ class AgentSlider extends Component {
               <button className="btn-submit">Submit</button>
             </form>
           </ModalBody>
-          <button className="close-icon" onClick={this.handleConnectCloseModal}><span class="icon-cross"><span class="path2"></span></span></button>
+          <button className="close-icon" onClick={this.handleConnectCloseModal}><span className="icon-cross"><span className="path2"></span></span></button>
         </Modal>
         {/* End Connect Modal */}
         {/* rate and review Modal */}
@@ -421,53 +421,53 @@ class AgentSlider extends Component {
                 <div className="user-detail">
                   <div className="user-heading">How would you rate your agent?</div>
                   <div className="star-section">
-                    <span class="icon-stars font-icon active"></span>
-                    <span class="icon-stars font-icon"></span>
-                    <span class="icon-stars font-icon"></span>
-                    <span class="icon-stars font-icon"></span>
-                    <span class="icon-stars font-icon"></span>
+                    <span className="icon-stars font-icon active"></span>
+                    <span className="icon-stars font-icon"></span>
+                    <span className="icon-stars font-icon"></span>
+                    <span className="icon-stars font-icon"></span>
+                    <span className="icon-stars font-icon"></span>
                   </div>
                 </div>
               </div>
               <div className="radio-heading">Rate your experience on seekr</div>
               <div className="custom-radio-container">
-                <div class="form-group custom-radio-btn">
+                <div className="form-group custom-radio-btn">
                   <input type="radio" id="rate1" name="radio-group" />
                   <label for="rate1">1</label>
                 </div>
-                <div class="form-group custom-radio-btn">
+                <div className="form-group custom-radio-btn">
                   <input type="radio" id="rate2" name="radio-group" />
                   <label for="rate2">2</label>
                 </div>
-                <div class="form-group custom-radio-btn">
+                <div className="form-group custom-radio-btn">
                   <input type="radio" id="rate3" name="radio-group" />
                   <label for="rate3">3</label>
                 </div>
-                <div class="form-group custom-radio-btn">
+                <div className="form-group custom-radio-btn">
                   <input type="radio" id="rate4" name="radio-group" />
                   <label for="rate4">4</label>
                 </div>
-                <div class="form-group custom-radio-btn">
+                <div className="form-group custom-radio-btn">
                   <input type="radio" id="rate5" name="radio-group" />
                   <label for="rate5">5</label>
                 </div>
-                <div class="form-group custom-radio-btn">
+                <div className="form-group custom-radio-btn">
                   <input type="radio" id="rate6" name="radio-group" />
                   <label for="rate6">6</label>
                 </div>
-                <div class="form-group custom-radio-btn">
+                <div className="form-group custom-radio-btn">
                   <input type="radio" id="rate7" name="radio-group" />
                   <label for="rate7">7</label>
                 </div>
-                <div class="form-group custom-radio-btn">
+                <div className="form-group custom-radio-btn">
                   <input type="radio" id="rate8" name="radio-group" />
                   <label for="rate8">8</label>
                 </div>
-                <div class="form-group custom-radio-btn">
+                <div className="form-group custom-radio-btn">
                   <input type="radio" id="rate9" name="radio-group" />
                   <label for="rate9">9</label>
                 </div>
-                <div class="form-group custom-radio-btn">
+                <div className="form-group custom-radio-btn">
                   <input type="radio" id="rate10" name="radio-group" />
                   <label for="rate10">10</label>
                 </div>
@@ -478,7 +478,7 @@ class AgentSlider extends Component {
                 </div>
               </div>
               <button className="btn-submit">Submit Feedback</button>
-              <button className="close-icon" onClick={this.handleFeedbackCloseModal}><span class="icon-cross"><span class="path2"></span></span></button>
+              <button className="close-icon" onClick={this.handleFeedbackCloseModal}><span className="icon-cross"><span className="path2"></span></span></button>
             </form>
 
           </ModalBody>
@@ -505,11 +505,11 @@ class AgentSlider extends Component {
                       <Image src={placeholder} alt="user" className="user-icon"></Image>
                     </AgentSliderImage>
                     <AgentSliderStars>
-                      <span class="icon-stars font-icon active"></span>
-                      <span class="icon-stars font-icon active"></span>
-                      <span class="icon-stars font-icon active"></span>
-                      <span class="icon-stars font-icon"></span>
-                      <span class="icon-stars font-icon"></span>
+                      <span className="icon-stars font-icon active"></span>
+                      <span className="icon-stars font-icon active"></span>
+                      <span className="icon-stars font-icon active"></span>
+                      <span className="icon-stars font-icon"></span>
+                      <span className="icon-stars font-icon"></span>
                     </AgentSliderStars>
                     <Author>
                       <AuthorDetail>
@@ -536,7 +536,7 @@ class AgentSlider extends Component {
                     </div>
                   </AgentSliderItemInner>
                 </AgentSliderItem>
-              <button className="close-icon" onClick={this.handleProfileCloseModal}><span class="icon-cross"><span class="path2"></span></span></button>
+              <button className="close-icon" onClick={this.handleProfileCloseModal}><span className="icon-cross"><span className="path2"></span></span></button>
             </form>
 
           </ModalBody>

@@ -1,6 +1,4 @@
 import {call, put, takeLatest} from 'redux-saga/effects';
-import Api from '../../lib/helpers/Api'
-import {API_ENDPOINT} from '../../lib/constants/api'
 
 import {
     REGISTER_REQUEST,
@@ -35,7 +33,6 @@ const executeRegisterUser = (payload) => {
 function* registerUser(payload) {
     try {
         const register = yield call(executeRegisterUser, payload);
-        console.log(register);
         if (register.payload) {
             yield put({tyoe: REGISTER_SUCCESS, payload: Object.assign({}, {...register.payload})});
             yield put({type: LOGIN_SUCCESS, payload: Object.assign({}, {...register.payload})});

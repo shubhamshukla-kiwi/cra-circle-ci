@@ -2,6 +2,12 @@
 // Needed since we're using nested non-'exact' routes
 const ROUTES = [
     '/',
+    '/agent/',
+    '/agent/agent-dashboard',
+    '/agent/agent-payment',
+    '/agent/login',
+    '/agent/agent-add-card',
+    '/agent/otp',
     '/login',
     '/dashboard',
     '/dashboard-empty',

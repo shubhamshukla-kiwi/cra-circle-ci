@@ -1,4 +1,3 @@
-import _ from 'lodash';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import moment from 'moment';
@@ -143,6 +142,7 @@ class CarDetailModel extends Component {
               <div className="make-option">
                 <div className="make-img-container">
                   <img
+                    alt="img"
                     className="make-img"
                     src={make.attributes.image_url}
                     onError={this.handleMakeImgError}

@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
-import {connect} from 'react-redux';
-import { Col, Row } from "react-styled-flexboxgrid"
+import { Row } from "react-styled-flexboxgrid"
 import Header from '../../components/header/header';
 import OnboardingFooter from '../../components/onboarding-footer/onboarding-footer';
 import './dashboard.css';
@@ -10,8 +9,6 @@ import emptyImage from '../../assets/images/homepage/empty.png';
 
 
 class DashboardEmpty extends Component {
-
-    
     render() {
         return (
             <div className="container">
@@ -19,8 +16,8 @@ class DashboardEmpty extends Component {
                     <Header />
                     <Row className="row">
                         <div className="dashboard-left">
-                            <span class="icon-cross font-icon">
-                                <span class="path2 font-icon"></span>
+                            <span className="icon-cross font-icon">
+                                <span className="path2 font-icon"></span>
                             </span>
                             <div className="profile-container">
                                 <img alt="Seeker icon" src={seekerIcon} />

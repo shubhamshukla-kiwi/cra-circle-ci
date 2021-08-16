@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import OtpModal from '../../components/otp-modal/otp-modal';
 import OnboardingHeader from '../../components/onboarding-header/onboarding-header';
 import OnboardingFooter from '../../components/onboarding-footer/onboarding-footer';

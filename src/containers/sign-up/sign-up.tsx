@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import SignupModal from '../../components/sign-up-modal/sign-up-modal';
 import OnboardingHeader from '../../components/onboarding-header/onboarding-header';
 import OnboardingFooter from '../../components/onboarding-footer/onboarding-footer';

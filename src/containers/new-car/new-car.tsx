@@ -4,7 +4,6 @@ import React, { Component } from 'react';
 
 
 import AgentDetail from '../agent-detail/agent-detail';
-import LoadingCircle from '../../components/loading-circle/loading-circle';
 import TabNavigator from '../../components/tab-navigator/tab-navigator';
 import OnboardHeader from '../../components/onboard-header/onboard-header';
 import OnboardingFooter from '../../components/onboarding-footer/onboarding-footer';
@@ -97,14 +96,6 @@ class NewCar extends Component {
         </div>
       );
     }
-  //     return (
-  //       <div className="new-car-container">
-  //         <div className="loading-container">
-  //           <LoadingCircle />
-  //         </div>
-  //       </div>
-  //     );
-  // }
 }
 
 function mapStateToProps(state) {

@@ -77,7 +77,7 @@ class AgentVerifyEmail extends Component {
                     </div>
                 </div>
             </div>
-                <button className="close-icon" onClick={this.props.handleVerifyCloseModal}><span class="icon-cross"><span class="path2"></span></span></button>
+                <button className="close-icon" onClick={this.props.handleVerifyCloseModal}><span className="icon-cross"><span className="path2"></span></span></button>
             </ReactModal>
            
             </div>
