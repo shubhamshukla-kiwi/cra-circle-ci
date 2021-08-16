@@ -52,20 +52,6 @@ jobs:
         - node_modules
         key: v1-dependencies-{{ checksum "package.json" }}
 
-  run_linter:
-    <<: *docker_image
-    steps:
-    - checkout
-    - *restore_cache
-    - run: npm run lint
-
-  run_unit_tests:
-    <<: *docker_image
-    steps:
-    - checkout
-    - *restore_cache
-    - run: npm run test
-
   build-qa:
     <<: *build
 
@@ -90,7 +76,7 @@ workflows:
           filters:
             branches:
               only: 
-                - qa
+                - circle-ci-setup
       - deploy-qa: 
           requires: 
             - build-qa
@@ -98,4 +84,4 @@ workflows:
           filters:
             branches:
               only: 
-                - qa
+                - circle-ci-setup
