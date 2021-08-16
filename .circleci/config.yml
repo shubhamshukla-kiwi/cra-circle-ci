@@ -63,12 +63,6 @@ workflows:
   continuos_integration:
     jobs:
       - install_dependencies
-      - run_linter:
-          requires:
-          - install_dependencies
-      - run_unit_tests:
-          requires:
-          - install_dependencies
       - build-qa:
           requires:
             - install_dependencies
