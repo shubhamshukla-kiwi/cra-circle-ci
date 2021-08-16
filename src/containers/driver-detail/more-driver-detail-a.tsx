@@ -22,13 +22,13 @@ class MoreDriverDetailA extends Component {
                             <div className="detail-dashboard driver-incident-details-wrapper">
                                 <TransitionGroup className="driver-detail-transition-group">
                                     <div className="header-container-row">
-                                        <span class="icon-back-arrow font-icon"></span>
+                                        <span className="icon-back-arrow font-icon"></span>
                                         <h4>Accidents/Moving Violations</h4>
                                     </div>
                                     <form>
                                         <div className="check-driver-details">
                                             <p>Check if Adrian has had no violations in the past 5 years</p>
-                                            <div class="form-group custom-radio-btn">
+                                            <div className="form-group custom-radio-btn">
                                                     <input type="radio" id="check" name="radio-group"/>
                                                     <label for="check"></label>
                                                 </div>

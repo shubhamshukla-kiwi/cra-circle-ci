@@ -5,11 +5,13 @@ import { connect } from 'react-redux';
 
 import OnboardingLeft from '../onboarding-left/onboarding-left';
 import VerifyEmail from '../verify-email/VerifyEmail';
-import { Link } from 'react-router-dom';
+import { Link, withRouter } from 'react-router-dom';
 import { Formik, ErrorMessage } from 'formik';
 import ReactModal from 'react-modal';
-import { SignupSchema } from '../../constants/app.const';
+import { SignupSchema } from '../../constants/formikSchemaValidation';
 import { saveEmail } from '../../actions';
+import { ZipCodeContext } from '../../contexts/ZipCodeContext/ZipCodeContext';
+import { initialSignupValue } from '../../constants/formikValue';
 
 ReactModal.setAppElement('#root');
 class SignupModal extends Component {
@@ -20,12 +22,12 @@ class SignupModal extends Component {
             showVerifyModal: false,
             userData: null
         };
-
         this.handleOpenModal = this.handleOpenModal.bind(this);
         this.handleCloseModal = this.handleCloseModal.bind(this);
         this.handleVerifyModal = this.handleVerifyModal.bind(this);
         this.handleVerifyCloseModal = this.handleVerifyCloseModal.bind(this);
     }
+    static contextType = ZipCodeContext;
 
     handleOpenModal = () => {
         this.setState({ showModal: true });
@@ -43,10 +45,19 @@ class SignupModal extends Component {
         this.setState({ showVerifyModal: false });
     }
     render() {
+        let data = this.context.data;
+        data = data && data.places[0]['state abbreviation'];
+        if(!data) {
+            this.props.history.push('/');
+        }
         const states = [
             {
               value: 'CA',
               label: 'CA',
+            },
+            {
+                value: 'WA',
+                label: 'WA',
             },
             {
               value: 'AUS',
@@ -59,15 +70,7 @@ class SignupModal extends Component {
                     <OnboardingLeft />
                     <div className="right-content">
                         <Formik
-                            initialValues={{
-                                firstName: '',
-                                lastName: '',
-                                email: '',
-                                address: '',
-                                state: '',
-                                city: '',
-                                termsCheckbox: false
-                            }}
+                            initialValues={Object.assign(initialSignupValue, {state: data})}
                             validationSchema={SignupSchema}
                             onSubmit={(values, { setSubmitting, isValidating }) => {
                                 this.props.dispatch(saveEmail(values.email))
@@ -152,7 +155,6 @@ class SignupModal extends Component {
                                                     onChange={handleChange}
                                                     onBlur={handleBlur}
                                                     value={values.state}
-                                                    helperText="Please select your state"
                                                     InputProps={{ disableUnderline: true }}>
                                                     {states.map((option) => (
                                                         <MenuItem key={option.value} value={option.value}>
@@ -171,7 +173,6 @@ class SignupModal extends Component {
                                             onChange={handleChange}
                                             onBlur={handleBlur}
                                             value={values.city}
-                                            helperText="Please select your city"
                                             InputProps={{ disableUnderline: true }}>
                                             {states.map((option) => (
                                                 <MenuItem key={option.value} value={option.value}>
@@ -231,7 +232,8 @@ class SignupModal extends Component {
 }
 
 function mapStateToProps(state) {
+    return {}
 
 }
-export default connect(mapStateToProps)(SignupModal);
+export default withRouter(connect(mapStateToProps)(SignupModal));
 

@@ -20,18 +20,18 @@ class MoreDriverDetail extends Component {
                             <div className="detail-dashboard moredriver-details-wrapper">
                                 <TransitionGroup className="driver-detail-transition-group">
                                     <div className="header-container-row">
-                                    <span class="icon-back-arrow font-icon"></span>
+                                    <span className="icon-back-arrow font-icon"></span>
                                         <h4>tell us a bit more about adrian!</h4>
                                     </div>
                                     <form>
                                         <div className="detail-list">
                                             <h4>Has the driver lived at the current address for less than 1 year?</h4>
                                             <div className="select-data">
-                                                <div class="form-group custom-radio-btn">
+                                                <div className="form-group custom-radio-btn">
                                                     <input type="radio" id="yes" name="radio-group" checked/>
                                                     <label for="yes">Yes</label>
                                                 </div>
-                                                <div class="form-group custom-radio-btn">
+                                                <div className="form-group custom-radio-btn">
                                                     <input type="radio" id="no" name="radio-group"/>
                                                     <label for="no">No</label>
                                                 </div>
@@ -47,11 +47,11 @@ class MoreDriverDetail extends Component {
                                         <div className="detail-list">
                                             <h4>Did the driver obtain their license in the last 3 years?</h4>
                                             <div className="select-data">
-                                                <div class="form-group custom-radio-btn">
+                                                <div className="form-group custom-radio-btn">
                                                     <input type="radio" id="yes" />
                                                     <label for="yes">Yes</label>
                                                 </div>
-                                                <div class="form-group custom-radio-btn">
+                                                <div className="form-group custom-radio-btn">
                                                     <input type="radio" id="no" />
                                                     <label for="no">No</label>
                                                 </div>
@@ -72,11 +72,11 @@ class MoreDriverDetail extends Component {
                                             <h4>Profession, Student, or Veteran Discounts?</h4>
                                             <h6>Some insurance companies offer discounts to student, veterans, and some professions.</h6>
                                             <div className="select-data">
-                                                <div class="form-group custom-radio-btn">
+                                                <div className="form-group custom-radio-btn">
                                                     <input type="radio" id="yes" />
                                                     <label for="yes">Yes</label>
                                                 </div>
-                                                <div class="form-group custom-radio-btn">
+                                                <div className="form-group custom-radio-btn">
                                                     <input type="radio" id="no" />
                                                     <label for="no">No</label>
                                                 </div>

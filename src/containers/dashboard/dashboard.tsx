@@ -29,8 +29,8 @@ class Dashboard extends Component {
                     <Row className="row">
                         <div className="dashboard-left">
                             <div className="profile-container">
-                            <span class="icon-cross font-icon" onClick={()=>this.setState({show: !this.state.show})}>
-                                <span class="path2 font-icon"></span>
+                            <span className="icon-cross font-icon" onClick={()=>this.setState({show: !this.state.show})}>
+                                <span className="path2 font-icon"></span>
                             </span>
                                 <img alt="Seeker icon" src={seekerIcon} />
                                 <div className="profile-content">

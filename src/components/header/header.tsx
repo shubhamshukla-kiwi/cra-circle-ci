@@ -24,6 +24,7 @@ class Header extends Component {
         this.handleCloseModal = this.handleCloseModal.bind(this);
         this.handleEditOpenModal = this.handleEditOpenModal.bind(this);
         this.handleEditCloseModal = this.handleEditCloseModal.bind(this);
+        this.logout = this.logout.bind(this);
     }
 
 
@@ -41,6 +42,10 @@ class Header extends Component {
 
     handleEditCloseModal() {
         this.setState({ showEditModal: false });
+    }
+
+    logout() {
+        localStorage.clear();
     }
 
     render() {
@@ -94,7 +99,7 @@ class Header extends Component {
                                         <li>
                                             <a href="#">Terms of Services</a>
                                         </li>
-                                        <li className="sign-out">
+                                        <li onClick={logout} className="sign-out">
                                             <a href="/">Sign out</a>
                                         </li>
                                     </ul>

@@ -39,7 +39,7 @@ class CarPlan extends Component {
                             <div className="detail-dashboard plan-details-wrapper">
                                 <TransitionGroup className="plan-detail-transition-group">
                                     <div className="header-container-row">
-                                        <span class="icon-back-arrow font-icon"></span>
+                                        <span className="icon-back-arrow font-icon"></span>
                                         <h4>please select your coverage</h4>
                                     </div>
                                     <div className="price-plan-wrap">
@@ -61,15 +61,15 @@ class CarPlan extends Component {
                                             </ul>
                                         </div>
                                         <div className="price-data">
-                                            <div class="pricing-table selected-plan">
+                                            <div className="pricing-table selected-plan">
                                                 <div className="header">
-                                                <h3 class="pricing-title">Best</h3>
-                                                <div class="form-group custom-radio-btn">
+                                                <h3 className="pricing-title">Best</h3>
+                                                <div className="form-group custom-radio-btn">
                                                     <input type="radio" id="check" name="radio-group"/>
                                                     <label for="check"></label>
                                                 </div>
                                                 </div>
-                                                <ul class="table-list">
+                                                <ul className="table-list">
                                                     <li><h5>Bodily Injury (BI)</h5>$250k/ $500K</li>
                                                     <li><h5>Property Damage</h5>$100K</li>
                                                     <li><h5>Unisured Motorist BI</h5>$250k/ $500K</li>
@@ -82,15 +82,15 @@ class CarPlan extends Component {
                                                     <li className="customise-btn" onClick={this.handleOpenModal}>Customize</li>
                                                 </ul>
                                             </div>
-                                            <div class="pricing-table">
+                                            <div className="pricing-table">
                                                 <div className="header">
-                                                <h3 class="pricing-title">Better</h3>
-                                                <div class="form-group custom-radio-btn">
+                                                <h3 className="pricing-title">Better</h3>
+                                                <div className="form-group custom-radio-btn">
                                                     <input type="radio" id="check" name="radio-group"/>
                                                     <label for="check"></label>
                                                 </div>
                                                 </div>
-                                                <ul class="table-list">
+                                                <ul className="table-list">
                                                     <li><h5>Bodily Injury (BI)</h5>$250k/ $500K</li>
                                                     <li><h5>Property Damage</h5>$100K</li>
                                                     <li><h5>Unisured Motorist BI</h5>$250k/ $500K</li>
@@ -103,15 +103,15 @@ class CarPlan extends Component {
                                                     <li className="customise-btn" onClick={this.handleOpenModal}>Customize</li>
                                                 </ul>
                                             </div>
-                                            <div class="pricing-table">
+                                            <div className="pricing-table">
                                                 <div className="header">
-                                                <h3 class="pricing-title">Basic</h3>
-                                                <div class="form-group custom-radio-btn">
+                                                <h3 className="pricing-title">Basic</h3>
+                                                <div className="form-group custom-radio-btn">
                                                     <input type="radio" id="check" name="radio-group"/>
                                                     <label for="check"></label>
                                                 </div>
                                                 </div>
-                                                <ul class="table-list">
+                                                <ul className="table-list">
                                                     <li><h5>Bodily Injury (BI)</h5>$250k/ $500K</li>
                                                     <li><h5>Property Damage</h5>$100K</li>
                                                     <li><h5>Unisured Motorist BI</h5>$250k/ $500K</li>
