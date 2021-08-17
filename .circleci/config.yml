@@ -35,10 +35,10 @@ build: &build
   steps:
     - checkout
     - *restore_cache
-    - run: npm run build
+    - run: npm run build:dev
     - persist_to_workspace:
         root: .
-        paths: dist
+        paths: build
 
 version: 2
 jobs:
@@ -52,10 +52,10 @@ jobs:
         - node_modules
         key: v1-dependencies-{{ checksum "package.json" }}
 
-  build-qa:
+  build-dev:
     <<: *build
 
-  deploy-qa: 
+  deploy-dev: 
     <<: *deploy
   
 workflows:
@@ -63,19 +63,19 @@ workflows:
   continuos_integration:
     jobs:
       - install_dependencies
-      - build-qa:
+      - build-dev:
           requires:
             - install_dependencies
-          context: cra-circle-ci-qa
+          context: seekr-qa
           filters:
             branches:
               only: 
-                - circle-ci-setup
-      - deploy-qa: 
+                - dev
+      - deploy-dev: 
           requires: 
             - build-qa
-          context: cra-circle-ci-qa
+          context: seekr-qa
           filters:
             branches:
               only: 
-                - circle-ci-setup
+                - dev
