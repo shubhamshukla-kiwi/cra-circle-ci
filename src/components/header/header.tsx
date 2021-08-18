@@ -99,7 +99,7 @@ class Header extends Component {
                                         <li>
                                             <a href="#">Terms of Services</a>
                                         </li>
-                                        <li onClick={logout} className="sign-out">
+                                        <li onClick={this.logout} className="sign-out">
                                             <a href="/">Sign out</a>
                                         </li>
                                     </ul>

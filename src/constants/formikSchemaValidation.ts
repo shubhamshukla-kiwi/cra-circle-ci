@@ -163,3 +163,49 @@ export const addVehicleInfoSchema = Yup.object().shape({
     .required('Mandatory!'),  
 });
 
+export const moreDriverDetailValidationSchema = Yup.object().shape({
+  driverDetail: Yup.array()
+    .of(
+      Yup.object().shape({
+        answer: Yup.string().required("Mandatory!"),
+      })
+    )
+});
+
+export const driverViolationSchema = Yup.object().shape({
+  violations: Yup.array()
+    .of(
+      Yup.object().shape({
+        category: Yup.string()
+                  .required('Mandatory!'), 
+        year: Yup.date()
+                 .nullable()
+                 .required('Mandatory!'),                
+      })
+    )
+});
+
+export const customizeCoveragePlanSchema = Yup.object().shape({
+  id: Yup.string()
+    .required('Mandatory!'),
+  planName: Yup.string()
+    .required('Mandatory!'),
+  bodilyInjury: Yup.string()
+    .required('Mandatory!'),
+  propertyDamage: Yup.string()
+    .required('Mandatory!'),
+  unisuredMotoristBI: Yup.string()
+    .required('Mandatory!'),
+  unisuredMotoristPropertyDamage: Yup.string()
+    .required('Mandatory!'),
+  personalInjuryProtection: Yup.string()
+    .required('Mandatory!'),
+  comprehensiveDeductible: Yup.string()
+    .required('Mandatory!'),
+  collisionDeductible: Yup.string()
+    .required('Mandatory!'),
+  rentalCarCoverage: Yup.string()
+    .required('Mandatory!'),
+  emergencyRoadServices: Yup.string()
+    .required('Mandatory!'),
+})

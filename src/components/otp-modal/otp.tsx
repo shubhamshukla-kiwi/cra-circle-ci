@@ -10,6 +10,7 @@ interface Props {
     isVerify: boolean;
     dispatch: Dispatch;
     email: string;
+    handleVerifyCloseModal: Function
 }
 
 const onKeyPressFn = (event) => {
@@ -19,7 +20,9 @@ const onKeyPressFn = (event) => {
     event.preventDefault();
 }
 
-const OTPComponent = ({isVerify, dispatch, email}: Props) => {
+const regex = /^[0-9]$/;
+
+const OTPComponent = ({isVerify, dispatch, email, handleVerifyCloseModal}: Props) => {
     const history = useHistory();
     const isClientUser = isClient();
     const navigateToLogin = () => {
@@ -35,6 +38,9 @@ const OTPComponent = ({isVerify, dispatch, email}: Props) => {
                 initialValues={initialOTPValue}
                 validationSchema={otpValidationSchema}
                 onSubmit={(values, { setSubmitting }) => {
+                    if(handleVerifyCloseModal) {
+                        handleVerifyCloseModal();
+                    }
                     setSubmitting(false);
                     if (isClientUser) {
                         // dispatch(registerRequest(userData))
@@ -52,7 +58,7 @@ const OTPComponent = ({isVerify, dispatch, email}: Props) => {
                     handleChange,
                     handleSubmit,
                     isSubmitting,
-                    /* and other goodies */
+                    setFieldValue
                 }) => (
                         <form className="input-data">
                             {!isVerify && <span onClick={navigateToLogin} className="icon-back-arrow font-icon"></span>}
@@ -68,8 +74,12 @@ const OTPComponent = ({isVerify, dispatch, email}: Props) => {
                                                 className={`form-control ${isVerify?'':'otp-login-padding'}`}
                                                 name="field1"
                                                 onChange={e => {
-                                                    handleChange(e)
+                                                    e.preventDefault();
+                                                    const { value } = e.target;
+                                                    if (regex.test(value.toString())) {
+                                                    setFieldValue("field1", value);
                                                     onKeyPressFn(e)
+                                                    }
                                                 }}
                                                 value={values.field1}
                                                 maxLength="1"
@@ -79,8 +89,12 @@ const OTPComponent = ({isVerify, dispatch, email}: Props) => {
                                                 className={`form-control ${isVerify?'':'otp-login-padding'}`}
                                                 name="field2"
                                                 onChange={e => {
-                                                    handleChange(e)
+                                                    e.preventDefault();
+                                                    const { value } = e.target;
+                                                    if (regex.test(value.toString())) {
+                                                    setFieldValue("field2", value);
                                                     onKeyPressFn(e)
+                                                    }
                                                 }}
                                                 value={values.field2}
                                                 maxLength="1"
@@ -90,8 +104,12 @@ const OTPComponent = ({isVerify, dispatch, email}: Props) => {
                                                 className={`form-control ${isVerify?'':'otp-login-padding'}`}
                                                 name="field3"
                                                 onChange={e => {
-                                                    handleChange(e)
+                                                    e.preventDefault();
+                                                    const { value } = e.target;
+                                                    if (regex.test(value.toString())) {
+                                                    setFieldValue("field3", value);
                                                     onKeyPressFn(e)
+                                                    }
                                                 }}
                                                 value={values.field3}
                                                 maxLength="1"
@@ -104,8 +122,12 @@ const OTPComponent = ({isVerify, dispatch, email}: Props) => {
                                                 className={`form-control ${isVerify?'':'otp-login-padding'}`}
                                                 name="field4"
                                                 onChange={e => {
-                                                    handleChange(e)
+                                                    e.preventDefault();
+                                                    const { value } = e.target;
+                                                    if (regex.test(value.toString())) {
+                                                    setFieldValue("field4", value);
                                                     onKeyPressFn(e)
+                                                    }
                                                 }}
                                                 value={values.field4}
                                                 maxLength="1"
@@ -115,8 +137,12 @@ const OTPComponent = ({isVerify, dispatch, email}: Props) => {
                                                 className={`form-control ${isVerify?'':'otp-login-padding'}`}
                                                 name="field5"
                                                 onChange={e => {
-                                                    handleChange(e)
+                                                    e.preventDefault();
+                                                    const { value } = e.target;
+                                                    if (regex.test(value.toString())) {
+                                                    setFieldValue("field5", value);
                                                     onKeyPressFn(e)
+                                                    }
                                                 }}
                                                 value={values.field5}
                                                 maxLength="1"
@@ -126,8 +152,12 @@ const OTPComponent = ({isVerify, dispatch, email}: Props) => {
                                                 className={`form-control ${isVerify?'':'otp-login-padding'}`}
                                                 name="field6"
                                                 onChange={e => {
-                                                    handleChange(e)
+                                                    e.preventDefault();
+                                                    const { value } = e.target;
+                                                    if (regex.test(value.toString())) {
+                                                    setFieldValue("field6", value);
                                                     onKeyPressFn(e)
+                                                    }
                                                 }}
                                                 value={values.field6}
                                                 maxLength="1"

@@ -20,27 +20,26 @@ const reducer = persistCombineReducers(config, {
 })
 
 
-const appReducer = persistReducer(
-    {
-        key: 'root2',
-        storage: sessionStorage,
-        transforms: [
-            // driverTransform,
-            // policyTransform
-        ],
-        whitelist: [
-            // 'drivers',
-            // 'policies',
-        ]
-    }, reducer);
+// const appReducer = persistReducer(
+//     {
+//         key: 'root2',
+//         storage: sessionStorage,
+//         transforms: [
+//             // driverTransform,
+//             // policyTransform
+//         ],
+//         whitelist: [
+//             // 'drivers',
+//             // 'policies',
+//         ]
+//     }, reducer);
 
 const rootReducer = (state, action) => {
     if (action.type === USER_LOGOUT) {
         sessionStorage.removeItem('persist:root2');
         localStorage.removeItem('persist:root');
-        return appReducer(undefined, action);
+        return reducer(undefined, action);
     }
-    return appReducer(state, action);
+    return reducer(state, action);
 };
-// export default rootReducer
-export default rootReducer;
+export default rootReducer

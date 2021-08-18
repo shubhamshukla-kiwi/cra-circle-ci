@@ -19,11 +19,6 @@ import { initialAddVehicleInfoValue } from '../../constants/formikValue';
 interface Props {
   dispatch: Dispatch
 }
-const naviagte = (history, flag) => {
-  if(flag) {
-    history.push('/car-plan');
-  }
-}
 const CarDetail = (props: Props) => {
   const history = useHistory();
   const states = [
@@ -49,6 +44,7 @@ const CarDetail = (props: Props) => {
             <TabNavigator />
             <div className="detail-dashboard car-details-wrapper">
               <TransitionGroup className="car-detail-transition-group">
+                <>
                 <div className="header-container-row">
                   <img src={carImg} alt="icon"></img>
                   <h4>
@@ -61,7 +57,7 @@ const CarDetail = (props: Props) => {
                   onSubmit={(values, { setSubmitting, resetForm }) => {
                     props.dispatch(saveVehicleInfo(values));
                     resetForm();
-                    // history.push('/more-driver-detail')
+                    history.push('/car-plan')
                     setSubmitting(false);
                   }}
                 >
@@ -183,17 +179,17 @@ const CarDetail = (props: Props) => {
 
                         </div>
                         <div className="btn-selection">
-                          <Link onClick={(e) => {
+                          {/* <Link onClick={(e) => {
                             handleSubmit(e);
                             naviagte(history, false)
-                          }} className="button-transparent" to="/car-detail">Save & add another vehicle</Link>
+                          }} className="button-transparent" to="/car-detail">Save & add another vehicle</Link> */}
                           <Link onClick={(e) => {
                             handleSubmit(e);
-                            naviagte(history, true)
                           }} className="button-primary" to="/car-plan">Next</Link>
                         </div>
                       </form>)}
                 </Formik>
+                </>
               </TransitionGroup>
             </div>
           </div>
