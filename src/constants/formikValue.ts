@@ -30,9 +30,9 @@ export const initialAgentSignupValue = {
   city: '',
   company: '',
   bio: '',
-  termsCheckbox: false
+  termsCheckbox: false,
+  licneseNumber: ''
 };
-
 
 export const initialLoginValue = {
   email: ''
@@ -55,4 +55,38 @@ export const initialSignupValue = {
   state: '',
   city: '',
   termsCheckbox: false
+}
+
+export const initialDriverDetailValues = {
+  driverDetail: [
+      {
+          answer: '',
+          metaAnswer: '',
+          metaAnswerSelect: '',
+      },
+      {
+          answer: '',
+          metaAnswer: '',
+          metaAnswerSelect: '',
+      },
+      {
+          answer: '',
+          metaAnswer: '',
+          metaAnswerSelect: '',
+      }
+  ]
+}
+
+export const intitalCustomizeCoveragePlanValue = {
+  id: '',
+  planName: '', 
+  bodilyInjury: '',
+  propertyDamage: '',
+  unisuredMotoristBI: '',
+  unisuredMotoristPropertyDamage: '',
+  personalInjuryProtection: '',
+  comprehensiveDeductible: '',
+  collisionDeductible: '',
+  rentalCarCoverage: '',
+  emergencyRoadServices: ''
 }

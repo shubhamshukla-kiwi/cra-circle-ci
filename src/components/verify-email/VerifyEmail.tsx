@@ -34,7 +34,7 @@ class VerifyEmail extends Component {
                 <div className="otp-wrap">
                 <div className="login-screen">
                     <div className="right-content">
-                    <OTPComponent isVerify={true}/>
+                    <OTPComponent isVerify={true} handleVerifyCloseModal={this.props.handleVerifyCloseModal}/>
                     </div>
                 </div>
             </div>

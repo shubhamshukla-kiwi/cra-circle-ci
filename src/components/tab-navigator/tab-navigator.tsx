@@ -64,8 +64,8 @@ const TabNavigator = (props: Props) => {
                             </div>
                             {showBox &&
                                 <div className="detail-dropdown">
-                                    {props.drivers.map(driver => (
-                                        <div className="list">
+                                    {props.drivers.map((driver, index) => (
+                                        <div className="list" key={index}>
                                             <div className="left-content">
                                                 <img src={User} alt="user-icon"></img>
                                                 <div className="user-name">
@@ -119,8 +119,8 @@ const TabNavigator = (props: Props) => {
                             </div>
                             {showVehicleBox &&
                                 <div className="detail-dropdown vehicle-added-dropdown">
-                                    {props.vehicles.map(vehicle => (
-                                        <div className="list">
+                                    {props.vehicles.map((vehicle, index) => (
+                                        <div className="list" key={index}>
                                             <div className="left-content">
                                                 <img src={Default} alt="user-icon"></img>
                                                 <div className="user-name">

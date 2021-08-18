@@ -20,7 +20,6 @@ import Tos from './containers/tos/tos';
 import Otp from './containers/otp/otp';
 import DriverDetail from './containers/driver-detail/driver-detail';
 import MoreDriverDetail from './containers/driver-detail/more-driver-detail';
-import MoreDriverDetailA from './containers/driver-detail/more-driver-detail-a';
 import CarDetail from './containers/car-detail/car-detail';
 import CarPlan from './containers/car-detail/car-plan';
 import CarDetailSuccess from './containers/car-detail/car-detail-success';
@@ -37,7 +36,8 @@ import ROUTES from './routes';
 
 import './App.scss';
 import ProtectedRoute from './components/common/protectedRoute';
-import { logout } from './actions';
+import ScrollToTop from './components/common/scrollToTop';
+import driverViolations from './containers/driver-detail/driver-violations';
 
 const childFactoryCreator = (classNames: string) => (child: React.ReactElement) =>
   React.cloneElement(child, {
@@ -109,6 +109,7 @@ class App extends Component<IRecipeProps, IRecipeState> {
           >
             <div className="switch-container">
               {this.validateRoutes()}
+              <ScrollToTop />
               <Switch location={this.props.location}>
                 <PropsRoute
                   exact
@@ -132,8 +133,8 @@ class App extends Component<IRecipeProps, IRecipeState> {
                 <Route path="/otp" component={Otp} />
                 <Route path="/sign-up" component={SignUp} />
                 <Route path="/driver-detail" component={DriverDetail} />
-                <Route path="/more-driver-detail" component={MoreDriverDetail} />
-                <Route path="/more-driver-detail-a" component={MoreDriverDetailA} />
+                <Route path="/driver-detail-info/:id" component={MoreDriverDetail} />
+                <Route path="/driver-violations/:id" component={driverViolations} />
                 <Route path="/car-detail" component={CarDetail} />
                 <Route path="/car-plan" component={CarPlan} />
                 <Route path="/car-detail-success" component={CarDetailSuccess} />

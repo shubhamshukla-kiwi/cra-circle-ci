@@ -31,7 +31,7 @@ class LoginModal extends Component {
     render() {
         return (
             <Formik
-                initialValues={initialLoginValue}
+                initialValues={{...initialLoginValue, ...{email: this.props.email}}}
                 validationSchema={OTPLoginSchema}
                 onSubmit={(values, { setSubmitting }) => {
                     setSubmitting(false);
@@ -45,7 +45,6 @@ class LoginModal extends Component {
                     handleChange,
                     handleSubmit,
                     isSubmitting,
-                    /* and other goodies */
                 }) => (
             <div className="login-modal screen-container">
                 <div className="login-screen">
@@ -86,7 +85,9 @@ class LoginModal extends Component {
 }
 
 function mapStateToProps(state) {
-    return {};
+    return {
+        email: state.login.email
+    };
 }
 
 export default withRouter(connect(mapStateToProps)(LoginModal));

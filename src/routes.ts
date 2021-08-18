@@ -39,6 +39,8 @@ const ROUTES = [
     '/driver-detail',
     '/more-driver-detail',
     '/more-driver-detail-a',
+    '/driver-detail-info/:id',
+    '/driver-violations/:id',
     '/car-detail',
     '/car-plan',
     '/car-detail-success',

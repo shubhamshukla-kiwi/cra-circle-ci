@@ -56,7 +56,7 @@ const DriverDetail = (props: Props) => {
                   validationSchema={addDriverInfoSchema}
                   onSubmit={(values, { setSubmitting, isValidating }) => {
                     props.dispatch(saveDriverInfo(values));
-                    history.push('/more-driver-detail')
+                    history.push(`/driver-detail-info/${props.drivers.length}`)
                     setSubmitting(false);
                   }}
                 >
@@ -202,7 +202,9 @@ const DriverDetail = (props: Props) => {
 }
 
 const mapStateToProps = (state) => {
-  return {}
+  return {
+    drivers: state.drivers
+  }
 }
 
 export default connect(mapStateToProps)(DriverDetail);
