@@ -6,6 +6,7 @@ import Dropdown from './../../assets/images/homepage/dropdown.png'
 import profileDefault from './../../assets/images/homepage/edit-profile.png';
 import './header.css';
 import ReactModal from 'react-modal';
+import { isClient } from '../../utils';
 
 ReactModal.setAppElement('#root');
 class Header extends Component {
@@ -18,6 +19,7 @@ class Header extends Component {
             showSelectBox: false,
             showModal: false,
             showEditModal: false,
+            isClientUser: isClient()
 
         }
         this.handleOpenModal = this.handleOpenModal.bind(this);
@@ -47,7 +49,11 @@ class Header extends Component {
     logout() {
         localStorage.removeItem('isAuthenticated');
         localStorage.removeItem('persist:root');
-        this.props.history.push('/')
+        if(this.state.isClientUser) {
+            this.props.history.push('/login')
+        } else {
+            this.props.history.push('/agent/login')
+        }
     }
 
     render() {

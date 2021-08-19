@@ -16,6 +16,8 @@ import { ZipCodeProvider} from './contexts/ZipCodeContext/ZipCodeContext'
 import ROUTES from './routes';
 
 import './App.css';
+import scrollToTop from './components/common/scrollToTop';
+import { MuiThemeProvider, createTheme } from '@material-ui/core';
 
 const childFactoryCreator = (classNames: string) => (child: React.ReactElement) =>
   React.cloneElement(child, {
@@ -31,6 +33,17 @@ const childFactoryCreator = (classNames: string) => (child: React.ReactElement) 
     location: object
     dispatch: Function
   }
+  const theme = createTheme({
+    overrides: {
+      MuiSelect: {
+        select: {
+          "&:focus": {
+            "background-color": "#fff"
+          }
+        }
+      }
+    }
+  });
 class AgentApp extends Component<IRecipeProps, IRecipeState> {
   constructor(props: IRecipeProps) {
     super(props);
@@ -57,6 +70,7 @@ class AgentApp extends Component<IRecipeProps, IRecipeState> {
     return (
       <div className="app-body">
       <ZipCodeProvider>
+      <MuiThemeProvider theme={theme}>  
         <div className="gradient-overlay" />
         <TransitionGroup
           className="app-body-transition-group"
@@ -69,6 +83,7 @@ class AgentApp extends Component<IRecipeProps, IRecipeState> {
           >
             <div className="switch-container">
               {this.validateRoutes()}
+              <scrollToTop />
               <Switch location={this.props.location}>
                 <Route path="/agent/agent-add-card" component={AgentAddCard} />
                 <Route exact path="/agent" component={AgentSignUp} />
@@ -79,6 +94,7 @@ class AgentApp extends Component<IRecipeProps, IRecipeState> {
             </div>
           </CSSTransition>
         </TransitionGroup>
+        </MuiThemeProvider>
         </ZipCodeProvider>
       </div>
     );
