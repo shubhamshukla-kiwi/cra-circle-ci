@@ -6,6 +6,9 @@ export const DEFAULT_DRIVER_STATE = [];
 
 export const DEFAULT_VEHICLE_STATE = [];
 
+export const DEFAULT_PREFERENCES_STATE = [];
+
+
 
 export const DEFAULT_LOGIN_STATE = {
     loggedIn: false,

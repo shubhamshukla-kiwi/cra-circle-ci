@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 
 import {connect} from 'react-redux';
 import './customer-dashboard-policies.css';
-import NewCar from '../new-car/new-car.js';
+import NewQuote from '../new-quote/new-quote.js';
 
 class CustomerDashboardPolicies extends Component {
     constructor(props) {
@@ -16,7 +16,7 @@ class CustomerDashboardPolicies extends Component {
         return (
             <div className="customer-dashboard-policies">
                 <div className="details-container">
-                    <NewCar readOnly={true}/>
+                    <NewQuote readOnly={true}/>
                 </div>
             </div>
         )

@@ -1,5 +1,4 @@
-import _ from 'lodash';
-import React, { Component } from 'react';
+import { Component } from 'react';
 import TransitionGroup from 'react-transition-group/TransitionGroup';
 import { Link } from 'react-router-dom';
 import TabNavigator from '../../components/tab-navigator/tab-navigator';
@@ -8,13 +7,14 @@ import info from '../../assets/images/homepage/info.svg';
 import './car-detail.css';
 import CustomModal from '../../components/custom-modal/custom-modal';
 import OnboardingFooter from '../../components/onboarding-footer/onboarding-footer';
+import { coveragePlans } from '../../constants/app.const';
 
 class CarPlan extends Component {
     constructor() {
         super();
         this.state = {
             showModal: false,
-            selectedPlan: 0
+            selectedPlan: null
         };
 
         this.handleOpenModal = this.handleOpenModal.bind(this);
@@ -32,43 +32,7 @@ class CarPlan extends Component {
     choosePlan = (index: number) => {
         this.setState({ selectedPlan: index });
     }
-    coveragePlans = [
-        {
-            id: 1,
-            planName: 'Basic', bodilyInjury: '200$',
-            propertyDamage: '200$',
-            unisuredMotoristBI: '200$',
-            unisuredMotoristPropertyDamage: '200$',
-            personalInjuryProtection: '200$',
-            comprehensiveDeductible: '200$',
-            collisionDeductible: '200$',
-            rentalCarCoverage: '200$',
-            emergencyRoadServices: '200$'
-        },
-        {
-            id: 2,
-            planName: 'Premium', bodilyInjury: '200$',
-            propertyDamage: '200$',
-            unisuredMotoristBI: '200$',
-            unisuredMotoristPropertyDamage: '200$',
-            personalInjuryProtection: '200$',
-            comprehensiveDeductible: '200$',
-            collisionDeductible: '200$',
-            rentalCarCoverage: '200$',
-            emergencyRoadServices: '200$'
-        },
-        {
-            id: 3,
-            planName: 'Best', bodilyInjury: '200$',
-            propertyDamage: '200$',
-            unisuredMotoristBI: '200$',
-            unisuredMotoristPropertyDamage: '200$',
-            personalInjuryProtection: '200$',
-            comprehensiveDeductible: '200$',
-            collisionDeductible: '200$',
-            rentalCarCoverage: '200$',
-            emergencyRoadServices: '200$'
-        }];
+    
     render() {
         return (
             <div className="plan-dashboard">
@@ -81,7 +45,7 @@ class CarPlan extends Component {
                                 <TransitionGroup className="plan-detail-transition-group">
                                     <>
                                         <div className="header-container-row">
-                                            <span className="icon-back-arrow font-icon"></span>
+                                            <span onClick={this.props.prevState} className="icon-back-arrow font-icon"></span>
                                             <h4>please select your coverage</h4>
                                         </div>
                                         <div className="price-plan-wrap">
@@ -103,13 +67,13 @@ class CarPlan extends Component {
                                                 </ul>
                                             </div>
                                             <div className="price-data">
-                                                {this.coveragePlans.map((item, index) => (
-                                                    <div onClick={() => this.choosePlan(index)} key={index} className={`pricing-table ${index === this.state.selectedPlan ? 'selected-plan' : ''}`}>
+                                                {coveragePlans.map((item, index) => (
+                                                    <div key={index} className={`pricing-table ${index === this.state.selectedPlan ? 'selected-plan' : ''}`}>
                                                         <div className="header">
                                                             <h3 className="pricing-title">{item.planName}</h3>
                                                             <div className="form-group custom-radio-btn">
-                                                                <input type="radio" id="check" name="radio-group" />
-                                                                <label htmlFor="check"></label>
+                                                                <input onChange={() => this.choosePlan(index)} checked={index === this.state.selectedPlan} type="checkbox" id={`check${index}`} name="radio-group" />
+                                                                <label htmlFor={`check${index}`}></label>
                                                             </div>
                                                         </div>
                                                         <ul className="table-list">
@@ -128,9 +92,18 @@ class CarPlan extends Component {
                                                 ))}
                                             </div>
                                         </div>
+                                        {!this.state.selectedPlan && <span className="error-msg">Please select a plan</span>}
                                         <div className="btn-selection">
-                                            <Link className="button-primary" to="/car-detail">Save & add another vehicle</Link>
-                                            <Link className="button-primary" to="/car-detail-success">
+                                            <Link onClick={()=> {
+                                                if(this.state.selectedPlan) {
+                                                    this.props.saveCoveragePlan(coveragePlans[this.state.selectedPlan], true);
+                                                }
+                                                }} className="button-primary">Save & add another vehicle</Link>
+                                            <Link onClick={()=> {
+                                                if(this.state.selectedPlan) {
+                                                    this.props.saveCoveragePlan(coveragePlans[this.state.selectedPlan], true);
+                                                }
+                                                }} className="button-primary" to="/car-detail-success">
                                                 <span className="btn-txt">Save & send request for quotes</span>
                                                 <span className="icon-forward-arrow font-icon"></span>
                                             </Link>
@@ -145,7 +118,8 @@ class CarPlan extends Component {
                 <CustomModal
                     showModal={this.state.showModal}
                     handleCloseModal={this.handleCloseModal}
-                    planData={this.coveragePlans[this.state.selectedPlan]}
+                    planData={coveragePlans[this.state.selectedPlan]}
+                    saveCoveragePlan={this.props.saveCoveragePlan}
                 />
             </div>
         );

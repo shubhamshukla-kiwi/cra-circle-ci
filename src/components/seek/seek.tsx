@@ -14,7 +14,6 @@ const Seek = () => {
   }, []);
   const [zipcode, setZip] = useState("");
   const history = useHistory();
-  const [isLoading, setIsLoading] = useState(false);
   const {
     cleanData,
     fetchZipCode,

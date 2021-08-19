@@ -1,4 +1,4 @@
-import { SAVE_DRIVER_INFO, SAVE_DRIVER_DETAIL_INFO, SAVE_DRIVER_VIOLATION_INFO } from "../../lib/constants/actions";
+import { SAVE_DRIVER_INFO, SAVE_DRIVER_DETAIL_INFO, SAVE_DRIVER_VIOLATION_INFO, SAVE_DRIVER } from "../../lib/constants/actions";
 import {DEFAULT_DRIVER_STATE} from '../../lib/constants/states';
 
 export function drivers(state = DEFAULT_DRIVER_STATE, action) {
@@ -28,6 +28,10 @@ export function drivers(state = DEFAULT_DRIVER_STATE, action) {
            ...state.slice(index + 1), // everything after current post
         ]
         } 
+        case SAVE_DRIVER: {
+            return state.concat(action.payload)
+        }
+
         default:
             return state;
     }

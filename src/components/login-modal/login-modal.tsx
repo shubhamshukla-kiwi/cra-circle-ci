@@ -1,56 +1,47 @@
-import React, { Component } from 'react';
-import { connect } from 'react-redux';
+import { useState } from 'react';
 import TextField from '@material-ui/core/TextField';
-import { withRouter, Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { Formik, ErrorMessage } from 'formik';
 import OnboardingLeft from '../onboarding-left/onboarding-left';
-import { saveEmail } from '../../actions';
 import { isClient } from '../../utils';
 import { OTPLoginSchema } from '../../constants/formikSchemaValidation';
 import { initialLoginValue } from '../../constants/formikValue';
+import OTPComponent from '../otp/otp';
 
-class LoginModal extends Component {
-    constructor(props) {
-        super(props);
-        this.saveData = this.saveData.bind(this);
-    }
-    isClientUser = isClient();
+interface Props {
 
-    saveData(email) {
-    this.props.dispatch(saveEmail(email))
+}
+const saveData = (email) => {
     localStorage.setItem('isAuthenticated', true);
-    }
-    navigate = () => {
-        if(this.isClientUser) {
-            this.props.history.push('/otp');
-        } else {
-            this.props.history.push('/agent/otp');
-        }
-    }
+}
 
-    render() {
-        return (
-            <Formik
-                initialValues={{...initialLoginValue, ...{email: this.props.email}}}
-                validationSchema={OTPLoginSchema}
-                onSubmit={(values, { setSubmitting }) => {
-                    setSubmitting(false);
-                    this.saveData(values.email);
-                    this.navigate();
-                }}
-            >
-                {({
-                    values,
-                    errors,
-                    handleChange,
-                    handleSubmit,
-                    isSubmitting,
-                }) => (
-            <div className="login-modal screen-container">
-                <div className="login-screen">
-                    <OnboardingLeft />
-                    <div className="right-content">
-                        <div className="input-data">
+const LoginModal = (props: Props) => {
+    const [activeStep, setActiveStep] = useState(1);
+    const [email, setEmail] = useState('');
+    const isClientUser = isClient();
+    return (
+        <div className="login-modal screen-container">
+            <div className="login-screen">
+                <OnboardingLeft />
+                <div className="right-content">
+                    {activeStep === 1 && <Formik
+                        initialValues={{ ...initialLoginValue, ...{ email: email } }}
+                        validationSchema={OTPLoginSchema}
+                        onSubmit={(values, { setSubmitting }) => {
+                            setSubmitting(false);
+                            saveData(values.email);
+                            setEmail(values.email)
+                            setActiveStep(2)
+                            // navigate(isClientUser, history);
+                        }}
+                    >
+                        {({
+                            values,
+                            errors,
+                            handleChange,
+                            handleSubmit,
+                            isSubmitting,
+                        }) => (<div className="input-data">
                             <h4>Sign in</h4>
                             <p>Hi, welcome to seekr</p>
                             <p>Enter your email address and you can use OTP or password to sign in.</p>
@@ -65,29 +56,24 @@ class LoginModal extends Component {
                                         InputProps={{ disableUnderline: true }}
                                         type="email"
                                         className={`form-control ${!errors.email ? '' : 'error'}`}
-                                        />
-                                 <span className="error-msg"><ErrorMessage name="email" /></span>
+                                    />
+                                    <span className="error-msg"><ErrorMessage name="email" /></span>
                                 </div>
                             </div>
-                            {this.isClientUser && <Link onClick={handleSubmit} className="button-primary" to="/otp">
+                            {isClientUser && <Link onClick={handleSubmit} className="button-primary" to="/otp">
                                 Sign In via OTP
                             </Link>}
-                            {!this.isClientUser && <Link onClick={handleSubmit} className="button-primary" to="/agent/otp">
+                            {!isClientUser && <Link onClick={handleSubmit} className="button-primary" to="/agent/otp">
                                 Sign In via OTP
                             </Link>}
                         </div>
-                    </div>
+                            )}
+                    </Formik>}
+                    {activeStep === 2 && <OTPComponent goBack={()=> {setActiveStep(1)}} email={email} isVerify={false} />}
                 </div>
-            </div>)}
-            </Formik>
-        );
-    }
+            </div>
+        </div>
+    )
 }
 
-function mapStateToProps(state) {
-    return {
-        email: state.login.email
-    };
-}
-
-export default withRouter(connect(mapStateToProps)(LoginModal));
+export default LoginModal;
