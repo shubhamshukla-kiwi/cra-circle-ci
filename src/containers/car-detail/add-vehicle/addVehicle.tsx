@@ -51,7 +51,8 @@ const AddVehicle = (props: Props) => {
     }, [props.passedData]);
 
     const history = useHistory();
-    let [steps, setSteps] = useState(1)
+    // let [steps, setSteps] = useState(1)
+    let [steps, setSteps] = useState(2)
     const saveVehicleInfo = (vehicle) => {
         setvehicleInfo(vehicle);
         setSteps(steps + 1);

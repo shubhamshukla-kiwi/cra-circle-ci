@@ -207,7 +207,7 @@ const WorkTitle = styled.h2`
 
 const WorkText = styled.p`
   color: #000;
-  font-family: 'Macho Regular';
+  font-family: 'Macho Regular', sans-serif;
   font-size: 21px;
   font-weight: normal;
   line-height: 100%;
@@ -301,7 +301,7 @@ const HeroField = styled.input`
   border: 0px;
   box-sizing: border-box;
   color: #808080;
-  font-family: 'Macho Regular';
+  font-family: 'Macho Regular', sans-serif;
   font-size: 13px;
   font-weight: 500;
   outline-width: 0;

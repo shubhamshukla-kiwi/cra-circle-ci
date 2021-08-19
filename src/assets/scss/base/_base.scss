@@ -62,16 +62,15 @@ a {
 
 .button-primary {
   height: 63px;
-  line-height: 63px;
   border-radius: 2px;
   background-color: #fcd344;
-  font-size: 18px;
+  font-size: 17px;
   font-weight: 600;
   color: #252525;
   border: 0px;
   width: 100%;
   cursor: pointer;
-  font-family: "Macho-Semi" !important;
+  font-family: "Macho-Semi", sans-serif !important;
   @include flex;
   @include align-items(center);
   @include justify-content(center);
@@ -87,7 +86,7 @@ a {
   color: #252525;
   background-color: $white;
   cursor: pointer;
-  font-family: "Macho-Semi" !important;
+  font-family: "Macho-Semi", sans-serif !important;
   @include flex;
   @include align-items(center);
   @include justify-content(center);

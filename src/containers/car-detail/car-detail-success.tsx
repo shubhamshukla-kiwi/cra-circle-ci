@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import TransitionGroup from 'react-transition-group/TransitionGroup';
 import { Link } from 'react-router-dom';
 import OnboardHeader from '../../components/onboard-header/onboard-header';
-import './car-detail.css';
+import './car-detail.scss';
 import OnboardingFooter from '../../components/onboarding-footer/onboarding-footer';
 
 class CarDetailSuccess extends Component {

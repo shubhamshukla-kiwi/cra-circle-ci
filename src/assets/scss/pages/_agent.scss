@@ -93,7 +93,7 @@
                 color: #fff;
                 h5 {
                     font-size: 22px;
-                    font-family: "Macho-Semi" !important;
+                    font-family: "Macho-Semi", sans-serif !important;
                 }
                 .rating-star {
                     margin-left: 10px;
@@ -127,7 +127,7 @@
                         cursor: pointer;
                     }
                     span {
-                        font-family: "Macho-Semi" !important;
+                        font-family: "Macho-Semi", sans-serif !important;
                         color: #23a54b;
                         padding-left: 5px;
                     }
@@ -209,7 +209,7 @@
 
             &.react-tabs__tab--selected {
                 background-color: unset;
-                font-family: "Macho-Semi";
+                font-family: "Macho-Semi", sans-serif;
                 color: #fff;
                 border-bottom: 2px solid #ffffff;
                 @media (max-width: 768px) {
@@ -237,7 +237,7 @@
         span {
             &:nth-child(1) {
                 font-size: 18px;
-                font-family: "Macho-Semi" !important;
+                font-family: "Macho-Semi", sans-serif !important;
             }
             &.font-icon {
                 font-size: 10px;
@@ -279,7 +279,7 @@
     .txt {
         font-size: 14px;
         color: #23a54b;
-        font-family: "Macho-Semi" !important;
+        font-family: "Macho-Semi", sans-serif !important;
         margin-left: 4px;
     }
 }
@@ -290,7 +290,6 @@
     padding: 40px;
     border-radius: 4px;
     max-width: 840px;
-    width: 100%;
     margin: 0px auto 0px;
     @media (max-width: 768px) {
         max-width: 100%;
@@ -309,7 +308,7 @@
             font-size: 14px;
             letter-spacing: 3px;
             text-transform: uppercase;
-            font-family: "Macho-Semi" !important;
+            font-family: "Macho-Semi", sans-serif !important;
             margin-bottom: 20px;
             @media (max-width: 768px) {
                 margin-bottom: 5px;
@@ -325,7 +324,7 @@
             align-items: center;
             h6 {
                 font-size: 18px;
-                font-family: "Macho-Medium" !important;
+                font-family: "Macho-Medium", sans-serif !important;
                 color: #252525;
             }
             span {
@@ -342,7 +341,7 @@
                 background-color: #fcd344;
                 border: 0px;
                 font-size: 16px;
-                font-family: "Macho-Semi" !important;
+                font-family: "Macho-Semi", sans-serif !important;
                 color: #252525;
             }
         }
@@ -382,7 +381,7 @@
                         width: 15%;
                         cursor: pointer;
                         span {
-                            font-family: "Macho-Semi" !important;
+                            font-family: "Macho-Semi", sans-serif !important;
                         }
                         img {
                             margin-right: 6px;
@@ -430,7 +429,7 @@
         a {
             font-size: 12px;
             color: #fff;
-            font-family: "Macho-Medium" !important;
+            font-family: "Macho-Medium", sans-serif !important;
             span {
                 margin-right: 5px;
             }
