@@ -325,7 +325,7 @@
     }
     .form-control {
       font-size: 16px;
-      font-family: "Macho Regular" !important;
+      font-family: "Macho Regular", sans-serif !important;
       color: #838383;
     }
   }
@@ -339,7 +339,7 @@
     border-radius: 2px;
     background-color: #fcd344;
     min-width: 120px;
-    font-family: "Macho-Semi";
+    font-family: "Macho-Semi", sans-serif;
     font-size: 18px;
     color: #252525;
     border: 1px solid #fcd344;
@@ -369,7 +369,7 @@
     border-radius: 2px;
     border: solid 1px #252525;
     font-size: 14px;
-    font-family: "Macho-Semi";
+    font-family: "Macho-Semi", sans-serif;
     &::before {
       content: "";
       display: none;
