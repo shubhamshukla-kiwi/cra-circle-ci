@@ -12,7 +12,9 @@ interface Props {
     dispatch: Dispatch,
     passedData: T
 }
+let naviagteFlag = false;
 let enableSetData = false;
+
 const AddDriver = (props: Props) => {
     let [driverInfo, setDriverInfo] = useState(null);
     let [driverDetail, setDriverDetail] = useState(null);
@@ -34,7 +36,7 @@ const AddDriver = (props: Props) => {
             setDriverViolations(null);
             setIndex(null);
             enableSetData = false;
-            if (newFlag) {
+            if (naviagteFlag) {
                 setSteps(1);
                 window.scrollTo(0, 0)
             } else {
@@ -68,6 +70,7 @@ const AddDriver = (props: Props) => {
     }
     const saveDriverViolations = (violations, newFlag) => {
         setDriverViolations(violations);
+        naviagteFlag = newFlag;
         enableSetData = true;
     }
     const prevState = () => {

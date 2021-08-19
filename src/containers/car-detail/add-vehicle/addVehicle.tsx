@@ -18,7 +18,8 @@ const AddVehicle = (props: Props) => {
     let [vehicleInfo, setvehicleInfo] = useState(null);
     let [coveragePlan, setcoveragePlan] = useState(null);
     let [index, setIndex] = useState(null);
-
+    const history = useHistory();
+    let [steps, setSteps] = useState(1)
     useEffect(() => {
         if (coveragePlan && enableSetData) {
             const data = { vehicleInfo, coveragePlan };
@@ -50,9 +51,6 @@ const AddVehicle = (props: Props) => {
         }
     }, [props.passedData]);
 
-    const history = useHistory();
-    // let [steps, setSteps] = useState(1)
-    let [steps, setSteps] = useState(2)
     const saveVehicleInfo = (vehicle) => {
         setvehicleInfo(vehicle);
         setSteps(steps + 1);
