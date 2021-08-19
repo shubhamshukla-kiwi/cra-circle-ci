@@ -1,29 +1,39 @@
 import React, { useState } from 'react';
-import { withRouter, useLocation } from 'react-router-dom';
+import { withRouter, useLocation, useHistory } from 'react-router-dom';
 import './tab-navigator.css';
 import Edit from '../../assets/images/homepage/edit.svg'
 import User from '../../assets/images/homepage/user.svg'
 import Default from '../../assets/images/homepage/car-default.png'
 import { connect } from 'react-redux';
 import { Dispatch } from 'redux';
+import { History } from 'history';
 
 
 interface Props {
     dispatch: Dispatch,
     drivers: T,
-    vehicles: T
+    vehicles: T,
+    getData: Function
 }
-
+const goToStep = (route: string, historyRef: History) => {
+    historyRef.push(route);
+}
 const TabNavigator = (props: Props) => {
     const [showBox, setShowBox] = useState(false);
     const [showVehicleBox, setshowVehicleBox] = useState(false);
     const location = useLocation();
+    const history = useHistory();
+    const onPageClicked = (event: Event) => {
+        setShowBox(false);
+        setshowVehicleBox(false);
+        event.stopPropagation();
+    } 
     return (
-        <div className="tab-navigator">
+        <div className="tab-navigator" onClick={onPageClicked}>
             <div className="tabs">
                 <div className="tab">
                     <div className={`tab-link-area ${location.pathname === '/new-quote' || location.pathname === '/new-quote/preferences'?'tab-selected':'' }`}>
-                        <div className="icon">
+                        <div onClick={() => goToStep('/new-quote', history)} className="icon">
                             <span className="icon-preference font-icon">
                                 <span className="path1 font-icon"></span>
                                 <span className="path2 font-icon"></span>
@@ -40,7 +50,7 @@ const TabNavigator = (props: Props) => {
                         </div>
                     </div>
                     <div className={`tab-link-area ${location.pathname === '/new-quote/drivers'?'tab-selected':'' }`}>
-                        <div className="icon">
+                        <div onClick={() => goToStep('/new-quote/drivers', history)} className="icon">
                             <span className="icon-detail font-icon">
                                 <span className="path1 font-icon"></span>
                                 <span className="path2 font-icon"></span>
@@ -52,8 +62,9 @@ const TabNavigator = (props: Props) => {
                             <div className="steps-txt">
                                 <div className="details-added">
                                     <h4>Driver details</h4>
-                                    {props.drivers.length>0 && <div className="added-txt" onClick={() => {
-                                        setShowBox(!showBox)
+                                    {props.drivers.length>0 && <div className="added-txt" onClick={(event: Event) => {
+                                        setShowBox(!showBox);
+                                        event.stopPropagation();
                                     }}>
                                         <p>{props.drivers.length} driver added</p>
                                         <span className="icon-forward-arrow font-icon"></span>
@@ -73,7 +84,7 @@ const TabNavigator = (props: Props) => {
                                                 </div>
                                             </div>
                                             <div className="right-content">
-                                                <img src={Edit} alt="edit-icon"></img>
+                                                <img onClick={() => props.getData(driver, index, '/new-quote/drivers')} src={Edit} alt="edit-icon"></img>
                                             </div>
                                         </div>
                                     ))}
@@ -82,7 +93,11 @@ const TabNavigator = (props: Props) => {
                         </div>
                     </div>
                     <div className={`tab-link-area ${location.pathname === '/new-quote/vehicles'?'tab-selected':'' }`}>
-                        <div className="icon">
+                        <div className="icon" onClick={() => {
+                            if(props.drivers.length > 0) {
+                                goToStep('/new-quote/vehicles', history)
+                            }
+                            }}>
                             <span className="icon-vehicle font-icon">
                                 <span className="path1 font-icon"></span>
                                 <span className="path2 font-icon"></span>
@@ -95,8 +110,9 @@ const TabNavigator = (props: Props) => {
                             <div className="steps-txt">
                                 <div className="details-added">
                                     <h4>Vehicle</h4>
-                                    {props.vehicles.length>0 && <div className="added-txt" onClick={() => {
-                                        setshowVehicleBox(!showVehicleBox)
+                                    {props.vehicles.length>0 && <div className="added-txt" onClick={(event: Event) => {
+                                        setshowVehicleBox(!showVehicleBox);
+                                        event.stopPropagation();
                                     }}>
                                         <p>{props.vehicles.length} vehicles added</p>
                                         <span className="icon-forward-arrow font-icon"></span>
@@ -115,8 +131,8 @@ const TabNavigator = (props: Props) => {
                                                     {vehicle.coveragePlan && <span>Coverage: {vehicle.coveragePlan.planName}</span>}
                                                 </div>
                                             </div>
-                                            <div className="right-content">
-                                                <img src={Edit} alt="edit-icon"></img>
+                                            <div className="right-content" >
+                                                <img onClick={() => props.getData(vehicle, index, '/new-quote/vehicles')} src={Edit} alt="edit-icon"></img>
                                             </div>
                                         </div>
                                     ))}

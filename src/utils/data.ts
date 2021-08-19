@@ -14,3 +14,7 @@ export const isClient = (): boolean => {
 export const isLoggedIn = (): boolean => {
     return localStorage.getItem('isAuthenticated')
 }
+
+export const setLoggedIn = (): boolean => {
+    return localStorage.setItem('isAuthenticated', true);
+}

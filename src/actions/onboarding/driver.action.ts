@@ -2,7 +2,8 @@ import {
     SAVE_DRIVER_INFO,
     SAVE_DRIVER_DETAIL_INFO,
     SAVE_DRIVER_VIOLATION_INFO,
-    SAVE_DRIVER
+    SAVE_DRIVER,
+    EDIT_DRIVER
 } from '../../lib/constants/actions';
 
 export function saveDriverInfo(payload) {
@@ -29,6 +30,13 @@ export function saveDriverViolationsInfo(payload) {
 export function saveDriver(payload) {
     return {
         type: SAVE_DRIVER,
+        payload
+    }
+}
+
+export function editDriver(payload) {
+    return {
+        type: EDIT_DRIVER,
         payload
     }
 }

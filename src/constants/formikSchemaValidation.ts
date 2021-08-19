@@ -149,8 +149,9 @@ export const addDriverInfoSchema = Yup.object().shape({
 
 
 export const addVehicleInfoSchema = Yup.object().shape({
-  year: Yup.string()
-    .required('Mandatory!'),
+  year: Yup.date()
+           .nullable()
+           .required('Mandatory!'),
   make: Yup.string()
     .required('Mandatory!'),
   model: Yup.string()

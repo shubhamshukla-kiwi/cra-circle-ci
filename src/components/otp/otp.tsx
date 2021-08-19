@@ -4,10 +4,14 @@ import { Formik } from 'formik';
 import { useHistory } from 'react-router-dom';
 import './otp.scss';
 import { initialOTPValue } from '../../constants/formikValue';
+import { connect } from 'react-redux';
+import { loginRequest } from '../../actions';
+import { Dispatch } from 'redux';
 interface Props {
     isVerify: boolean;
     email: string;
-    handleVerifyCloseModal: Function
+    handleVerifyCloseModal: Function,
+    dispatch: Dispatch
 }
 
 const onKeyPressFn = (event) => {
@@ -19,7 +23,7 @@ const onKeyPressFn = (event) => {
 
 const regex = /^[0-9]$/;
 
-const OTPComponent = ({isVerify, email, handleVerifyCloseModal, goBack}: Props) => {
+const OTPComponent = ({isVerify, email, handleVerifyCloseModal, goBack, dispatch}: Props) => {
     const history = useHistory();
     const isClientUser = isClient();
     return (
@@ -33,7 +37,11 @@ const OTPComponent = ({isVerify, email, handleVerifyCloseModal, goBack}: Props) 
                     }
                     setSubmitting(false);
                     if (isClientUser) {
-                        history.push("/dashboard");
+                        dispatch(loginRequest({
+                            email: email,
+                            password: 'cityslicka'
+                        }))
+                        history.push("/new-quote");
                     } else {
                         history.push('/agent/agent-dashboard')
                     }
@@ -164,4 +172,8 @@ const OTPComponent = ({isVerify, email, handleVerifyCloseModal, goBack}: Props) 
     )
 }
 
-export default OTPComponent;
+const mapStateToProps = (state) => {
+    return {}
+}
+
+export default connect(mapStateToProps)(OTPComponent);

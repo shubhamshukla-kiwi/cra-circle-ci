@@ -45,6 +45,7 @@ const DriverViolations = (props: Props) => {
                         <h4>Accidents/Moving Violations</h4>
                     </div>
                     <Formik
+                        enableReinitialize
                         initialValues={{ ...initialDriverViolationValues, ...props.driverViolations }}
                         validationSchema={driverViolationSchema}
                         onSubmit={(values, { setSubmitting }) => {

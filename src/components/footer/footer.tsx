@@ -1,20 +1,15 @@
-import React, { useState } from "react"
+import React from "react"
 import styled from "styled-components"
 import seekrLogo from './../../assets/images/homepage/seekr-logo-blue.png'
-import Loading from '../loading2/loading'
 
 const Footer = (props) => {
-  const [zipcode, setZipcode] = useState(97);
-  const [isLoading, setIsLoading] = useState(false);
-
   return (
     <FooterContainer>
-      <Loading show={isLoading} />
       <div className="footer-wrapper">
         <InnerContainer>
           <FooterDetail>
             <FooterLogo src={seekrLogo} alt="logo" />
-            <FooterDetailTitle>&copy; 2020 Seekr Inc. All Rights Reserved.</FooterDetailTitle>
+            <FooterDetailTitle>&copy; 2021 Seekr Inc. All Rights Reserved.</FooterDetailTitle>
             <FooterDetailText>Use of Seekr Inc.'s Services is subject to our <Link href="tos">Terms of Service</Link>, <Link href="privacy">Privacy Policy</Link>, and Licenses.</FooterDetailText>
             <FooterDetailText> Need help? Reach us at support@quoteseekr.com</FooterDetailText>
           </FooterDetail>

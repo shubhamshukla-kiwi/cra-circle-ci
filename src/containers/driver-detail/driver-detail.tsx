@@ -13,6 +13,7 @@ import { genderList, states } from '../../constants/app.const';
 interface Props {
   saveDriverInfo: Function,
   driver: Driver,
+  index: number
 }
 
 const DriverDetail = (props: Props) => {
@@ -23,11 +24,12 @@ const DriverDetail = (props: Props) => {
           <div className="header-container-row">
             <img src={driverImg} alt="icon"></img>
             <h4>
-              Add Primary Driver
+              {props.index!== null?'Edit':'Add'} Primary Driver
                   </h4>
 
           </div>
           <Formik
+            enableReinitialize
             initialValues={{...initialAddDriverInfoValue, ...props.driver}}
             validationSchema={addDriverInfoSchema}
             onSubmit={(values, { setSubmitting, isValidating }) => {

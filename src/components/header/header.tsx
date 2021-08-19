@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, withRouter } from 'react-router-dom';
 import logoWhite from './../../assets/images/seekr-logo.png'
 import dashboardMenu from './../../assets/images/homepage/dashboard-menu.svg'
 import Dropdown from './../../assets/images/homepage/dropdown.png'
@@ -45,7 +45,9 @@ class Header extends Component {
     }
 
     logout() {
-        localStorage.clear();
+        localStorage.removeItem('isAuthenticated');
+        localStorage.removeItem('persist:root');
+        this.props.history.push('/')
     }
 
     render() {
@@ -99,8 +101,8 @@ class Header extends Component {
                                         <li>
                                             <a href="#">Terms of Services</a>
                                         </li>
-                                        <li onClick={this.logout} className="sign-out">
-                                            <a href="/">Sign out</a>
+                                        <li onClick={this.logout} className="sign-out cursor-pointer">
+                                            <a>Sign out</a>
                                         </li>
                                     </ul>
                                 </div>
@@ -295,4 +297,4 @@ class Header extends Component {
 
 
 
-export default Header;
+export default withRouter(Header);

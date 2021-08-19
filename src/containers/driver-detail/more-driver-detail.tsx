@@ -27,6 +27,7 @@ export const MoreDriverDetail = (props: Props) => {
                         <h4>tell us a bit more about {props.driver && props.driver.firstName} {props.driver && props.driver.lastName}!</h4>
                     </div>
                     <Formik
+                        enableReinitialize
                         initialValues={{ ...initialDriverDetailValues, ...props.driverDetail }}
                         validationSchema={moreDriverDetailValidationSchema}
                         onSubmit={(values, { setSubmitting }) => {

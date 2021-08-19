@@ -4,7 +4,7 @@ import CarDetail from '../car-detail';
 import { connect } from 'react-redux';
 import { Dispatch } from 'redux';
 import { useHistory } from 'react-router-dom';
-import { saveVehicle } from '../../../actions/onboarding/vehicle.action';
+import { saveVehicle, editVehicle } from '../../../actions/onboarding/vehicle.action';
 
 interface Props {
     dispatch: Dispatch,
@@ -12,42 +12,64 @@ interface Props {
 }
 
 let naviagteFlag = false;
+let enableSetData = false;
 
 const AddVehicle = (props: Props) => {
     let [vehicleInfo, setvehicleInfo] = useState(null);
     let [coveragePlan, setcoveragePlan] = useState(null);
+    let [index, setIndex] = useState(null);
+
     useEffect(() => {
-        if(coveragePlan) {
-        const data = { vehicleInfo, coveragePlan}
-        props.dispatch(saveVehicle(data));
-            if(naviagteFlag) {
+        if (coveragePlan && enableSetData) {
+            const data = { vehicleInfo, coveragePlan };
+            if(index != null) {
+                const editData = {data: data, index: index}
+                props.dispatch(editVehicle(editData));
+            } else {
+                props.dispatch(saveVehicle(data));
+            }
+            if (naviagteFlag) {
                 setSteps(1);
                 window.scrollTo(0, 0);
             } else {
                 history.push('/car-detail-success')
             }
-        setvehicleInfo(null);
-        setcoveragePlan(null);
-    }
+            setvehicleInfo(null);
+            setcoveragePlan(null);
+            setIndex(null);
+        }
     }, [coveragePlan]);
+
+    useEffect(() => {
+        if (props.passedData && props.passedData.vehicleInfo && props.passedData.index != null) {
+            setvehicleInfo(props.passedData.vehicleInfo);
+            setcoveragePlan(props.passedData.coveragePlan);
+            setIndex(props.passedData.index);
+            setSteps(1);
+            enableSetData = false;
+        }
+    }, [props.passedData]);
+
     const history = useHistory();
     let [steps, setSteps] = useState(1)
     const saveVehicleInfo = (vehicle) => {
         setvehicleInfo(vehicle);
-        setSteps(steps+1);
+        setSteps(steps + 1);
         window.scrollTo(0, 0);
     }
     const saveCoveragePlan = (plan, newFlag) => {
-        setcoveragePlan(plan);
+        enableSetData = true;
         naviagteFlag = newFlag;
+        setcoveragePlan(plan);
     }
     const prevState = () => {
-        setSteps(steps -1)
+        setSteps(steps - 1)
     }
-    return (<>
-            {steps === 1 && <CarDetail drivers={props.drivers} vehicle={vehicleInfo}  saveVehicleInfo={saveVehicleInfo} />}
-            {steps === 2 && <CarPlan coveragePlan={coveragePlan} prevState={prevState} saveCoveragePlan={saveCoveragePlan} />}
-    </>
+    return (
+        <>
+            {steps === 1 && <CarDetail index={index} drivers={props.drivers} vehicle={vehicleInfo} saveVehicleInfo={saveVehicleInfo} />}
+            {steps === 2 && <CarPlan index={index} coveragePlan={coveragePlan} prevState={prevState} saveCoveragePlan={saveCoveragePlan} />}
+        </>
     )
 }
 
