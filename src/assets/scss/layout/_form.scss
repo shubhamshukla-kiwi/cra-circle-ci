@@ -24,9 +24,9 @@
     border-bottom: 1px solid #dfdfdf;
     padding: 24px 0px 12px;
     font-size: 16px;
-    font-family: "Macho-Semi" !important;
+    font-family: "Macho-Semi", sans-serif !important;
     color: #252525;
-    &:focus-visible {
+    &:focus {
       outline: none;
     }
     &.error{

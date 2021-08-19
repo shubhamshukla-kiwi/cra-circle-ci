@@ -106,7 +106,7 @@
         }
         h6 {
           font-size: 16px;
-          font-family: "Macho-Semi";
+          font-family: "Macho-Semi", sans-serif;
           margin-bottom: 5px;
           color: #fff;
           opacity: 0.4;
@@ -117,7 +117,7 @@
         h4 {
           font-size: 25px;
           text-transform: capitalize;
-          font-family: "Macho-Semi";
+          font-family: "Macho-Semi", sans-serif;
           margin: 0px;
           opacity: 0.4;
           @media (max-width: 992px) {
@@ -369,7 +369,7 @@
     padding: 2px 11px;
     margin-top: 7px;
     p {
-      font-family: 'Macho-Semi'!important;
+      font-family: 'Macho-Semi', sans-serif!important;
         width: 100%;
         font-style: italic;
         margin-top: -5px !important;
@@ -402,7 +402,7 @@
   h4{
     font-size: 25px;
     text-transform: capitalize;
-    font-family: "Macho-Semi"!important;
+    font-family: "Macho-Semi", sans-serif!important;
     margin: 0px;
   }
   p{

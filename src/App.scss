@@ -12,7 +12,7 @@
   overflow: hidden;
   
   *:not(i):not(.info-icon-no-hover):not(.info-icon-hover):not(.font-icon) {
-    font-family: 'Macho Regular';
+    font-family: 'Macho Regular', sans-serif;
   }
 
   .gradient-overlay {
@@ -29,7 +29,6 @@
     min-height: 100%;
     width: auto;
     height: auto;
-    position: absolute;
     left: 50%;
     top: 50%;
     transform: translateX(-50%) translateY(-50%);

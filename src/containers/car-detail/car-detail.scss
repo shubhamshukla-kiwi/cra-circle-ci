@@ -50,7 +50,7 @@
         li {
           font-size: 16px;
           margin-bottom: 15px;
-          font-family: "Macho-Medium" !important;
+          font-family: "Macho-Medium", sans-serif !important;
           min-height: 50px;
         }
       }
@@ -62,7 +62,7 @@
       display: flex;
       align-items: center;
       text-decoration: underline;
-      font-family: "Macho-Semi" !important;
+      font-family: "Macho-Semi", sans-serif !important;
       height: 49px;
       img {
         padding-top: 6px;
@@ -95,7 +95,7 @@
           height: 49px;
           .pricing-title {
             font-size: 13px;
-            font-family: "Macho-Semi" !important;
+            font-family: "Macho-Semi", sans-serif !important;
             text-transform: uppercase;
             letter-spacing: 2.79px;
             padding-left: 10px;
@@ -150,7 +150,7 @@
               background-color: #e9e9e9;
               margin: 0px auto 10px;
               font-size: 14px;
-              font-family: "Macho-Semi" !important;
+              font-family: "Macho-Semi", sans-serif !important;
               min-height: auto;
               cursor: pointer;
               @media (max-width: 768px){
@@ -168,7 +168,7 @@
               @media (max-width: 768px){
                 display: block;
                 font-size: 13px;
-                font-family: 'Macho-Medium'!important;
+                font-family: 'Macho-Medium', sans-serif!important;
               }
             }
           }
@@ -227,7 +227,7 @@
     }
     h5 {
       font-size: 14px;
-      font-family: "Macho-Semi" !important;
+      font-family: "Macho-Semi", sans-serif !important;
       text-transform: uppercase;
       letter-spacing: 3px;
       margin-top: 18px;
@@ -243,7 +243,7 @@
     }
     h4 {
       font-size: 22px;
-      font-family: "Macho-Medium" !important;
+      font-family: "Macho-Medium", sans-serif !important;
       margin-bottom: 53px;
       @media (max-width: 768px){
       font-size: 18px;
