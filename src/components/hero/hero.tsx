@@ -185,17 +185,6 @@ const HeroItem = styled.li`
   }
 `
 
-// const HeroItemLogo = styled.img`
-//   height: ${props => props.height}px;
-//   margin-right: 10px;
-//   width: ${props => props.width}px;
-
-//   @media only screen and (max-width: ${({ theme: { media } }) =>
-//     media.mobile_landscape}) {
-    
-//   }
-// `
-
 const HeroItemCopy = styled.p`
   color: white;
   font-family: 'Macho Regular';
