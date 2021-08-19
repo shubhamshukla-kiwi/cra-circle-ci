@@ -15,13 +15,13 @@ class CarDetailSuccess extends Component {
             <div className="navigation-section success-modal">
               <div className="car-success-wrapper">
                 <TransitionGroup className="car-detail-transition-group">
+                  <>
                   <h5>success!</h5>
                   <p>Hello Seekr, Your on-boarding is through. Thank you for sending us the request. We will process your requirements and get back to you soon with the suitable quotes.</p>
-                  <h4>Do you wish to create a password now for authentication?</h4>
                   <div className="btn-wrapper">
-                    <Link className="button-txt" to="/login">Later</Link>
-                    <Link className="button-primary" to="/set-password">Yes, create my password</Link>              
+                    <Link className="button-primary" to="/dashboard">Go To Dashboard</Link>              
                   </div>
+                  </>
                 </TransitionGroup>
               </div>
             </div>

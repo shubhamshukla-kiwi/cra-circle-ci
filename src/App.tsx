@@ -12,16 +12,12 @@ import Login from './containers/login/login';
 import ComingSoon from './containers/coming-soon/coming-soon';
 import SignUp from './containers/sign-up/sign-up'
 
-import NewCar from './containers/new-car/new-car';
+import NewQuote from './containers/new-quote/new-quote';
 import NewCarCongratulations from './containers/new-car-congratulations/new-car-congratulations';
 import Oops from './containers/oops/oops';
 import Privacy from './containers/privacy/privacy';
 import Tos from './containers/tos/tos';
 import Otp from './containers/otp/otp';
-import DriverDetail from './containers/driver-detail/driver-detail';
-import MoreDriverDetail from './containers/driver-detail/more-driver-detail';
-import CarDetail from './containers/car-detail/car-detail';
-import CarPlan from './containers/car-detail/car-plan';
 import CarDetailSuccess from './containers/car-detail/car-detail-success';
 import AgentAddCard from './containers/agent-add-card/agent-add-card';
 import DashboardEmpty from './containers/dashboard/dashboard-empty';
@@ -37,7 +33,9 @@ import ROUTES from './routes';
 import './App.scss';
 import ProtectedRoute from './components/common/protectedRoute';
 import ScrollToTop from './components/common/scrollToTop';
-import driverViolations from './containers/driver-detail/driver-violations';
+import AddDriver from './containers/driver-detail/add-driver/add-driver';
+import AddVehicle from './containers/car-detail/add-vehicle/addVehicle';
+import { createTheme, MuiThemeProvider } from '@material-ui/core';
 
 const childFactoryCreator = (classNames: string) => (child: React.ReactElement) =>
   React.cloneElement(child, {
@@ -53,6 +51,18 @@ const childFactoryCreator = (classNames: string) => (child: React.ReactElement) 
     location: object
     dispatch: Function
   }
+
+  const theme = createTheme({
+    overrides: {
+      MuiSelect: {
+        select: {
+          "&:focus": {
+            "background-color": "#fff"
+          }
+        }
+      }
+    }
+  });
 class App extends Component<IRecipeProps, IRecipeState> {
   constructor(props: IRecipeProps) {
     super(props);
@@ -96,6 +106,7 @@ class App extends Component<IRecipeProps, IRecipeState> {
     return (
       <div className="app-body">
       <ZipCodeProvider>
+      <MuiThemeProvider theme={theme}>  
       <MuiPickersUtilsProvider utils={DateFnsUtils}>
         <div className="gradient-overlay" />
         <TransitionGroup
@@ -119,7 +130,16 @@ class App extends Component<IRecipeProps, IRecipeState> {
                   setEmail={()=> {}}
                 />
                 <Route path="/login" component={Login} />
-                <Route path="/new-car" component={NewCar} />
+                <Route
+                      path="/new-quote"
+                      render={({ match: { url } }) => (
+                        <>
+                          <Route path={`${url}/`} component={NewQuote} exact />
+                          <Route path={`${url}/drivers`} component={AddDriver} />
+                          <Route path={`${url}/vehicles`} component={AddVehicle} />
+                        </>
+                      )}
+                    />
                 <Route path="/coming-soon" component={ComingSoon} />
                 {/* <Route path="/confirm/:token" component={ConfirmEmail} /> */}
                 <Route
@@ -130,13 +150,7 @@ class App extends Component<IRecipeProps, IRecipeState> {
                 <Route exact path="/oops" component={Oops} />
                 <PropsRoute exact path="/tos" component={Tos} static />
                 <Route exact path="/privacy" component={Privacy} />
-                <Route path="/otp" component={Otp} />
                 <Route path="/sign-up" component={SignUp} />
-                <Route path="/driver-detail" component={DriverDetail} />
-                <Route path="/driver-detail-info/:id" component={MoreDriverDetail} />
-                <Route path="/driver-violations/:id" component={driverViolations} />
-                <Route path="/car-detail" component={CarDetail} />
-                <Route path="/car-plan" component={CarPlan} />
                 <Route path="/car-detail-success" component={CarDetailSuccess} />
                 <Route path="/agent-add-card" component={AgentAddCard} />
                 <ProtectedRoute path="/dashboard" component={DashboardEmpty} />
@@ -148,6 +162,7 @@ class App extends Component<IRecipeProps, IRecipeState> {
           </CSSTransition>
         </TransitionGroup>
         </MuiPickersUtilsProvider>
+        </MuiThemeProvider>
         </ZipCodeProvider>
       </div>
     );

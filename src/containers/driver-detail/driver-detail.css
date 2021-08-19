@@ -127,3 +127,7 @@
     width: 60%; }
     .driver-incident-details-wrapper .form-row .form-group.calendar-col {
       width: 40%; }
+
+.driver-incident-details-wrapper .icon-back-arrow {
+  cursor: pointer;
+ }      

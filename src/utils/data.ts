@@ -1,6 +1,3 @@
-import { configureStore, configureAgentStore } from "../configureStore";
-
-
 export const setPlatform = (type: string): void => {
     localStorage.setItem('platform', type);
 }

@@ -18,7 +18,7 @@ const SeekerWork = () => {
   }, []);
   const [zipcode, setZip] = useState("");
   const history = useHistory();
-  const [isLoading, setIsLoading] = useState(false);
+  // const [isLoading, setIsLoading] = useState(false);
   const {
     cleanData,
     fetchZipCode,
@@ -223,18 +223,18 @@ const WorkText = styled.p`
       line-height: 1.57;
   }
 `
-const FieldIcon = styled.img`
-  height: ${props => props.height}px;
-  left: 15px;  
-  position: absolute;
-  top: 14px;
-  width: ${props => props.width}px;
+// const FieldIcon = styled.img`
+//   height: ${props => props.height}px;
+//   left: 15px;  
+//   position: absolute;
+//   top: 14px;
+//   width: ${props => props.width}px;
 
-  @media only screen and (max-width: ${({ theme: { media } }) =>
-    media.mobile_landscape}) {
+//   @media only screen and (max-width: ${({ theme: { media } }) =>
+//     media.mobile_landscape}) {
       
-  }
-`
+//   }
+// `
 const FieldGroup = styled.div`
   align-items: center;
   display: flex;
@@ -252,17 +252,17 @@ const FieldGroup = styled.div`
       margin-right: 0px;
   }
 `
-const ZipContent = styled.div`
-  align-items: center;
-  display: flex;
-  justify-content: center;
-  margin-bottom: 19.5px;
+// const ZipContent = styled.div`
+//   align-items: center;
+//   display: flex;
+//   justify-content: center;
+//   margin-bottom: 19.5px;
 
-  @media only screen and (max-width: ${({ theme: { media } }) =>
-    media.mobile_landscape}) {
+//   @media only screen and (max-width: ${({ theme: { media } }) =>
+//     media.mobile_landscape}) {
   
-  }
-`
+//   }
+// `
 const HeroButton = styled.button`
   align-items: center;
   background-color: ${({ theme: { colors } }) => colors.yellow};

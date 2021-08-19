@@ -20,7 +20,7 @@ class SignupModal extends Component {
         this.state = {
             showModal: false,
             showVerifyModal: false,
-            userData: null
+            userData: null,
         };
         this.handleOpenModal = this.handleOpenModal.bind(this);
         this.handleCloseModal = this.handleCloseModal.bind(this);
@@ -74,6 +74,7 @@ class SignupModal extends Component {
                             validationSchema={SignupSchema}
                             onSubmit={(values, { setSubmitting, isValidating }) => {
                                 this.props.dispatch(saveEmail(values.email))
+                                this.setState({userData: values})
                                 this.handleOpenModal();
                                 setSubmitting(false);
                             }}
@@ -223,6 +224,7 @@ class SignupModal extends Component {
                     </div>
                 </div>
                 <VerifyEmail
+                    email={this.state.userData?this.state.userData.email:''}
                     showVerifyModal={this.state.showVerifyModal}
                     handleVerifyCloseModal={this.handleVerifyCloseModal}
                 />
