@@ -1,7 +1,5 @@
 import TransitionGroup from 'react-transition-group/TransitionGroup';
-import { Link, useHistory } from 'react-router-dom';
-import { Dispatch } from 'redux';
-import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
 import { Formik, ErrorMessage } from 'formik';
 import TextField from '@material-ui/core/TextField';
 import MenuItem from '@material-ui/core/MenuItem';
@@ -10,31 +8,21 @@ import TabNavigator from '../../components/tab-navigator/tab-navigator';
 import OnboardHeader from '../../components/onboard-header/onboard-header';
 import carImg from '../../assets/images/homepage/signup-2.png';
 import OnboardingFooter from '../../components/onboarding-footer/onboarding-footer';
-import './car-detail.css';
-import { saveVehicleInfo } from '../../actions/onboarding/vehicle.action';
 import { addVehicleInfoSchema } from '../../constants/formikSchemaValidation';
 import { initialAddVehicleInfoValue } from '../../constants/formikValue';
+import { Vehicle } from '../../constants/types';
+import { states } from '../../constants/app.const';
 
+import './car-detail.css';
+import { DatePicker } from '@material-ui/pickers';
 
 interface Props {
-  dispatch: Dispatch
+  saveVehicleInfo: Function,
+  vehicle: Vehicle,
+  drivers: T
 }
+
 const CarDetail = (props: Props) => {
-  const history = useHistory();
-  const states = [
-    {
-      value: 'CA',
-      label: 'CA',
-    },
-    {
-      value: 'WA',
-      label: 'WA',
-    },
-    {
-      value: 'AUS',
-      label: 'AUS',
-    }
-  ];
   return (
     <div className="car-detail-dashboard">
       <div className="new-car-container">
@@ -52,12 +40,10 @@ const CarDetail = (props: Props) => {
                   </h4>
                 </div>
                 <Formik
-                  initialValues={initialAddVehicleInfoValue}
+                  initialValues={{...initialAddVehicleInfoValue, ...props.vehicle}}
                   validationSchema={addVehicleInfoSchema}
                   onSubmit={(values, { setSubmitting, resetForm }) => {
-                    props.dispatch(saveVehicleInfo(values));
-                    resetForm();
-                    history.push('/car-plan')
+                    props.saveVehicleInfo(values);
                     setSubmitting(false);
                   }}
                 >
@@ -70,23 +56,23 @@ const CarDetail = (props: Props) => {
                     setFieldValue
                   }) => (
                       <form>
-                        <div className="form-row">
-                          <div className="form-group">
-                            <TextField
-                              select
-                              className={`form-control ${!errors.year ? '' : 'error'}`}
-                              label="Vehicle Year"
-                              name="year"
-                              onChange={handleChange}
-                              value={values.year}
-                              InputProps={{ disableUnderline: true }}>
-                              {states.map((option) => (
-                                <MenuItem key={option.value} value={option.value}>
-                                  {option.label}
-                                </MenuItem>
-                              ))}
-                            </TextField>
-                            <span className="error-msg"><ErrorMessage name="year" /></span>
+                          <div className="form-row">
+                            <div className="form-group">
+                              <DatePicker
+                                className={`form-control ${!errors.year ? '' : 'error'}`}
+                                label="Vehicle Year"
+                                views={["year"]}
+                                name="year"
+                                onChange={(value) => {
+                                  setFieldValue("year", value)
+                                }}
+                                value={values.year}
+                                InputProps={{ disableUnderline: true }}
+                                format="yyyy"
+                                maxDate={new Date()}
+
+                              />
+                              <span className="error-msg"><ErrorMessage name="year" /></span>
                           </div>
                           <div className="form-group">
                             <TextField
@@ -151,9 +137,9 @@ const CarDetail = (props: Props) => {
                             onChange={handleChange}
                             value={values.driver}
                             InputProps={{ disableUnderline: true }}>
-                            {states.map((option) => (
-                              <MenuItem key={option.value} value={option.value}>
-                                {option.label}
+                            {props.drivers.map((option) => (
+                              <MenuItem key={option.driverInfo.firstName} value={option.driverInfo.firstName}>
+                                {option.driverInfo.firstName} {option.driverInfo.firstName}
                               </MenuItem>
                             ))}
                           </TextField>
@@ -200,8 +186,4 @@ const CarDetail = (props: Props) => {
   );
 }
 
-const mapStateToProps = (state) => {
-  return {};
-}
-
-export default connect(mapStateToProps)(CarDetail);
+export default CarDetail;

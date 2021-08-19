@@ -11,8 +11,6 @@ import AgentAddCard from './containers/agent-add-card/agent-add-card';
 import AgentSignUp from './containers/agent-sign-up/agent-sign-up';
 import AgentDashboard from './containers/agent-dashboard/agent-dashboard';
 import AgentPayment from './containers/agent-payment/agent-payment';
-import Otp from './containers/otp/otp';
-
 
 import { ZipCodeProvider} from './contexts/ZipCodeContext/ZipCodeContext'
 import ROUTES from './routes';
@@ -77,7 +75,6 @@ class AgentApp extends Component<IRecipeProps, IRecipeState> {
                 <Route path="/agent/login" component={Login} />
                 <Route path="/agent/agent-dashboard" component={AgentDashboard} />
                 <Route path="/agent/agent-payment" component={AgentPayment} />
-                <Route path="/agent/otp" component={Otp} />
                 </Switch>
             </div>
           </CSSTransition>

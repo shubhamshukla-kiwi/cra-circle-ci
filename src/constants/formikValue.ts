@@ -9,7 +9,7 @@ export const initialAddDriverInfoValue = {
   }
 
 export const initialAddVehicleInfoValue = {
-  year: '',
+  year: null,
   make: '',
   model: '',
   mileage: '',
@@ -89,4 +89,24 @@ export const intitalCustomizeCoveragePlanValue = {
   collisionDeductible: '',
   rentalCarCoverage: '',
   emergencyRoadServices: ''
+}
+
+export const initialDriverViolationValues = {
+  noViolation: '',
+  violations: [{
+      addNew: false,
+      labelTitle: 'Mention any accident occured',
+      category: '',
+      year: null
+  }, {
+      addNew: false,
+      labelTitle: 'Has there been a violation?',
+      category: '',
+      year: null
+  }, {
+      addNew: false,
+      labelTitle: 'Any other incident?',
+      category: '',
+      year: null
+  },]
 }

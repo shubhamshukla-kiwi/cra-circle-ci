@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import ReactModal from 'react-modal';
 import { withRouter } from "react-router-dom";
 import { connect } from 'react-redux';
-import OTPComponent from '../otp-modal/otp';
+import OTPComponent from '../otp/otp';
 
 
 ReactModal.setAppElement('#root');
@@ -34,7 +34,7 @@ class VerifyEmail extends Component {
                 <div className="otp-wrap">
                 <div className="login-screen">
                     <div className="right-content">
-                    <OTPComponent isVerify={true} handleVerifyCloseModal={this.props.handleVerifyCloseModal}/>
+                    <OTPComponent email={this.props.email} isVerify={true} handleVerifyCloseModal={this.props.handleVerifyCloseModal}/>
                     </div>
                 </div>
             </div>
