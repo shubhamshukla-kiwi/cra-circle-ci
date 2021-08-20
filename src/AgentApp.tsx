@@ -16,8 +16,9 @@ import { ZipCodeProvider} from './contexts/ZipCodeContext/ZipCodeContext'
 import ROUTES from './routes';
 
 import './App.css';
-import scrollToTop from './components/common/scrollToTop';
+import ScrollToTop from './components/common/scrollToTop';
 import { MuiThemeProvider, createTheme } from '@material-ui/core';
+import ProtectedRoute from './components/common/protectedRoute';
 
 const childFactoryCreator = (classNames: string) => (child: React.ReactElement) =>
   React.cloneElement(child, {
@@ -83,12 +84,12 @@ class AgentApp extends Component<IRecipeProps, IRecipeState> {
           >
             <div className="switch-container">
               {this.validateRoutes()}
-              <scrollToTop />
+              <ScrollToTop />
               <Switch location={this.props.location}>
                 <Route path="/agent/agent-add-card" component={AgentAddCard} />
                 <Route exact path="/agent" component={AgentSignUp} />
                 <Route path="/agent/login" component={Login} />
-                <Route path="/agent/agent-dashboard" component={AgentDashboard} />
+                <ProtectedRoute path="/agent/agent-dashboard" component={AgentDashboard} />
                 <Route path="/agent/agent-payment" component={AgentPayment} />
                 </Switch>
             </div>
