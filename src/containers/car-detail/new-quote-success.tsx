@@ -19,7 +19,7 @@ class CarDetailSuccess extends Component {
                   <h5>success!</h5>
                   <p>Hello Seekr, Your on-boarding is through. Thank you for sending us the request. We will process your requirements and get back to you soon with the suitable quotes.</p>
                   <div className="btn-wrapper">
-                    <Link className="button-primary" to="/dashboard">Go To Dashboard</Link>              
+                    <Link className="button-primary" to="/congratulations">Go To Dashboard</Link>              
                   </div>
                   </>
                 </TransitionGroup>

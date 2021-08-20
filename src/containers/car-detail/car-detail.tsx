@@ -8,7 +8,7 @@ import carImg from '../../assets/images/homepage/signup-2.png';
 import { addVehicleInfoSchema } from '../../constants/formikSchemaValidation';
 import { initialAddVehicleInfoValue } from '../../constants/formikValue';
 import { Vehicle } from '../../constants/types';
-import { states } from '../../constants/app.const';
+import { states, carModels, ownership, mileage } from '../../constants/app.const';
 
 import './car-detail.css';
 import { DatePicker } from '@material-ui/pickers';
@@ -95,7 +95,7 @@ const CarDetail = (props: Props) => {
                         onChange={handleChange}
                         value={values.model}
                         InputProps={{ disableUnderline: true }}>
-                        {states.map((option) => (
+                        {carModels.map((option) => (
                           <MenuItem key={option.value} value={option.value}>
                             {option.label}
                           </MenuItem>
@@ -112,7 +112,7 @@ const CarDetail = (props: Props) => {
                         onChange={handleChange}
                         value={values.mileage}
                         InputProps={{ disableUnderline: true }}>
-                        {states.map((option) => (
+                        {mileage.map((option) => (
                           <MenuItem key={option.value} value={option.value}>
                             {option.label}
                           </MenuItem>
@@ -148,7 +148,7 @@ const CarDetail = (props: Props) => {
                       onChange={handleChange}
                       value={values.ownership}
                       InputProps={{ disableUnderline: true }}>
-                      {states.map((option) => (
+                      {ownership.map((option) => (
                         <MenuItem key={option.value} value={option.value}>
                           {option.label}
                         </MenuItem>

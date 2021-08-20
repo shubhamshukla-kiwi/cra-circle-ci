@@ -49,8 +49,8 @@ export const states = [
     {
         question: 'Profession, Student, or Veteran Discounts?',
         helperText: 'Some insurance companies offer discounts to student, veterans, and some professions.',
-        text: false,
-        options: ['22', '23', '234', '56'],
+        text: true,
+        options: [],
         optionLabel: 'If yes, at what age?',
         answer: null,
         metaAnswerSelect: null,
@@ -109,3 +109,24 @@ export const coveragePlans = [
       rentalCarCoverage: '200$',
       emergencyRoadServices: '200$'
   }];
+
+
+  export const carModels = [
+    {value: 'Audi', label: 'Audi'},
+    {value: 'BMW', label: 'BMW'}
+  ];
+
+  export const ownership = [
+    {value: 'Self', label: 'Self'},
+    {value: 'Rent', label: 'Rent'}
+  ];
+
+  export const companies = [
+    {value: 'Kiwitech', label: 'Kiwitech'},
+    {value: 'Seekr', label: 'Seekr'}
+  ];
+
+  export const mileage = [
+    {value: '50Km/l', label: '50Km/l'},
+    {value: '70Km/l', label: '70Km/l'}
+  ];

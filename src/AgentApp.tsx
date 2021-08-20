@@ -13,12 +13,13 @@ import AgentDashboard from './containers/agent-dashboard/agent-dashboard';
 import AgentPayment from './containers/agent-payment/agent-payment';
 
 import { ZipCodeProvider} from './contexts/ZipCodeContext/ZipCodeContext'
-import ROUTES from './routes';
+import {agentRoutes} from './routes';
 
 import './App.css';
 import ScrollToTop from './components/common/scrollToTop';
 import { MuiThemeProvider, createTheme } from '@material-ui/core';
 import ProtectedRoute from './components/common/protectedRoute';
+import PublicRoute from './components/common/publicRoute';
 
 const childFactoryCreator = (classNames: string) => (child: React.ReactElement) =>
   React.cloneElement(child, {
@@ -56,7 +57,7 @@ class AgentApp extends Component<IRecipeProps, IRecipeState> {
     localStorage.setItem('API_ENDPOINT', API_ENDPOINT);
   }
   validateRoutes() {
-    const routes = ROUTES.map((route) => (
+    const routes = agentRoutes.map((route) => (
       <Route key={route} exact path={route} render={() => null} />
     ));
     return (
@@ -86,11 +87,11 @@ class AgentApp extends Component<IRecipeProps, IRecipeState> {
               {this.validateRoutes()}
               <ScrollToTop />
               <Switch location={this.props.location}>
-                <Route path="/agent/agent-add-card" component={AgentAddCard} />
-                <Route exact path="/agent" component={AgentSignUp} />
-                <Route path="/agent/login" component={Login} />
+                <ProtectedRoute path="/agent/agent-add-card" component={AgentAddCard} />
+                <PublicRoute exact path="/agent" component={AgentSignUp} />
+                <PublicRoute path="/agent/login" component={Login} />
                 <ProtectedRoute path="/agent/agent-dashboard" component={AgentDashboard} />
-                <Route path="/agent/agent-payment" component={AgentPayment} />
+                <ProtectedRoute path="/agent/agent-payment" component={AgentPayment} />
                 </Switch>
             </div>
           </CSSTransition>

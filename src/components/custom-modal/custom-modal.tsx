@@ -229,7 +229,7 @@ const  CustomModal= (props: Props) => {
                                     <Link onClick={(e) => {
                                         handleSubmit(e)
                                         setAddNew(false)
-                                    }} className="button-primary" to="/car-detail-success">
+                                    }} className="button-primary" to="/quote-success">
                                         <span className="btn-txt">Save & send request for quotes</span>
                                         <span className="icon-forward-arrow font-icon"></span>
                                     </Link>

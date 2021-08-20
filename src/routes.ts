@@ -1,31 +1,9 @@
 // List of route patterns for 404 checking
 // Needed since we're using nested non-'exact' routes
-const ROUTES = [
+export const clientRoutes = [
     '/',
-    '/agent/',
-    '/agent/agent-dashboard',
-    '/agent/agent-payment',
-    '/agent/login',
-    '/agent/agent-add-card',
-    '/agent/otp',
     '/login',
     '/dashboard',
-    '/dashboard-empty',
-    '/dashboard/quotes',
-    '/dashboard/policies',
-    '/new-car',
-    '/new-car/drivers',
-    '/new-car/drivers/more-info',
-    '/new-car/drivers/accidents',
-    '/new-car/drivers/confirm',
-    '/new-car/vehicles',
-    '/new-car/vehicles/details',
-    '/new-car/vehicles/package',
-    '/new-car/vehicles/confirm',
-    '/new-car/preferences',
-    '/new-car/preferences/confirm',
-    '/new-car/quotes',
-    '/new-car/quotes/confirm',
     '/coming-soon',
     '/confirm/:token',
     '/congratulations',
@@ -33,25 +11,18 @@ const ROUTES = [
     '/privacy',
     '/tos',
     '/register/:token',
-    '/otp',
-    '/password-login',
     '/sign-up',
     '/new-quote/drivers',
     '/new-quote/vehicles',
     '/new-quote',
-    '/driver-detail',
-    '/more-driver-detail',
-    '/more-driver-detail-a',
-    '/driver-detail-info/:id',
-    '/driver-violations/:id',
-    '/car-detail',
-    '/car-plan',
-    '/car-detail-success',
-    '/set-password',
-    '/agent-sign-up',
-    '/agent-dashboard',
-    '/agent-add-card',
-    '/agent-payment'
+    '/quote-success',
 ];
 
-export default ROUTES;
+
+export const agentRoutes = [
+    '/agent/',
+    '/agent/agent-dashboard',
+    '/agent/agent-payment',
+    '/agent/login',
+    '/agent/agent-add-card',
+];

@@ -4,7 +4,7 @@ import styled from "styled-components"
 const Footer = () => {
   return (
     <FooterDetail>
-      <FooterDetailText>© 2020 Seeker Inc. All Rights Reserve.</FooterDetailText>
+      <FooterDetailText>© 2021 Seeker Inc. All Rights Reserve.</FooterDetailText>
       <FooterDetailText>Use of Seeker Inc. Services is subject to our<br /> Terms of Service, Privacy Policy, and Licenses.</FooterDetailText>
       <FooterDetailText> Need help? Reach us at support@quoteseekr.com</FooterDetailText>
     </FooterDetail>

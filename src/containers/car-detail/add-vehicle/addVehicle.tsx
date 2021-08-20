@@ -29,17 +29,18 @@ const AddVehicle = (props: Props) => {
             } else {
                 props.dispatch(saveVehicle(data));
             }
-            if (naviagteFlag) {
+            if (!naviagteFlag) {
                 setSteps(1);
                 window.scrollTo(0, 0);
             } else {
-                history.push('/car-detail-success')
+                history.push('/quote-success')
             }
             setvehicleInfo(null);
             setcoveragePlan(null);
             setIndex(null);
+            enableSetData=false;
         }
-    }, [coveragePlan]);
+    }, [coveragePlan, enableSetData]);
 
     useEffect(() => {
         if (props.passedData && props.passedData.vehicleInfo && props.passedData.index != null) {

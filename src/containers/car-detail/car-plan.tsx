@@ -27,8 +27,11 @@ const  CarPlan= (props: Props) => {
         setSelectedPlan(index);
     }
     useEffect(() => {
-        const index = coveragePlans.findIndex(item => item.planName === props.coveragePlan && props.coveragePlan.planName);
-        setSelectedPlan(index);
+        console.log(coveragePlans);
+        if(props.coveragePlan) {
+            const index = coveragePlans.findIndex(item => item.planName === props.coveragePlan.planName);
+            setSelectedPlan(index);
+        }
     }, [props.coveragePlan]);
 
     return (
@@ -84,22 +87,22 @@ const  CarPlan= (props: Props) => {
                                 ))}
                             </div>
                         </div>
-                        {!selectedPlan && btnClicked && <span className="error-msg">Please select a plan</span>}
+                        {selectedPlan < 0 && btnClicked && <span className="error-msg">Please select a plan</span>}
                         <div className="btn-selection">
                             <Link onClick={() => {
                                 setBtnClicked(true)
-                                if (selectedPlan) {
+                                if (selectedPlan > -1) {
                                     props.saveCoveragePlan(coveragePlans[selectedPlan], false);
                                     setBtnClicked(false)
                                 }
-                            }} className="button-primary">Save & add another vehicle</Link>
-                            <Link onClick={() => {
+                            }} className="button-primary" to="/new-quote/vehicles">Save & add another vehicle</Link>
+                            <Link  onClick={() => {
                                 setBtnClicked(true)
-                                if (selectedPlan) {
+                                if (selectedPlan > -1) {
                                     props.saveCoveragePlan(coveragePlans[selectedPlan], true);
                                     setBtnClicked(false)
                                 }
-                            }} className="button-primary" to="/car-detail-success">
+                            }} className="button-primary" to="/quote-success">
                                 <span className="btn-txt">Save & send request for quotes</span>
                                 <span className="icon-forward-arrow font-icon"></span>
                             </Link>

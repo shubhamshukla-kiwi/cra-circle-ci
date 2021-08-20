@@ -194,7 +194,7 @@ class SignupModal extends Component {
                                         onBlur={handleBlur}
                                         value={values.termsCheckbox}
                                     />
-                                    <label htmlFor="style-checkbox">I agree to Seekr’s Terms of service & Privacy Policy.</label>
+                                    <label htmlFor="style-checkbox">I agree to Seekr’s <Link to="/tos" target={"_blank"}>Terms of Service</Link> & <Link to="/privacy" target={"_blank"}>Privacy Policy</Link>.</label>
                                     <span className="error-msg"><ErrorMessage name="termsCheckbox" /></span>
                                 </div>
                                 <button className="button-primary" onClick={handleSubmit}>Create a new account</button>

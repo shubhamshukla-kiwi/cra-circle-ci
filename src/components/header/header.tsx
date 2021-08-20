@@ -102,10 +102,7 @@ class Header extends Component {
                                             <a href="/agent-payment">My Payments</a>
                                         </li>
                                         <li>
-                                            <a href="#">Change Password</a>
-                                        </li>
-                                        <li>
-                                            <a href="#">Terms of Services</a>
+                                        <Link to="/privacy" target={"_blank"}>Privacy Policy</Link>
                                         </li>
                                         <li onClick={this.logout} className="sign-out cursor-pointer">
                                             <a>Sign out</a>

@@ -37,15 +37,14 @@ const OTPComponent = ({isVerify, email, handleVerifyCloseModal, goBack, dispatch
                     }
                     setSubmitting(false);
                     if (isClientUser) {
-                        dispatch(loginRequest({
-                            email: email,
-                            password: 'cityslicka'
-                        }))
                         history.push("/new-quote");
                     } else {
                         history.push('/agent/agent-dashboard')
                     }
-
+                    dispatch(loginRequest({
+                        email: email,
+                        password: 'cityslicka'
+                    }))
                 }}
             >
                 {({

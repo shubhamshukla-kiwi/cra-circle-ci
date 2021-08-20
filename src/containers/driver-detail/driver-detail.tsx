@@ -9,7 +9,7 @@ import driverImg from '../../assets/images/homepage/signup-3.png';
 import { addDriverInfoSchema } from '../../constants/formikSchemaValidation';
 import { initialAddDriverInfoValue } from '../../constants/formikValue';
 import { Driver } from '../../constants/types';
-import { genderList, states } from '../../constants/app.const';
+import { genderList, states, companies } from '../../constants/app.const';
 interface Props {
   saveDriverInfo: Function,
   driver: Driver,
@@ -155,7 +155,7 @@ const DriverDetail = (props: Props) => {
                       onChange={handleChange}
                       value={values.insuranceCompany}
                       InputProps={{ disableUnderline: true }}>
-                      {states.map((option) => (
+                      {companies.map((option) => (
                         <MenuItem key={option.value} value={option.value}>
                           {option.label}
                         </MenuItem>
