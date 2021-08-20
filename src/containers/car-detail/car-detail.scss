@@ -5,12 +5,12 @@
     display: flex;
     justify-content: flex-end;
     margin-top: 60px;
-    @media (max-width: 768px){
+    @media (max-width: 768px) {
       flex-wrap: wrap;
     }
     .button-transparent {
       width: 268px;
-      @media (max-width: 768px){
+      @media (max-width: 768px) {
         width: 100%;
         margin-bottom: 20px;
       }
@@ -19,7 +19,7 @@
       margin-top: 0px;
       margin-left: 10px;
       width: 198px;
-      @media (max-width: 768px){
+      @media (max-width: 768px) {
         width: 100%;
         margin-left: 0px;
       }
@@ -42,15 +42,15 @@
     }
     .price-content {
       width: 150px;
-      @media (max-width:768px){
+      @media (max-width: 768px) {
         display: none;
       }
-      
+
       ul {
         li {
           font-size: 16px;
           margin-bottom: 15px;
-          font-family: "Macho-Medium" !important;
+          font-family: "Macho-Medium", sans-serif !important;
           min-height: 50px;
         }
       }
@@ -62,7 +62,7 @@
       display: flex;
       align-items: center;
       text-decoration: underline;
-      font-family: "Macho-Semi" !important;
+      font-family: "Macho-Semi", sans-serif !important;
       height: 49px;
       img {
         padding-top: 6px;
@@ -74,7 +74,7 @@
       width: calc(100% - 150px);
       justify-content: space-between;
       margin-left: 48px;
-      @media (max-width: 768px){
+      @media (max-width: 768px) {
         width: 100%;
         margin-left: 0px;
         flex-wrap: wrap;
@@ -82,7 +82,7 @@
       .pricing-table {
         width: 33.33%;
         margin-left: 1px;
-        @media (max-width: 768px){
+        @media (max-width: 768px) {
           width: 100%;
           margin-bottom: 20px;
         }
@@ -95,7 +95,7 @@
           height: 49px;
           .pricing-title {
             font-size: 13px;
-            font-family: "Macho-Semi" !important;
+            font-family: "Macho-Semi", sans-serif !important;
             text-transform: uppercase;
             letter-spacing: 2.79px;
             padding-left: 10px;
@@ -130,7 +130,7 @@
         .table-list {
           border-right: 1px solid #dfdfdf;
           text-align: center;
-          @media (max-width: 768px){
+          @media (max-width: 768px) {
             border: 1px solid #dfdfdf;
             position: relative;
             padding-top: 80px;
@@ -140,7 +140,7 @@
             font-weight: normal;
             margin-bottom: 15px;
             min-height: 50px;
-            @media (max-width: 768px){
+            @media (max-width: 768px) {
               font-size: 14px;
             }
             &.customise-btn {
@@ -150,10 +150,10 @@
               background-color: #e9e9e9;
               margin: 0px auto 10px;
               font-size: 14px;
-              font-family: "Macho-Semi" !important;
+              font-family: "Macho-Semi", sans-serif !important;
               min-height: auto;
               cursor: pointer;
-              @media (max-width: 768px){
+              @media (max-width: 768px) {
                 position: absolute;
                 top: 20px;
                 left: 0px;
@@ -163,12 +163,12 @@
                 height: 30px;
               }
             }
-            h5{
+            h5 {
               display: none;
-              @media (max-width: 768px){
+              @media (max-width: 768px) {
                 display: block;
                 font-size: 13px;
-                font-family: 'Macho-Medium'!important;
+                font-family: "Macho-Medium", sans-serif !important;
               }
             }
           }
@@ -190,10 +190,16 @@
       }
     }
   }
+  .btn-selection {
+    display: flex;
+    margin: 40px -10px 0px;
+  }
   .button-primary {
     width: 314px !important;
     margin-top: 45px;
-    @media (max-width: 768px){
+    margin: 0px 10px !important;
+    padding: 10px;
+    @media (max-width: 768px) {
       width: 100% !important;
     }
     .btn-txt {
@@ -221,17 +227,17 @@
     max-width: 830px;
     border-radius: 4px;
     box-shadow: 0 32px 34px 0 rgba(0, 0, 0, 0.08);
-    @media (max-width: 768px){
+    @media (max-width: 768px) {
       padding: 20px;
       text-align: center;
     }
     h5 {
       font-size: 14px;
-      font-family: "Macho-Semi" !important;
+      font-family: "Macho-Semi", sans-serif !important;
       text-transform: uppercase;
       letter-spacing: 3px;
       margin-top: 18px;
-      @media (max-width: 768px){
+      @media (max-width: 768px) {
         margin-top: 0px;
       }
     }
@@ -243,25 +249,25 @@
     }
     h4 {
       font-size: 22px;
-      font-family: "Macho-Medium" !important;
+      font-family: "Macho-Medium", sans-serif !important;
       margin-bottom: 53px;
-      @media (max-width: 768px){
-      font-size: 18px;
-    line-height: 23px;
-    margin-bottom: 33px;
+      @media (max-width: 768px) {
+        font-size: 18px;
+        line-height: 23px;
+        margin-bottom: 33px;
       }
     }
     .btn-wrapper {
       display: flex;
       justify-content: flex-end;
       align-items: center;
-      @media (max-width: 768px){
-      flex-wrap: wrap;
-      flex-direction: column-reverse;
+      @media (max-width: 768px) {
+        flex-wrap: wrap;
+        flex-direction: column-reverse;
       }
       .button-primary {
         max-width: 302px;
-        @media (max-width: 768px){
+        @media (max-width: 768px) {
           margin-bottom: 26px;
         }
       }
@@ -270,7 +276,7 @@
         font-size: 18px;
         font-weight: 600;
         margin-right: 50px;
-        @media (max-width: 768px){
+        @media (max-width: 768px) {
           margin-right: 0px;
         }
       }

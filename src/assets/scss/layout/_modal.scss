@@ -20,7 +20,7 @@
     bottom: auto;
     border-radius: 4px;
     outline: none;
-    font-family: "Macho Regular";
+    font-family: "Macho Regular", sans-serif;
     @media (max-width: 768px) {
         padding: 20px 20px 0px !important;
         height: auto;
@@ -45,7 +45,7 @@
         text-transform: uppercase;
         margin-bottom: 0px;
         color: #252525;
-        font-family: "Macho-Semi";
+        font-family: "Macho-Semi", sans-serif;
     }
     p {
         font-size: 14px;
@@ -68,7 +68,7 @@
             font-weight: 600;
             margin-bottom: 2px;
             margin-top: 0px;
-            font-family: "Macho-Semi";
+            font-family: "Macho-Semi", sans-serif;
         }
         p,
         span {
@@ -162,11 +162,17 @@
     h4 {
         margin-bottom: 37px;
     }
+    .btn-selection {
+        display: flex;
+        margin: 40px -10px 0px;
+      }
     .button-primary {
         max-width: 376px;
         margin-left: auto;
         margin-top: 45px;
         width: 100%;
+        margin: 0px 10px !important;
+        padding: 10px;
         @media (max-width: 768px) {
             font-size: 15px;
         }
@@ -216,7 +222,7 @@
     .review-heading {
         text-transform: uppercase;
         font-size: 14px;
-        font-family: "Macho-Semi";
+        font-family: "Macho-Semi", sans-serif;
         letter-spacing: 3px;
         color: #252525;
         margin-bottom: 3px;
@@ -239,7 +245,7 @@
         }
         .user-heading {
             font-size: 14px;
-            font-family: "Macho-Semi";
+            font-family: "Macho-Semi", sans-serif;
             line-height: 1.29;
             color: #252525;
             margin-bottom: 8px;
@@ -258,7 +264,7 @@
     }
     .radio-heading {
         font-size: 14px;
-        font-family: "Macho-Semi";
+        font-family: "Macho-Semi", sans-serif;
         line-height: 1.29;
         color: #252525;
         margin-bottom: 9px;
@@ -275,7 +281,7 @@
             padding: 8px 0 0;
             line-height: 1.29;
             font-size: 14px;
-            font-family: "Macho-Semi";
+            font-family: "Macho-Semi", sans-serif;
             border: 0;
             margin: 0 0 0 -1px;
         }
@@ -408,12 +414,17 @@
     height: 526px;
     .user-details {
         margin-top: 24px;
+        img {
+            width: 60px;
+            height: 60px;
+            object-fit: cover;
+        }
     }
     .about-me {
         margin-top: 15px;
         h6 {
             font-size: 16px;
-            font-family: "Macho-Semi";
+            font-family: "Macho-Semi", sans-serif;
         }
         p {
             max-width: 281px;
@@ -423,13 +434,7 @@
     .co-logo {
         display: flex;
     }
-    .user-details {
-        img {
-            width: 60px;
-            height: 60px;
-            object-fit: cover;
-        }
-    }
+    
 }
 
 // agent request modal
@@ -443,7 +448,7 @@
     overflow-y: auto;
     h3 {
         font-size: 14px;
-        font-family: "Macho-Semi" !important;
+        font-family: "Macho-Semi", sans-serif !important;
         text-transform: uppercase;
         letter-spacing: 3px;
         text-align: center;
@@ -451,7 +456,7 @@
     }
     .download-pdf-btn {
         font-size: 14px;
-        font-family: "Macho-Semi" !important;
+        font-family: "Macho-Semi", sans-serif !important;
         cursor: pointer;
         display: flex;
         justify-content: flex-end;
@@ -493,7 +498,7 @@
         .right-head {
             span {
                 font-size: 16px;
-                font-family: "Macho-Semi" !important;
+                font-family: "Macho-Semi", sans-serif !important;
             }
         }
     }
@@ -508,7 +513,7 @@
             border: 1px solid #ff5454;
             border-radius: 2px;
             font-size: 18px;
-            font-family: "Macho-Semi" !important;
+            font-family: "Macho-Semi", sans-serif !important;
             color: #ff5454;
             background-color: unset;
             cursor: pointer;
@@ -548,7 +553,7 @@
             font-size: 15px;
             border: 0px;
             color: #fff;
-            font-family: "Macho-Semi" !important;
+            font-family: "Macho-Semi", sans-serif !important;
             span {
                 margin-top: -5px;
                 display: block;
@@ -559,7 +564,7 @@
         }
         label {
             font-size: 16px;
-            font-family: "Macho-Semi" !important;
+            font-family: "Macho-Semi", sans-serif !important;
             &:before {
                 border: 1px solid #23a54b;
                 margin-top: -5px;
@@ -574,7 +579,7 @@
         background-color: rgba(255, 84, 84, 0.1);
         padding: 12px 15px;
         font-size: 16px;
-        font-family: "Macho-Semi" !important;
+        font-family: "Macho-Semi", sans-serif !important;
         color: #ff5454;
         max-width: 580px;
         margin: 0px auto;
@@ -621,14 +626,14 @@
         }
         h5 {
             font-size: 14px;
-            font-family: "Macho-Semi" !important;
+            font-family: "Macho-Semi", sans-serif !important;
             letter-spacing: 3px;
             text-transform: uppercase;
             margin-bottom: 13px;
         }
         h6 {
             font-size: 16px;
-            font-family: "Macho-Semi" !important;
+            font-family: "Macho-Semi", sans-serif !important;
         }
         .details-rw {
             display: flex;
@@ -648,7 +653,7 @@
             margin-top: 25px;
             em {
                 font-size: 16px;
-                font-family: "Macho-Semi" !important;
+                font-family: "Macho-Semi",sans-serif !important;
                 margin-top: -10px;
                 display: block;
                 margin-bottom: 15px;
@@ -680,7 +685,7 @@
             }
             label {
                 font-size: 16px;
-                font-family: "Macho-Semi" !important;
+                font-family: "Macho-Semi", sans-serif !important;
                 max-width: 220px;
                 width: 100%;
             }
@@ -707,7 +712,7 @@
         margin: 0px auto;
         font-size: 16px;
         color: #fc8d44;
-        font-family: "Macho-Semi" !important;
+        font-family: "Macho-Semi", sans-serif !important;
         img {
             margin-right: 10px;
         }
@@ -730,7 +735,7 @@
     }
     h5 {
         font-size: 14px;
-        font-family: "Macho-Semi" !important;
+        font-family: "Macho-Semi", sans-serif !important;
         letter-spacing: 3px;
         text-transform: uppercase;
         margin-bottom: 30px;
@@ -745,7 +750,7 @@
         }
         a {
             font-size: 18px;
-            font-family: "Macho-Semi" !important;
+            font-family: "Macho-Semi", sans-serif !important;
             color: #ff5454;
             cursor: pointer;
         }
@@ -787,7 +792,7 @@
         h5 {
             font-size: 14px;
             letter-spacing: 3px;
-            font-family: "Macho-Semi" !important;
+            font-family: "Macho-Semi", sans-serif !important;
             text-transform: uppercase;
         }
         .select-wrap {
@@ -867,7 +872,7 @@
         }
         .cancel-btn {
             font-size: 18px;
-            font-family: "Macho-Semi" !important;
+            font-family: "Macho-Semi", sans-serif !important;
             color: #ff5454;
         }
     }

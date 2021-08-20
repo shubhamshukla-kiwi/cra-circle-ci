@@ -1,6 +1,3 @@
-import { configureStore, configureAgentStore } from "../configureStore";
-
-
 export const setPlatform = (type: string): void => {
     localStorage.setItem('platform', type);
 }
@@ -16,4 +13,8 @@ export const isClient = (): boolean => {
 
 export const isLoggedIn = (): boolean => {
     return localStorage.getItem('isAuthenticated')
+}
+
+export const setLoggedIn = (): boolean => {
+    return localStorage.setItem('isAuthenticated', true);
 }

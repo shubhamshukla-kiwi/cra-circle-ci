@@ -12,6 +12,7 @@ import uploadPhoto from './../../assets/images/homepage/upload-photo.svg';
 import profileDefault from './../../assets/images/homepage/modal-profile.png';
 import { agentSignupSchema } from '../../constants/formikSchemaValidation';
 import { initialAgentSignupValue } from '../../constants/formikValue';
+import { ListItemIcon, ListItemText } from '@material-ui/core';
 
 
 ReactModal.setAppElement('#root');
@@ -51,6 +52,18 @@ class AgentSignupModal extends Component {
             },
             {
               value: 'AUS',
+              label: 'AUS',
+            }
+          ];
+          const comapnies = [
+            {
+              value: 'CA',
+              image: 'https://icons.iconarchive.com/icons/graphics-vibe/simple-rounded-social/24/twitter-icon.png',
+              label: 'CA',
+            },
+            {
+              value: 'AUS',
+              image: 'https://icons.iconarchive.com/icons/graphics-vibe/simple-rounded-social/24/twitter-icon.png',
               label: 'AUS',
             }
           ];
@@ -236,13 +249,31 @@ class AgentSignupModal extends Component {
                                                     onBlur={handleBlur}
                                                     value={values.company}
                                                     InputProps={{ disableUnderline: true }}>
-                                                    {states.map((option) => (
+                                                    {comapnies.map((option) => (
+                                                        
                                                         <MenuItem key={option.value} value={option.value}>
-                                                            {option.label}
+                                                            <ListItemIcon>
+                                                                <img src={option.image} alt="company"/>
+                                                            </ListItemIcon>
+                                                            <ListItemText primary={option.label} />
+                                                            {/* {option.label} */}
                                                         </MenuItem>
                                                     ))}
                                                 </TextField>
                                                 <span className="error-msg"><ErrorMessage name="company" /></span>
+                                            </div>
+                                            <div className="form-group">
+                                            <TextField
+                                                    type="text"
+                                                    className={`form-control ${!errors.licneseNumber ? '' : 'error'}`}
+                                                    label="Insurance License Number"
+                                                    name="licneseNumber"
+                                                    onChange={handleChange}
+                                                    onBlur={handleBlur}
+                                                    value={values.licneseNumber}
+                                                    InputProps={{ disableUnderline: true }}
+                                                />
+                                                <span className="error-msg"><ErrorMessage name="licneseNumber" /></span>
                                             </div>
                                         </div>
                                         <div className="custom-checkbox agree-txt">

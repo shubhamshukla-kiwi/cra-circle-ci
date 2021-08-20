@@ -11,13 +11,14 @@ import AgentAddCard from './containers/agent-add-card/agent-add-card';
 import AgentSignUp from './containers/agent-sign-up/agent-sign-up';
 import AgentDashboard from './containers/agent-dashboard/agent-dashboard';
 import AgentPayment from './containers/agent-payment/agent-payment';
-import Otp from './containers/otp/otp';
-
 
 import { ZipCodeProvider} from './contexts/ZipCodeContext/ZipCodeContext'
 import ROUTES from './routes';
 
 import './App.css';
+import ScrollToTop from './components/common/scrollToTop';
+import { MuiThemeProvider, createTheme } from '@material-ui/core';
+import ProtectedRoute from './components/common/protectedRoute';
 
 const childFactoryCreator = (classNames: string) => (child: React.ReactElement) =>
   React.cloneElement(child, {
@@ -33,6 +34,17 @@ const childFactoryCreator = (classNames: string) => (child: React.ReactElement) 
     location: object
     dispatch: Function
   }
+  const theme = createTheme({
+    overrides: {
+      MuiSelect: {
+        select: {
+          "&:focus": {
+            "background-color": "#fff"
+          }
+        }
+      }
+    }
+  });
 class AgentApp extends Component<IRecipeProps, IRecipeState> {
   constructor(props: IRecipeProps) {
     super(props);
@@ -59,6 +71,7 @@ class AgentApp extends Component<IRecipeProps, IRecipeState> {
     return (
       <div className="app-body">
       <ZipCodeProvider>
+      <MuiThemeProvider theme={theme}>  
         <div className="gradient-overlay" />
         <TransitionGroup
           className="app-body-transition-group"
@@ -71,17 +84,18 @@ class AgentApp extends Component<IRecipeProps, IRecipeState> {
           >
             <div className="switch-container">
               {this.validateRoutes()}
+              <ScrollToTop />
               <Switch location={this.props.location}>
                 <Route path="/agent/agent-add-card" component={AgentAddCard} />
                 <Route exact path="/agent" component={AgentSignUp} />
                 <Route path="/agent/login" component={Login} />
-                <Route path="/agent/agent-dashboard" component={AgentDashboard} />
+                <ProtectedRoute path="/agent/agent-dashboard" component={AgentDashboard} />
                 <Route path="/agent/agent-payment" component={AgentPayment} />
-                <Route path="/agent/otp" component={Otp} />
                 </Switch>
             </div>
           </CSSTransition>
         </TransitionGroup>
+        </MuiThemeProvider>
         </ZipCodeProvider>
       </div>
     );

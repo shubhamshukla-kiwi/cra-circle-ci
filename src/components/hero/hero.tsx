@@ -16,7 +16,6 @@ const Hero = (props) => {
   }, []);
   const [zipcode, setZip] = useState("");
   const history = useHistory();
-  const [isLoading, setIsLoading] = useState(false);
   const {
     cleanData,
     fetchZipCode,
@@ -40,7 +39,6 @@ const Hero = (props) => {
 
   return (
     <HeroContainer>
-      <Loading show={isLoading} />
       <InnerContainer className="inner-container">
         <Row center="xs">
           <Col className="heroTitle" xs={12}>
@@ -184,17 +182,6 @@ const HeroItem = styled.li`
       margin-right: 0px;
       width: 100%;
       margin-bottom: 30px;
-  }
-`
-
-const HeroItemLogo = styled.img`
-  height: ${props => props.height}px;
-  margin-right: 10px;
-  width: ${props => props.width}px;
-
-  @media only screen and (max-width: ${({ theme: { media } }) =>
-    media.mobile_landscape}) {
-    
   }
 `
 

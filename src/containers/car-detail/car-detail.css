@@ -230,3 +230,7 @@
         @media (max-width: 768px) {
           .success-modal .car-success-wrapper .btn-wrapper .button-txt {
             margin-right: 0px; } }
+
+.plan-details-wrapper .icon-back-arrow {
+  cursor: pointer;
+}            

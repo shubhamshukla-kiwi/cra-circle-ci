@@ -1,24 +1,20 @@
 import {call, put, takeLatest} from 'redux-saga/effects';
 import Api from '../../lib/helpers/Api'
-import {API_ENDPOINT} from '../../lib/constants/api';
-import _ from 'lodash';
+
+// import {API_ENDPOINT} from '../../lib/constants/api';
 
 import {
     LOGIN_REQUEST,
     LOGIN_SUCCESS,
     LOGIN_FAILURE,
 } from '../../lib/constants/actions'
+import { setLoggedIn } from '../../utils';
 
 
 const executeLoginUser = (payload) => {
-    return Api.post(API_ENDPOINT + 'login', {
-        "data": {
-            "attributes": {
+    return Api.post('https://611e3932a0f19c00179e7716.mockapi.io/login/login', {
                 "email": String(payload.payload.email).toLowerCase(),
-                "password": payload.payload.password,
-            },
-            "type": "users"
-        }
+                "password": payload.payload.password
     }).then((res) => {
         return res;
     })
@@ -28,13 +24,12 @@ function* loginUser(payload, action) {
     try {
         const login = yield call(executeLoginUser, payload);
 
-        if (login.data) {
-            const user = _.find(login.included, included => included.type === 'user');
-
-            yield put({type: LOGIN_SUCCESS, payload: Object.assign({}, {...user})});
+        if (login.error) {
+            yield put({type: LOGIN_FAILURE, payload: Object.assign({}, {err: login.error})});
         }
-        if (login.errors) {
-            yield put({type: LOGIN_FAILURE, payload: Object.assign({}, {err: login.errors})});
+        if (login.token) {
+            setLoggedIn();
+            yield put({type: LOGIN_SUCCESS, payload: Object.assign({}, {token: login.token})});
         }
     } catch (error) {
         console.warn(error);

@@ -7,6 +7,9 @@ import { DragDropContext, Droppable, Draggable } from "react-beautiful-dnd";
 import agentImg from '../../assets/images/homepage/signup-1.png';
 import stepsLine from '../../assets/images/homepage/steps-line.svg';
 import whiteLogo from '../../assets/images/homepage/seekr-logo-white.png';
+import { connect } from 'react-redux';
+import { savePreferences } from '../../actions/onboarding/preferences.action';
+import { Dispatch } from 'redux';
 
 // a little function to help us with reordering the result
 const reorder = (list, startIndex, endIndex) => {
@@ -16,8 +19,10 @@ const reorder = (list, startIndex, endIndex) => {
 
     return result;
 };
-
-class AgentPreferences extends Component {
+interface IProps {
+    dispatch: Dispatch
+}
+class AgentPreferences extends Component<IProps, IStateProps> {
     constructor(props) {
         super(props);
         this.state = {
@@ -43,6 +48,10 @@ class AgentPreferences extends Component {
         this.setState({
             items
         });
+    }
+
+    setPreferences = () => {
+        this.props.dispatch(savePreferences(this.state.items))
     }
 
     render() {
@@ -95,7 +104,7 @@ class AgentPreferences extends Component {
 
                     </div>
                 </div>
-                <Link className="button-primary" to="/driver-detail">Next</Link>
+                <Link onClick={this.setPreferences} className="button-primary" to="/new-quote/drivers">Next</Link>
                 {this.state.showTooltip &&
                     <div className="welcome-msg">
                         <div className="msg-txt">
@@ -115,5 +124,8 @@ class AgentPreferences extends Component {
         );
     }
 }
+const mapStateToProps = () => {
+    return {}
+}
 
-export default AgentPreferences;
+export default connect(mapStateToProps)(AgentPreferences);

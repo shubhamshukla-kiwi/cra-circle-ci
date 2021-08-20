@@ -9,7 +9,7 @@ export const initialAddDriverInfoValue = {
   }
 
 export const initialAddVehicleInfoValue = {
-  year: '',
+  year: null,
   make: '',
   model: '',
   mileage: '',
@@ -30,9 +30,9 @@ export const initialAgentSignupValue = {
   city: '',
   company: '',
   bio: '',
-  termsCheckbox: false
+  termsCheckbox: false,
+  licneseNumber: ''
 };
-
 
 export const initialLoginValue = {
   email: ''
@@ -55,4 +55,58 @@ export const initialSignupValue = {
   state: '',
   city: '',
   termsCheckbox: false
+}
+
+export const initialDriverDetailValues = {
+  driverDetail: [
+      {
+          answer: '',
+          metaAnswer: '',
+          metaAnswerSelect: '',
+      },
+      {
+          answer: '',
+          metaAnswer: '',
+          metaAnswerSelect: '',
+      },
+      {
+          answer: '',
+          metaAnswer: '',
+          metaAnswerSelect: '',
+      }
+  ]
+}
+
+export const intitalCustomizeCoveragePlanValue = {
+  id: '',
+  planName: '', 
+  bodilyInjury: '',
+  propertyDamage: '',
+  unisuredMotoristBI: '',
+  unisuredMotoristPropertyDamage: '',
+  personalInjuryProtection: '',
+  comprehensiveDeductible: '',
+  collisionDeductible: '',
+  rentalCarCoverage: '',
+  emergencyRoadServices: ''
+}
+
+export const initialDriverViolationValues = {
+  noViolation: '',
+  violations: [{
+      addNew: false,
+      labelTitle: 'Mention any accident occured',
+      category: '',
+      year: null
+  }, {
+      addNew: false,
+      labelTitle: 'Has there been a violation?',
+      category: '',
+      year: null
+  }, {
+      addNew: false,
+      labelTitle: 'Any other incident?',
+      category: '',
+      year: null
+  },]
 }

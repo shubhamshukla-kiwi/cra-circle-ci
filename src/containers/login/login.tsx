@@ -4,6 +4,7 @@ import React, { Component } from 'react';
 import LoginModal from '../../components/login-modal/login-modal';
 import OnboardingHeader from '../../components/onboarding-header/onboarding-header';
 import OnboardingFooter from '../../components/onboarding-footer/onboarding-footer';
+import Loading from '../../components/loading2/loading';
 
 class Login extends Component {
   constructor(props) {
@@ -42,6 +43,7 @@ class Login extends Component {
   render() {
     return (
       <div className="login">
+        <Loading />
         <OnboardingHeader />
         <LoginModal
           activeScreen="login"

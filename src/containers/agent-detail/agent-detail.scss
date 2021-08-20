@@ -343,7 +343,7 @@
   }
   h4 {
     font-size: 14px;
-    font-family: "Macho-Semi" !important;
+    font-family: "Macho-Semi", sans-serif !important;
     text-transform: uppercase;
     letter-spacing: 3px;
     margin-top: 10px;
@@ -358,7 +358,7 @@
   h6 {
     font-style: italic;
     font-size: 14px;
-    font-family: "Macho-Semi" !important;
+    font-family: "Macho-Semi", sans-serif !important;
     .note-text {
       color: #ff5454;
     }
@@ -381,7 +381,7 @@
       border-radius: 5px;
       margin-bottom: 20px;
       font-size: 22px;
-      font-family: "Macho-Semi" !important;
+      font-family: "Macho-Semi", sans-serif !important;
       cursor: move;
       background-image: url("../../../src/assets/images/homepage/drag.svg");
       background-repeat: no-repeat;
@@ -396,7 +396,7 @@
     align-items: center;
     h6 {
       font-size: 14px;
-      font-family: "Macho-Semi" !important;
+      font-family: "Macho-Semi", sans-serif !important;
       text-transform: uppercase;
       letter-spacing: 3px;
       writing-mode: tb;
@@ -447,7 +447,7 @@
     background-color: transparent;
     border: 1px solid #fff;
     margin-top: 15px;
-    font-family: "Macho-Medium" !important;
+    font-family: "Macho-Medium", sans-serif !important;
     color: #fff;
     margin-left: 35px;
     cursor: pointer;
