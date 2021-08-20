@@ -33,8 +33,8 @@ const Dashboard = (props: Props) => {
                         <DriverList />
                         <VehicleList />
                     </div>
-                    {/* <EmptyDashboard /> */}
-                    <AgentList />
+                    <EmptyDashboard />
+                    {/* <AgentList /> */}
                 </Row>
                 <OnboardingFooter />
             </div>

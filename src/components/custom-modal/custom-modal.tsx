@@ -33,6 +33,7 @@ const  CustomModal= (props: Props) => {
                     initialValues={{...intitalCustomizeCoveragePlanValue, ...props.planData}}
                     validationSchema={customizeCoveragePlanSchema}
                     onSubmit={(values, { setSubmitting, resetForm }) => {
+                        props.handleCloseModal()
                         props.saveCoveragePlan(values, addNew)
                         setSubmitting(false);
                     }}
