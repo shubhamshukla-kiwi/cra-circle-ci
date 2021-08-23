@@ -10,7 +10,7 @@ const Footer = (props) => {
           <FooterDetail>
             <FooterLogo src={seekrLogo} alt="logo" />
             <FooterDetailTitle>&copy; 2021 Seekr Inc. All Rights Reserved.</FooterDetailTitle>
-            <FooterDetailText>Use of Seekr Inc.'s Services is subject to our <Link href="tos">Terms of Service</Link>, <Link href="privacy">Privacy Policy</Link>, and Licenses.</FooterDetailText>
+            <FooterDetailText>Use of Seekr Inc.'s Services is subject to our <Link href="tos" target={"_blank"}>Terms of Service</Link>, <Link href="privacy" target={"_blank"}>Privacy Policy</Link>, and Licenses.</FooterDetailText>
             <FooterDetailText> Need help? Reach us at support@quoteseekr.com</FooterDetailText>
           </FooterDetail>
         </InnerContainer>

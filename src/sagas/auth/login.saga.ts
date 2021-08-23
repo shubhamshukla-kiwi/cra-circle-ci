@@ -8,7 +8,6 @@ import {
     LOGIN_SUCCESS,
     LOGIN_FAILURE,
 } from '../../lib/constants/actions'
-import { setLoggedIn } from '../../utils';
 
 
 const executeLoginUser = (payload) => {
@@ -28,7 +27,6 @@ function* loginUser(payload, action) {
             yield put({type: LOGIN_FAILURE, payload: Object.assign({}, {err: login.error})});
         }
         if (login.token) {
-            setLoggedIn();
             yield put({type: LOGIN_SUCCESS, payload: Object.assign({}, {token: login.token})});
         }
     } catch (error) {

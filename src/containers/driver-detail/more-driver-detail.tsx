@@ -81,10 +81,11 @@ export const MoreDriverDetail = (props: Props) => {
                                                         />
                                                     </div>}
                                                     {!questionAnswerList[index].text && <div className="form-group">
-                                                        <label>{questionAnswerList[index].optionLabel}</label>
                                                         <TextField
                                                             select
+                                                            label={questionAnswerList[index].optionLabel}
                                                             defaultValue=""
+                                                            className="form-control"
                                                             name={`driverDetail.${index}.metaAnswerSelect`}
                                                             onChange={handleChange}
                                                             InputProps={{ disableUnderline: true }}>

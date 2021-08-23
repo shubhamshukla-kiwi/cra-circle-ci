@@ -43,7 +43,7 @@ const AddDriver = (props: Props) => {
                 history.push('/new-quote/vehicles')
             }
         }
-    }, [driverViolations]);
+    }, [driverViolations, enableSetData]);
 
 
     useEffect(() => {

@@ -38,8 +38,8 @@ class AgentAddCard extends Component {
                                             />
                                         </div>
                                         <div className="btn-wrapper">
-                                            <Link className="button-txt" to="/car-detail-success">Skip</Link>
-                                            <Link className="button-primary" to="/car-detail-success">Save & Proceed</Link>
+                                            <Link className="button-txt" to="/quote-success">Skip</Link>
+                                            <Link className="button-primary" to="/quote-success">Save & Proceed</Link>
                                         </div>
 
                                     </form>

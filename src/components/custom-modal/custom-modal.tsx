@@ -13,12 +13,12 @@ interface Props {
     showModal: boolean
     handleCloseModal: boolean
     planData: T,
-    saveCoveragePlan: Function
+    setCoveragePlan: Function
 }
-let addNew = false;
+let navigation = false;
 
-const setAddNew = (flag) => {
-    addNew = flag;
+const setNavigation = (flag) => {
+    navigation = flag;
 }
 const options = [{label: '100$/ 250$', value: '100$/ 250$'}, {label: '200$', value: '200$'}]
 
@@ -34,7 +34,7 @@ const  CustomModal= (props: Props) => {
                     validationSchema={customizeCoveragePlanSchema}
                     onSubmit={(values, { setSubmitting, resetForm }) => {
                         props.handleCloseModal()
-                        props.saveCoveragePlan(values, addNew)
+                        props.setCoveragePlan(values)
                         setSubmitting(false);
                     }}
                 >
@@ -221,23 +221,23 @@ const  CustomModal= (props: Props) => {
                                         <span className="error-msg"><ErrorMessage name="unisuredMotoristPropertyDamage" /></span>
                                     </div>
                                 </div>
-                                <div className="btn-selection">
+                                {/* <div className="btn-selection">
                                     <Link onClick={(e) => {
                                         handleSubmit(e)
-                                        setAddNew(true)
-                                    }} className="button-primary">Save & add another vehicle</Link>
+                                        setNavigation(false)
+                                    }} className="button-primary">Save custom & add another vehicle</Link>
                                     <Link onClick={(e) => {
                                         handleSubmit(e)
-                                        setAddNew(false)
-                                    }} className="button-primary" to="/car-detail-success">
-                                        <span className="btn-txt">Save & send request for quotes</span>
+                                        setNavigation(true)
+                                    }} className="button-primary" to="/quote-success">
+                                        <span className="btn-txt">Save custom & send request for quotes</span>
                                         <span className="icon-forward-arrow font-icon"></span>
                                     </Link>
-                                </div>
-                                {/* <Link onClick={handleSubmit} className="button-primary" to="/">
-                                    <span className="btn-txt">Save custom & send request for quotes</span>
+                                </div> */}
+                                <Link onClick={handleSubmit} className="button-primary" to="/">
+                                    <span className="btn-txt">Save custom plan</span>
                                     <span className="icon-forward-arrow font-icon"></span>
-                                </Link> */}
+                                </Link>
                             </div>)}
                 </Formik>
                 <button className="close-icon" onClick={props.handleCloseModal}><span className="icon-cross"><span className="path2"></span></span></button>

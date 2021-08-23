@@ -47,13 +47,13 @@ class Header extends Component {
     }
 
     logout() {
-        localStorage.removeItem('isAuthenticated');
-        localStorage.removeItem('persist:root');
         if(this.state.isClientUser) {
-            this.props.history.push('/login')
+            this.props.history.push('/')
         } else {
             this.props.history.push('/agent/login')
         }
+        localStorage.removeItem('isAuthenticated');
+        localStorage.removeItem('persist:root');
     }
 
     render() {
@@ -90,22 +90,19 @@ class Header extends Component {
                                         }}>
                                             <a href="#">Edit Profile</a>
                                         </li>
-                                        <li onClick={() => {
+                                        {!this.state.isClientUser && <li onClick={() => {
                                             this.setState({
                                                 showBox: false
                                             })
                                             this.handleOpenModal()
                                         }}>
                                             <a href="#">Add Card</a>
-                                        </li>
-                                        <li>
+                                        </li>}
+                                        {!this.state.isClientUser && <li>
                                             <a href="/agent-payment">My Payments</a>
-                                        </li>
+                                        </li>}
                                         <li>
-                                            <a href="#">Change Password</a>
-                                        </li>
-                                        <li>
-                                            <a href="#">Terms of Services</a>
+                                        <Link to="/privacy" target={"_blank"}>Privacy Policy</Link>
                                         </li>
                                         <li onClick={this.logout} className="sign-out cursor-pointer">
                                             <a>Sign out</a>

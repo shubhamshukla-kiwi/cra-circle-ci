@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import info from '../../assets/images/homepage/info.svg';
 import './car-detail.css';
 import CustomModal from '../../components/custom-modal/custom-modal';
-import { coveragePlans } from '../../constants/app.const';
+import { coveragePlanList, originalCoveragePlans } from '../../constants/app.const';
 
 
 import React from 'react'
@@ -15,8 +15,9 @@ interface Props {
 
 const  CarPlan= (props: Props) => {
     const [showModal, setShowModal] = useState(false)
-    const [selectedPlan, setSelectedPlan] = useState(null)
+    const [selectedPlan, setSelectedPlan] = useState(-1)
     const [btnClicked, setBtnClicked ]=  useState(false)
+    const [coveragePlans, setCoveragePlans] = useState(coveragePlanList);
     const handleOpenModal = () => {
         setShowModal(true);
     }
@@ -26,9 +27,24 @@ const  CarPlan= (props: Props) => {
     const choosePlan = (index: number) => {
         setSelectedPlan(index);
     }
-    useEffect(() => {
-        const index = coveragePlans.findIndex(item => item.planName === props.coveragePlan && props.coveragePlan.planName);
+    const setCoveragePlan = (data) => {
+        const index = coveragePlans.findIndex(item => item.planName === data.planName);
         setSelectedPlan(index);
+        setCoveragePlans([
+            ...coveragePlans.slice(0,index),
+            {
+                ...coveragePlans[index],
+                ...data,
+            },
+            ...coveragePlans.slice(index+1)
+        ])
+    }
+    useEffect(() => {
+        if(props.coveragePlan) {
+            setCoveragePlan(props.coveragePlan)
+        } else {
+            setCoveragePlans(originalCoveragePlans)
+        }
     }, [props.coveragePlan]);
 
     return (
@@ -84,22 +100,24 @@ const  CarPlan= (props: Props) => {
                                 ))}
                             </div>
                         </div>
-                        {!selectedPlan && btnClicked && <span className="error-msg">Please select a plan</span>}
+                        {selectedPlan < 0 && btnClicked && <span className="error-msg">Please select a plan</span>}
                         <div className="btn-selection">
                             <Link onClick={() => {
                                 setBtnClicked(true)
-                                if (selectedPlan) {
+                                if (selectedPlan > -1) {
                                     props.saveCoveragePlan(coveragePlans[selectedPlan], false);
-                                    setBtnClicked(false)
+                                    setBtnClicked(false);
+                                    setSelectedPlan(-1);
                                 }
-                            }} className="button-primary">Save & add another vehicle</Link>
-                            <Link onClick={() => {
+                            }} className="button-primary" to="/new-quote/vehicles">Save & add another vehicle</Link>
+                            <Link  onClick={() => {
                                 setBtnClicked(true)
-                                if (selectedPlan) {
+                                if (selectedPlan > -1) {
                                     props.saveCoveragePlan(coveragePlans[selectedPlan], true);
-                                    setBtnClicked(false)
+                                    setBtnClicked(false);
+                                    setSelectedPlan(-1);
                                 }
-                            }} className="button-primary" to="/car-detail-success">
+                            }} className="button-primary">
                                 <span className="btn-txt">Save & send request for quotes</span>
                                 <span className="icon-forward-arrow font-icon"></span>
                             </Link>
@@ -113,6 +131,7 @@ const  CarPlan= (props: Props) => {
                 handleCloseModal={handleCloseModal}
                 planData={coveragePlans[selectedPlan]}
                 saveCoveragePlan={props.saveCoveragePlan}
+                setCoveragePlan={setCoveragePlan}
             />
         </>
     );

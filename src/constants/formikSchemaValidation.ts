@@ -20,13 +20,19 @@ export const SignupSchema = Yup.object().shape({
   address: Yup.string()
     .required('Mandatory!')
     .matches(
-      /^[a-zA-Z0-9]*$/,
+      /^\w+( \w+)*$/,
       'Only alphanumeric characters are allowed'
     ),
   state: Yup.string()
+    .nullable()
     .required('Mandatory!'),
   city: Yup.string()
-    .required('Mandatory!'),
+    .required('Mandatory!')
+    .when('state', (state) => {
+      if(!state) {
+        return Yup.string().required("Please select state")
+      }
+    }),
   termsCheckbox: Yup.boolean()
     .oneOf([true], 'Please accept terms and condition')
 });
@@ -75,13 +81,13 @@ export const agentSignupSchema = Yup.object().shape({
   address: Yup.string()
     .required('Mandatory!')
     .matches(
-      /^[a-zA-Z0-9]*$/,
+      /^\w+( \w+)*$/,
       'Only alphanumeric characters are allowed'
     ),
   bio: Yup.string()
     .required('Mandatory!')
     .matches(
-      /^[a-zA-Z0-9]*$/,
+      /^\w+( \w+)*$/,
       'Only alphanumeric characters are allowed'
     ),
   phone: Yup.string()
@@ -104,7 +110,12 @@ export const agentSignupSchema = Yup.object().shape({
   state: Yup.string()
     .required('Mandatory!'),
   city: Yup.string()
-    .required('Mandatory!'),
+    .required('Mandatory!')
+    .when('state', (state) => {
+      if(!state) {
+        return Yup.string().required("Please select state")
+      }
+    }),
   company: Yup.string()
     .required('Mandatory!'),
   termsCheckbox: Yup.boolean()
@@ -177,11 +188,16 @@ export const driverViolationSchema = Yup.object().shape({
   violations: Yup.array()
     .of(
       Yup.object().shape({
-        category: Yup.string()
-                  .required('Mandatory!'), 
-        year: Yup.date()
-                 .nullable()
-                 .required('Mandatory!'),                
+        options: Yup.array()
+        .of(
+          Yup.object().shape({
+            category: Yup.string()
+                      .required('Mandatory!'), 
+            year: Yup.date()
+                     .nullable()
+                     .required('Mandatory!'),                
+          })
+        )              
       })
     )
 });

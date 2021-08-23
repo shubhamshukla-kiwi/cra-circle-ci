@@ -1,4 +1,3 @@
-import { connect } from 'react-redux';
 import { Redirect } from 'react-router-dom';
 import React, { Component } from 'react';
 
@@ -7,7 +6,7 @@ import logo from './../../assets/images/seekr-logo.png';
 
 import './new-car-congratulations.css';
 
-class NewCarCongratulations extends Component {
+class NewQuoteCongratulations extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -56,11 +55,5 @@ class NewCarCongratulations extends Component {
   }
 }
 
-function mapStateToProps(state) {
-  return {
-    login: state.login,
-    rfqs: state.rfqs,
-  };
-}
 
-export default connect(mapStateToProps)(NewCarCongratulations);
+export default NewQuoteCongratulations;

@@ -47,9 +47,9 @@ class SignupModal extends Component {
     render() {
         let data = this.context.data;
         data = data && data.places[0]['state abbreviation'];
-        if(!data) {
-            this.props.history.push('/');
-        }
+        // if(!data) {
+        //     this.props.history.push('/');
+        // }
         const states = [
             {
               value: 'CA',
@@ -171,7 +171,12 @@ class SignupModal extends Component {
                                             label="City"
                                             name="city"
                                             className={`form-control ${!errors.city ? '' : 'error'}`}
-                                            onChange={handleChange}
+                                            onChange={(e) => {
+                                                if(values.state) {
+                                                    handleChange(e);
+                                                }
+                                            }
+                                            }
                                             onBlur={handleBlur}
                                             value={values.city}
                                             InputProps={{ disableUnderline: true }}>
@@ -194,7 +199,7 @@ class SignupModal extends Component {
                                         onBlur={handleBlur}
                                         value={values.termsCheckbox}
                                     />
-                                    <label htmlFor="style-checkbox">I agree to Seekr’s Terms of service & Privacy Policy.</label>
+                                    <label htmlFor="style-checkbox">I agree to Seekr’s <Link to="/tos" target={"_blank"}>Terms of Service</Link> & <Link to="/privacy" target={"_blank"}>Privacy Policy</Link>.</label>
                                     <span className="error-msg"><ErrorMessage name="termsCheckbox" /></span>
                                 </div>
                                 <button className="button-primary" onClick={handleSubmit}>Create a new account</button>
@@ -208,7 +213,7 @@ class SignupModal extends Component {
                                     <h4>Please confirm your details</h4>
                                     <div className="user-details">
                                         <h5>{values.firstName} {values.lastName}</h5>
-                                        <span>{values.lastName}</span>
+                                        <span>{values.email}</span>
                                         <p>{values.address}</p>
                                         <p>{values.city}, {values.state}</p>
                                     </div>

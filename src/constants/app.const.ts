@@ -6,6 +6,10 @@ export const genderList = [
     {
       value: 'Female',
       label: 'Female',
+    },
+    {
+      value: 'Others',
+      label: 'Others',
     }
   ];
 
@@ -50,7 +54,7 @@ export const states = [
         question: 'Profession, Student, or Veteran Discounts?',
         helperText: 'Some insurance companies offer discounts to student, veterans, and some professions.',
         text: false,
-        options: ['22', '23', '234', '56'],
+        options: [23,46,89],
         optionLabel: 'If yes, at what age?',
         answer: null,
         metaAnswerSelect: null,
@@ -72,7 +76,7 @@ export const comapnies = [
 ];
 
 
-export const coveragePlans = [
+export const coveragePlanList = [
   {
       id: 1,
       planName: 'Basic', bodilyInjury: '200$',
@@ -109,3 +113,62 @@ export const coveragePlans = [
       rentalCarCoverage: '200$',
       emergencyRoadServices: '200$'
   }];
+
+  export const originalCoveragePlans = [
+    {
+        id: 1,
+        planName: 'Basic', bodilyInjury: '200$',
+        propertyDamage: '200$',
+        unisuredMotoristBI: '200$',
+        unisuredMotoristPropertyDamage: '200$',
+        personalInjuryProtection: '200$',
+        comprehensiveDeductible: '200$',
+        collisionDeductible: '200$',
+        rentalCarCoverage: '200$',
+        emergencyRoadServices: '200$'
+    },
+    {
+        id: 2,
+        planName: 'Premium', bodilyInjury: '200$',
+        propertyDamage: '200$',
+        unisuredMotoristBI: '200$',
+        unisuredMotoristPropertyDamage: '200$',
+        personalInjuryProtection: '200$',
+        comprehensiveDeductible: '200$',
+        collisionDeductible: '200$',
+        rentalCarCoverage: '200$',
+        emergencyRoadServices: '200$'
+    },
+    {
+        id: 3,
+        planName: 'Best', bodilyInjury: '200$',
+        propertyDamage: '200$',
+        unisuredMotoristBI: '200$',
+        unisuredMotoristPropertyDamage: '200$',
+        personalInjuryProtection: '200$',
+        comprehensiveDeductible: '200$',
+        collisionDeductible: '200$',
+        rentalCarCoverage: '200$',
+        emergencyRoadServices: '200$'
+    }];
+  
+  
+  export const carModels = [
+    {value: 'Audi', label: 'Audi'},
+    {value: 'BMW', label: 'BMW'}
+  ];
+
+  export const ownership = [
+    {value: 'Self', label: 'Self'},
+    {value: 'Rent', label: 'Rent'}
+  ];
+
+  export const companies = [
+    {value: 'Kiwitech', label: 'Kiwitech'},
+    {value: 'Seekr', label: 'Seekr'}
+  ];
+
+  export const mileage = [
+    {value: '50Km/l', label: '50Km/l'},
+    {value: '70Km/l', label: '70Km/l'}
+  ];

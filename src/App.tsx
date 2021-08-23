@@ -13,27 +13,23 @@ import ComingSoon from './containers/coming-soon/coming-soon';
 import SignUp from './containers/sign-up/sign-up'
 
 import NewQuote from './containers/new-quote/new-quote';
-import NewCarCongratulations from './containers/new-car-congratulations/new-car-congratulations';
+import NewQuoteCongratulations from './containers/new-quote-congratulations/new-quote-congratulations';
 import Oops from './containers/oops/oops';
 import Privacy from './containers/privacy/privacy';
 import Tos from './containers/tos/tos';
-import CarDetailSuccess from './containers/car-detail/car-detail-success';
-import AgentAddCard from './containers/agent-add-card/agent-add-card';
-
-import AgentSignUp from './containers/agent-sign-up/agent-sign-up';
-import AgentDashboard from './containers/agent-dashboard/agent-dashboard';
-import AgentPayment from './containers/agent-payment/agent-payment';
-
+import NewQuoteSuccess from './containers/car-detail/new-quote-success';
 
 import PropsRoute from './lib/helpers/props-route';
 import { ZipCodeProvider} from './contexts/ZipCodeContext/ZipCodeContext'
-import ROUTES from './routes';
+import {clientRoutes} from './routes';
 
 import './App.scss';
 import ProtectedRoute from './components/common/protectedRoute';
 import ScrollToTop from './components/common/scrollToTop';
 import { createTheme, MuiThemeProvider } from '@material-ui/core';
 import Dashboard from './containers/dashboard/dashboard';
+import { isLoggedIn } from './utils';
+import PublicRoute from './components/common/publicRoute';
 
 const childFactoryCreator = (classNames: string) => (child: React.ReactElement) =>
   React.cloneElement(child, {
@@ -43,6 +39,7 @@ const childFactoryCreator = (classNames: string) => (child: React.ReactElement) 
     transitionKey?: boolean;
     currentKey?: string;
     transitionClassName: string;
+    isLoggedIn: boolean;
   }
   
   interface IRecipeProps {
@@ -68,12 +65,13 @@ class App extends Component<IRecipeProps, IRecipeState> {
       transitionKey: false,
       currentKey: this.props.location.pathname,
       transitionClassName: 'fade',
+      isLoggedIn: isLoggedIn()
     };
     localStorage.setItem('API_ENDPOINT', API_ENDPOINT);
   }
 
   validateRoutes() {
-    const routes = ROUTES.map((route) => (
+    const routes = clientRoutes.map((route) => (
       <Route key={route} exact path={route} render={() => null} />
     ));
     return (
@@ -112,24 +110,20 @@ class App extends Component<IRecipeProps, IRecipeState> {
                   setEmail={()=> {}}
                 />
                 <Route path="/login" component={Login} />
-                <Route path="/new-quote" component={NewQuote} />
+                <ProtectedRoute path="/new-quote" component={NewQuote} />
                 <Route path="/coming-soon" component={ComingSoon} />
                 {/* <Route path="/confirm/:token" component={ConfirmEmail} /> */}
-                <Route
+                <ProtectedRoute
                   exact
                   path="/congratulations"
-                  component={NewCarCongratulations}
+                  component={NewQuoteCongratulations}
                 />
                 <Route exact path="/oops" component={Oops} />
                 <PropsRoute exact path="/tos" component={Tos} static />
                 <Route exact path="/privacy" component={Privacy} />
                 <Route path="/sign-up" component={SignUp} />
-                <Route path="/car-detail-success" component={CarDetailSuccess} />
-                <Route path="/agent-add-card" component={AgentAddCard} />
+                <ProtectedRoute path="/quote-success" component={NewQuoteSuccess} />
                 <ProtectedRoute path="/dashboard" component={Dashboard} />
-                <Route path="/agent-sign-up" component={AgentSignUp} />
-                <Route path="/agent-dashboard" component={AgentDashboard} />
-                <Route path="/agent-payment" component={AgentPayment} />
                 </Switch>
             </div>
           </CSSTransition>

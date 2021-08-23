@@ -21,6 +21,7 @@ const LoginModal = (props: Props) => {
     const isClientUser = isClient();
     return (
         <div className="login-modal screen-container">
+                <div className="otp-wrap">
             <div className="login-screen">
                 <OnboardingLeft />
                 <div className="right-content">
@@ -71,6 +72,7 @@ const LoginModal = (props: Props) => {
                     </Formik>}
                     {activeStep === 2 && <OTPComponent goBack={()=> {setActiveStep(1)}} email={email} isVerify={false} />}
                 </div>
+            </div>
             </div>
         </div>
     )

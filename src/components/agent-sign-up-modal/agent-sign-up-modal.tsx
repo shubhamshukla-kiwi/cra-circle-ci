@@ -202,7 +202,12 @@ class AgentSignupModal extends Component {
                                                     className={`form-control ${!errors.city ? '' : 'error'}`}
                                                     label="City"
                                                     name="city"
-                                                    onChange={handleChange}
+                                                    onChange={(e) => {
+                                                        if(values.state) {
+                                                            handleChange(e);
+                                                        }
+                                                    }
+                                                    }
                                                     onBlur={handleBlur}
                                                     value={values.city}
                                                     InputProps={{ disableUnderline: true }}>
@@ -284,7 +289,7 @@ class AgentSignupModal extends Component {
                                                 onChange={handleChange}
                                                 onBlur={handleBlur}
                                                 value={values.termsCheckbox} />
-                                            <label htmlFor="style-checkbox">I agree to Seekr’s Terms of service & Privacy Policy.</label>
+                                            <label htmlFor="style-checkbox">I agree to Seekr’s <Link to="/tos" target={"_blank"}>Terms of Service</Link> & <Link to="/privacy" target={"_blank"}>Privacy Policy</Link>.</label>
                                             <span className="error-msg"><ErrorMessage name="termsCheckbox" /></span>
                                         </div>
                                         <button className="button-primary" onClick={handleSubmit}>Create a new account</button>
@@ -308,7 +313,7 @@ class AgentSignupModal extends Component {
                                                 <p>{values.bio}</p>
                                             </div>
                                             <div className="co-logo">
-                                                <img alt="company" src=""></img>
+                                                <img alt="company" src='https://icons.iconarchive.com/icons/graphics-vibe/simple-rounded-social/24/twitter-icon.png'></img>
                                                 <span>{values.company}</span>
                                             </div>
                                             <div className="button-wrap">

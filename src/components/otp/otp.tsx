@@ -1,5 +1,5 @@
 import { otpValidationSchema } from '../../constants/formikSchemaValidation';
-import { isClient } from '../../utils';
+import { isClient, setLoggedIn } from '../../utils';
 import { Formik } from 'formik';
 import { useHistory } from 'react-router-dom';
 import './otp.scss';
@@ -36,16 +36,20 @@ const OTPComponent = ({isVerify, email, handleVerifyCloseModal, goBack, dispatch
                         handleVerifyCloseModal();
                     }
                     setSubmitting(false);
-                    if (isClientUser) {
-                        dispatch(loginRequest({
-                            email: email,
-                            password: 'cityslicka'
-                        }))
-                        history.push("/new-quote");
+                    setLoggedIn();
+                    dispatch(loginRequest({
+                        email: email,
+                        password: 'cityslicka'
+                    }))
+                    if (isClientUser) { 
+                        if(isVerify) {
+                            history.push('/new-quote')
+                        } else {
+                            history.push('/dashboard')
+                        }                    
                     } else {
                         history.push('/agent/agent-dashboard')
                     }
-
                 }}
             >
                 {({
