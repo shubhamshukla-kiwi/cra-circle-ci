@@ -116,7 +116,7 @@ const DriverViolations = (props: Props) => {
                                                                             </TextField>
                                                                             <span className="error-msg"><ErrorMessage name={`violations[${index}].options[${fieldIndex}].year`} /></span>
                                                                         </div>
-                                                                        {values.violations[index].options.length > 1 && <div onClick={() => remove(index)} className="delete-spn">
+                                                                        {values.violations[index].options.length > 1 && <div onClick={() => remove(fieldIndex)} className="delete-spn">
                                                                             <img alt="delete" src={cross}></img>
                                                                         </div>}
                                                                     </div>
