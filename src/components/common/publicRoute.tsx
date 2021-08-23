@@ -9,7 +9,7 @@ const PublicRoute = ({ component: Component, ...innerProps }) => {
     <Route
       {...innerProps}
       render={(props) =>
-        !isAuthenticated ? <Component {...props} /> : isClientUser?<Redirect to="/new-quote" />:<Redirect to="/agent/agent-dashboard" />
+        !isAuthenticated ? <Component {...props} /> : isClientUser?<Redirect to="/dashboard" />:<Redirect to="/agent/agent-dashboard" />
       }
     />
   );

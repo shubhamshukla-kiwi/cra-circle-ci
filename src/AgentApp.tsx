@@ -88,8 +88,8 @@ class AgentApp extends Component<IRecipeProps, IRecipeState> {
               <ScrollToTop />
               <Switch location={this.props.location}>
                 <ProtectedRoute path="/agent/agent-add-card" component={AgentAddCard} />
-                <PublicRoute exact path="/agent" component={AgentSignUp} />
-                <PublicRoute path="/agent/login" component={Login} />
+                <Route exact path="/agent" component={AgentSignUp} />
+                <Route path="/agent/login" component={Login} />
                 <ProtectedRoute path="/agent/agent-dashboard" component={AgentDashboard} />
                 <ProtectedRoute path="/agent/agent-payment" component={AgentPayment} />
                 </Switch>

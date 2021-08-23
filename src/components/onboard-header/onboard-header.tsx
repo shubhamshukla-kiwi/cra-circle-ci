@@ -10,7 +10,7 @@ const  OnboardHeader= (props) => {
         localStorage.removeItem('isAuthenticated');
         localStorage.removeItem('persist:root');
         if(isClientUser) {
-            props.history.push('/login')
+            props.history.push('/')
         } else {
             props.history.push('/agent/login')
         }
@@ -20,7 +20,7 @@ const  OnboardHeader= (props) => {
             <Link to="/" className="seeker-logo-container">
                 <img alt="" src={logo} />
             </Link>
-            <Link onClick={logout} to="/login" className="signout-link">
+            <Link onClick={logout} className="signout-link">
                 Sign out
           </Link>
         </div>

@@ -47,13 +47,13 @@ class Header extends Component {
     }
 
     logout() {
-        localStorage.removeItem('isAuthenticated');
-        localStorage.removeItem('persist:root');
         if(this.state.isClientUser) {
             this.props.history.push('/')
         } else {
             this.props.history.push('/agent/login')
         }
+        localStorage.removeItem('isAuthenticated');
+        localStorage.removeItem('persist:root');
     }
 
     render() {

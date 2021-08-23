@@ -47,9 +47,9 @@ class SignupModal extends Component {
     render() {
         let data = this.context.data;
         data = data && data.places[0]['state abbreviation'];
-        if(!data) {
-            this.props.history.push('/');
-        }
+        // if(!data) {
+        //     this.props.history.push('/');
+        // }
         const states = [
             {
               value: 'CA',
@@ -171,7 +171,12 @@ class SignupModal extends Component {
                                             label="City"
                                             name="city"
                                             className={`form-control ${!errors.city ? '' : 'error'}`}
-                                            onChange={handleChange}
+                                            onChange={(e) => {
+                                                if(values.state) {
+                                                    handleChange(e);
+                                                }
+                                            }
+                                            }
                                             onBlur={handleBlur}
                                             value={values.city}
                                             InputProps={{ disableUnderline: true }}>
@@ -208,7 +213,7 @@ class SignupModal extends Component {
                                     <h4>Please confirm your details</h4>
                                     <div className="user-details">
                                         <h5>{values.firstName} {values.lastName}</h5>
-                                        <span>{values.lastName}</span>
+                                        <span>{values.email}</span>
                                         <p>{values.address}</p>
                                         <p>{values.city}, {values.state}</p>
                                     </div>

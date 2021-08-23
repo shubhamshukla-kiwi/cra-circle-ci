@@ -202,7 +202,12 @@ class AgentSignupModal extends Component {
                                                     className={`form-control ${!errors.city ? '' : 'error'}`}
                                                     label="City"
                                                     name="city"
-                                                    onChange={handleChange}
+                                                    onChange={(e) => {
+                                                        if(values.state) {
+                                                            handleChange(e);
+                                                        }
+                                                    }
+                                                    }
                                                     onBlur={handleBlur}
                                                     value={values.city}
                                                     InputProps={{ disableUnderline: true }}>
@@ -308,7 +313,7 @@ class AgentSignupModal extends Component {
                                                 <p>{values.bio}</p>
                                             </div>
                                             <div className="co-logo">
-                                                <img alt="company" src=""></img>
+                                                <img alt="company" src='https://icons.iconarchive.com/icons/graphics-vibe/simple-rounded-social/24/twitter-icon.png'></img>
                                                 <span>{values.company}</span>
                                             </div>
                                             <div className="button-wrap">

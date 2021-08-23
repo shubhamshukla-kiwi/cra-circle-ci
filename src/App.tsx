@@ -109,7 +109,7 @@ class App extends Component<IRecipeProps, IRecipeState> {
                   fetchZip={()=> {}}
                   setEmail={()=> {}}
                 />
-                <PublicRoute path="/login" component={Login} />
+                <Route path="/login" component={Login} />
                 <ProtectedRoute path="/new-quote" component={NewQuote} />
                 <Route path="/coming-soon" component={ComingSoon} />
                 {/* <Route path="/confirm/:token" component={ConfirmEmail} /> */}
@@ -121,7 +121,7 @@ class App extends Component<IRecipeProps, IRecipeState> {
                 <Route exact path="/oops" component={Oops} />
                 <PropsRoute exact path="/tos" component={Tos} static />
                 <Route exact path="/privacy" component={Privacy} />
-                <PublicRoute path="/sign-up" component={SignUp} />
+                <Route path="/sign-up" component={SignUp} />
                 <ProtectedRoute path="/quote-success" component={NewQuoteSuccess} />
                 <ProtectedRoute path="/dashboard" component={Dashboard} />
                 </Switch>

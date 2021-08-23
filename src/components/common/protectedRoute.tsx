@@ -9,7 +9,7 @@ const ProtectedRoute = ({ component: Component, ...innerProps }) => {
     <Route
       {...innerProps}
       render={(props) =>
-        isAuthenticated ? <Component {...props} /> : isClientUser?<Redirect to="/login" />:<Redirect to="/agent/login" />
+        isAuthenticated ? <Component {...props} /> : isClientUser?<Redirect to="/" />:<Redirect to="/agent/login" />
       }
     />
   );
