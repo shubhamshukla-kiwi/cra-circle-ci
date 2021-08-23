@@ -96,7 +96,7 @@ const SeekerWork = () => {
                 disabled={!isZipCodeValid}
                 onClick={onClickGetStartedHandler}
                 className={!isZipCodeValid?'btn-disabled':''}>
-                  Get Started
+                  Get Started Now
                 </HeroButton>
               </Form>
             </div>

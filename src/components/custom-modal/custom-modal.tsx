@@ -15,10 +15,10 @@ interface Props {
     planData: T,
     saveCoveragePlan: Function
 }
-let addNew = false;
+let navigation = false;
 
-const setAddNew = (flag) => {
-    addNew = flag;
+const setNavigation = (flag) => {
+    navigation = flag;
 }
 const options = [{label: '100$/ 250$', value: '100$/ 250$'}, {label: '200$', value: '200$'}]
 
@@ -34,7 +34,7 @@ const  CustomModal= (props: Props) => {
                     validationSchema={customizeCoveragePlanSchema}
                     onSubmit={(values, { setSubmitting, resetForm }) => {
                         props.handleCloseModal()
-                        props.saveCoveragePlan(values, addNew)
+                        props.saveCoveragePlan(values, navigation)
                         setSubmitting(false);
                     }}
                 >
@@ -224,13 +224,13 @@ const  CustomModal= (props: Props) => {
                                 <div className="btn-selection">
                                     <Link onClick={(e) => {
                                         handleSubmit(e)
-                                        setAddNew(true)
-                                    }} className="button-primary">Save & add another vehicle</Link>
+                                        setNavigation(false)
+                                    }} className="button-primary">Save custom & add another vehicle</Link>
                                     <Link onClick={(e) => {
                                         handleSubmit(e)
-                                        setAddNew(false)
+                                        setNavigation(true)
                                     }} className="button-primary" to="/quote-success">
-                                        <span className="btn-txt">Save & send request for quotes</span>
+                                        <span className="btn-txt">Save custom & send request for quotes</span>
                                         <span className="icon-forward-arrow font-icon"></span>
                                     </Link>
                                 </div>

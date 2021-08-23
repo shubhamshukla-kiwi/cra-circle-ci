@@ -6,6 +6,10 @@ export const genderList = [
     {
       value: 'Female',
       label: 'Female',
+    },
+    {
+      value: 'Others',
+      label: 'Others',
     }
   ];
 
@@ -72,7 +76,7 @@ export const comapnies = [
 ];
 
 
-export const coveragePlans = [
+export let coveragePlans = [
   {
       id: 1,
       planName: 'Basic', bodilyInjury: '200$',
@@ -110,7 +114,45 @@ export const coveragePlans = [
       emergencyRoadServices: '200$'
   }];
 
-
+  export const originalCoveragePlans = [
+    {
+        id: 1,
+        planName: 'Basic', bodilyInjury: '200$',
+        propertyDamage: '200$',
+        unisuredMotoristBI: '200$',
+        unisuredMotoristPropertyDamage: '200$',
+        personalInjuryProtection: '200$',
+        comprehensiveDeductible: '200$',
+        collisionDeductible: '200$',
+        rentalCarCoverage: '200$',
+        emergencyRoadServices: '200$'
+    },
+    {
+        id: 2,
+        planName: 'Premium', bodilyInjury: '200$',
+        propertyDamage: '200$',
+        unisuredMotoristBI: '200$',
+        unisuredMotoristPropertyDamage: '200$',
+        personalInjuryProtection: '200$',
+        comprehensiveDeductible: '200$',
+        collisionDeductible: '200$',
+        rentalCarCoverage: '200$',
+        emergencyRoadServices: '200$'
+    },
+    {
+        id: 3,
+        planName: 'Best', bodilyInjury: '200$',
+        propertyDamage: '200$',
+        unisuredMotoristBI: '200$',
+        unisuredMotoristPropertyDamage: '200$',
+        personalInjuryProtection: '200$',
+        comprehensiveDeductible: '200$',
+        collisionDeductible: '200$',
+        rentalCarCoverage: '200$',
+        emergencyRoadServices: '200$'
+    }];
+  
+  
   export const carModels = [
     {value: 'Audi', label: 'Audi'},
     {value: 'BMW', label: 'BMW'}

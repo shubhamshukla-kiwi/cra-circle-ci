@@ -131,8 +131,8 @@ const CarDetail = (props: Props) => {
                       value={values.driver}
                       InputProps={{ disableUnderline: true }}>
                       {props.drivers.map((option) => (
-                        <MenuItem key={option.driverInfo.firstName} value={option.driverInfo.firstName}>
-                          {option.driverInfo.firstName} {option.driverInfo.firstName}
+                        <MenuItem key={option.driverInfo.firstName} value={`${option.driverInfo.firstName} ${option.driverInfo.lastName}`}>
+                          {option.driverInfo.firstName} {option.driverInfo.lastName}
                         </MenuItem>
                       ))}
                     </TextField>

@@ -15,7 +15,7 @@ interface Props {
 
 const  CarPlan= (props: Props) => {
     const [showModal, setShowModal] = useState(false)
-    const [selectedPlan, setSelectedPlan] = useState(null)
+    const [selectedPlan, setSelectedPlan] = useState(-1)
     const [btnClicked, setBtnClicked ]=  useState(false)
     const handleOpenModal = () => {
         setShowModal(true);
@@ -31,6 +31,7 @@ const  CarPlan= (props: Props) => {
         if(props.coveragePlan) {
             const index = coveragePlans.findIndex(item => item.planName === props.coveragePlan.planName);
             setSelectedPlan(index);
+            coveragePlans[index]=props.coveragePlan;
         }
     }, [props.coveragePlan]);
 
@@ -93,16 +94,18 @@ const  CarPlan= (props: Props) => {
                                 setBtnClicked(true)
                                 if (selectedPlan > -1) {
                                     props.saveCoveragePlan(coveragePlans[selectedPlan], false);
-                                    setBtnClicked(false)
+                                    setBtnClicked(false);
+                                    setSelectedPlan(-1);
                                 }
                             }} className="button-primary" to="/new-quote/vehicles">Save & add another vehicle</Link>
                             <Link  onClick={() => {
                                 setBtnClicked(true)
                                 if (selectedPlan > -1) {
                                     props.saveCoveragePlan(coveragePlans[selectedPlan], true);
-                                    setBtnClicked(false)
+                                    setBtnClicked(false);
+                                    setSelectedPlan(-1);
                                 }
-                            }} className="button-primary" to="/quote-success">
+                            }} className="button-primary">
                                 <span className="btn-txt">Save & send request for quotes</span>
                                 <span className="icon-forward-arrow font-icon"></span>
                             </Link>

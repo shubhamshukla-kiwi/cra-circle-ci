@@ -50,7 +50,7 @@ class Header extends Component {
         localStorage.removeItem('isAuthenticated');
         localStorage.removeItem('persist:root');
         if(this.state.isClientUser) {
-            this.props.history.push('/login')
+            this.props.history.push('/')
         } else {
             this.props.history.push('/agent/login')
         }
@@ -90,17 +90,17 @@ class Header extends Component {
                                         }}>
                                             <a href="#">Edit Profile</a>
                                         </li>
-                                        <li onClick={() => {
+                                        {!this.state.isClientUser && <li onClick={() => {
                                             this.setState({
                                                 showBox: false
                                             })
                                             this.handleOpenModal()
                                         }}>
                                             <a href="#">Add Card</a>
-                                        </li>
-                                        <li>
+                                        </li>}
+                                        {!this.state.isClientUser && <li>
                                             <a href="/agent-payment">My Payments</a>
-                                        </li>
+                                        </li>}
                                         <li>
                                         <Link to="/privacy" target={"_blank"}>Privacy Policy</Link>
                                         </li>

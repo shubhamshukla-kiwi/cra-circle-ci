@@ -124,9 +124,9 @@ const DriverViolations = (props: Props) => {
                                                                 </TextField>
                                                                 <span className="error-msg"><ErrorMessage name={`violations.${index}.category`} /></span>
                                                             </div>
-                                                            <div onClick={() => remove(index)} className="delete-spn">
+                                                            {values.violations.length>1 && <div onClick={() => remove(index)} className="delete-spn">
                                                                 <img alt="delete" src={cross}></img>
-                                                            </div>
+                                                            </div>}
                                                         </div>
                                                     </div>
                                                 ))}

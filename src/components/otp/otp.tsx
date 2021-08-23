@@ -36,8 +36,8 @@ const OTPComponent = ({isVerify, email, handleVerifyCloseModal, goBack, dispatch
                         handleVerifyCloseModal();
                     }
                     setSubmitting(false);
-                    if (isClientUser) {
-                        history.push("/new-quote");
+                    if (isClientUser) {                        
+                        history.push('/dashboard')
                     } else {
                         history.push('/agent/agent-dashboard')
                     }
