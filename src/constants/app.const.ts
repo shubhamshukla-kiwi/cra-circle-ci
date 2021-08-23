@@ -53,8 +53,8 @@ export const states = [
     {
         question: 'Profession, Student, or Veteran Discounts?',
         helperText: 'Some insurance companies offer discounts to student, veterans, and some professions.',
-        text: true,
-        options: [],
+        text: false,
+        options: [23,46,89],
         optionLabel: 'If yes, at what age?',
         answer: null,
         metaAnswerSelect: null,
@@ -76,7 +76,7 @@ export const comapnies = [
 ];
 
 
-export let coveragePlans = [
+export const coveragePlanList = [
   {
       id: 1,
       planName: 'Basic', bodilyInjury: '200$',

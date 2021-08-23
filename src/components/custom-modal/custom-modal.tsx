@@ -13,7 +13,7 @@ interface Props {
     showModal: boolean
     handleCloseModal: boolean
     planData: T,
-    saveCoveragePlan: Function
+    setCoveragePlan: Function
 }
 let navigation = false;
 
@@ -34,7 +34,7 @@ const  CustomModal= (props: Props) => {
                     validationSchema={customizeCoveragePlanSchema}
                     onSubmit={(values, { setSubmitting, resetForm }) => {
                         props.handleCloseModal()
-                        props.saveCoveragePlan(values, navigation)
+                        props.setCoveragePlan(values)
                         setSubmitting(false);
                     }}
                 >
@@ -221,7 +221,7 @@ const  CustomModal= (props: Props) => {
                                         <span className="error-msg"><ErrorMessage name="unisuredMotoristPropertyDamage" /></span>
                                     </div>
                                 </div>
-                                <div className="btn-selection">
+                                {/* <div className="btn-selection">
                                     <Link onClick={(e) => {
                                         handleSubmit(e)
                                         setNavigation(false)
@@ -233,11 +233,11 @@ const  CustomModal= (props: Props) => {
                                         <span className="btn-txt">Save custom & send request for quotes</span>
                                         <span className="icon-forward-arrow font-icon"></span>
                                     </Link>
-                                </div>
-                                {/* <Link onClick={handleSubmit} className="button-primary" to="/">
-                                    <span className="btn-txt">Save custom & send request for quotes</span>
+                                </div> */}
+                                <Link onClick={handleSubmit} className="button-primary" to="/">
+                                    <span className="btn-txt">Save custom plan</span>
                                     <span className="icon-forward-arrow font-icon"></span>
-                                </Link> */}
+                                </Link>
                             </div>)}
                 </Formik>
                 <button className="close-icon" onClick={props.handleCloseModal}><span className="icon-cross"><span className="path2"></span></span></button>

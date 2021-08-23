@@ -94,19 +94,22 @@ export const intitalCustomizeCoveragePlanValue = {
 export const initialDriverViolationValues = {
   noViolation: '',
   violations: [{
-      addNew: false,
-      labelTitle: 'Mention any accident occured',
+    labelTitle: 'Mention any accident occured',
+    options: [{
       category: '',
       year: null
+    }]
   }, {
-      addNew: false,
-      labelTitle: 'Has there been a violation?',
+    labelTitle: 'Has there been a violation?',
+    options: [{
       category: '',
       year: null
+    }]
   }, {
-      addNew: false,
-      labelTitle: 'Any other incident?',
+    labelTitle: 'Any other incident?',
+    options: [{
       category: '',
       year: null
+    }]
   },]
 }

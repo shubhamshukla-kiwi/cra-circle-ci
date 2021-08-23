@@ -177,11 +177,16 @@ export const driverViolationSchema = Yup.object().shape({
   violations: Yup.array()
     .of(
       Yup.object().shape({
-        category: Yup.string()
-                  .required('Mandatory!'), 
-        year: Yup.date()
-                 .nullable()
-                 .required('Mandatory!'),                
+        options: Yup.array()
+        .of(
+          Yup.object().shape({
+            category: Yup.string()
+                      .required('Mandatory!'), 
+            year: Yup.date()
+                     .nullable()
+                     .required('Mandatory!'),                
+          })
+        )              
       })
     )
 });

@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import info from '../../assets/images/homepage/info.svg';
 import './car-detail.css';
 import CustomModal from '../../components/custom-modal/custom-modal';
-import { coveragePlans } from '../../constants/app.const';
+import { coveragePlanList, originalCoveragePlans } from '../../constants/app.const';
 
 
 import React from 'react'
@@ -17,6 +17,7 @@ const  CarPlan= (props: Props) => {
     const [showModal, setShowModal] = useState(false)
     const [selectedPlan, setSelectedPlan] = useState(-1)
     const [btnClicked, setBtnClicked ]=  useState(false)
+    const [coveragePlans, setCoveragePlans] = useState(coveragePlanList);
     const handleOpenModal = () => {
         setShowModal(true);
     }
@@ -26,12 +27,23 @@ const  CarPlan= (props: Props) => {
     const choosePlan = (index: number) => {
         setSelectedPlan(index);
     }
+    const setCoveragePlan = (data) => {
+        const index = coveragePlans.findIndex(item => item.planName === data.planName);
+        setSelectedPlan(index);
+        setCoveragePlans([
+            ...coveragePlans.slice(0,index),
+            {
+                ...coveragePlans[index],
+                ...data,
+            },
+            ...coveragePlans.slice(index+1)
+        ])
+    }
     useEffect(() => {
-        console.log(coveragePlans);
         if(props.coveragePlan) {
-            const index = coveragePlans.findIndex(item => item.planName === props.coveragePlan.planName);
-            setSelectedPlan(index);
-            coveragePlans[index]=props.coveragePlan;
+            setCoveragePlan(props.coveragePlan)
+        } else {
+            setCoveragePlans(originalCoveragePlans)
         }
     }, [props.coveragePlan]);
 
@@ -119,6 +131,7 @@ const  CarPlan= (props: Props) => {
                 handleCloseModal={handleCloseModal}
                 planData={coveragePlans[selectedPlan]}
                 saveCoveragePlan={props.saveCoveragePlan}
+                setCoveragePlan={setCoveragePlan}
             />
         </>
     );
