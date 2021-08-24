@@ -29,7 +29,7 @@ import ScrollToTop from './components/common/scrollToTop';
 import { createTheme, MuiThemeProvider } from '@material-ui/core';
 import Dashboard from './containers/dashboard/dashboard';
 import { isLoggedIn } from './utils';
-import PublicRoute from './components/common/publicRoute';
+import ConfirmEmail from './containers/confirm-email/confirm-email';
 
 const childFactoryCreator = (classNames: string) => (child: React.ReactElement) =>
   React.cloneElement(child, {
@@ -112,7 +112,7 @@ class App extends Component<IRecipeProps, IRecipeState> {
                 <Route path="/login" component={Login} />
                 <ProtectedRoute path="/new-quote" component={NewQuote} />
                 <Route path="/coming-soon" component={ComingSoon} />
-                {/* <Route path="/confirm/:token" component={ConfirmEmail} /> */}
+                <Route path="/confirm/:token" component={ConfirmEmail} />
                 <ProtectedRoute
                   exact
                   path="/congratulations"
