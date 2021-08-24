@@ -98,9 +98,11 @@ class AgentDashboard extends Component {
                                 <div className="dropdown">
                                     <ul>
                                         <li>
+                                            {/* eslint-disable-next-line */}
                                             <a href="#">Active</a>
                                         </li>
                                         <li>
+                                            {/* eslint-disable-next-line */}
                                             <a href="#">In-active</a>
                                         </li>
                                     </ul>

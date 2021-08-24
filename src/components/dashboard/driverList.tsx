@@ -10,7 +10,8 @@ const DriverList = (props: Props) => {
             <h4 className="user-title">1 driver added</h4>
             <ul className="user-list">
                 <li>
-                    <a className="user-link">
+                        {/* eslint-disable-next-line */}
+                        <a className="user-link">
                         <img alt="Brand icon" src={userDefaultIcon} />
                         <div className="profile-content">
                             <h5>Adrian</h5>

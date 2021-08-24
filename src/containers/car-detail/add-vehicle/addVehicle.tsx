@@ -40,6 +40,7 @@ const AddVehicle = (props: Props) => {
             setIndex(null);
             enableSetData=false;
         }
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [coveragePlan, enableSetData]);
 
     useEffect(() => {

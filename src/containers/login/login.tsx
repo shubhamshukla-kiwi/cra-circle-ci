@@ -1,6 +1,3 @@
-import { connect } from 'react-redux';
-import React, { Component } from 'react';
-
 import LoginModal from '../../components/login-modal/login-modal';
 import OnboardingHeader from '../../components/onboarding-header/onboarding-header';
 import OnboardingFooter from '../../components/onboarding-footer/onboarding-footer';
