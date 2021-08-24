@@ -45,6 +45,7 @@ const  CarPlan= (props: Props) => {
         } else {
             setCoveragePlans(originalCoveragePlans)
         }
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [props.coveragePlan]);
 
     return (

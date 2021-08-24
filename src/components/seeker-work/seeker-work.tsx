@@ -15,7 +15,7 @@ import InputMask from 'react-input-mask'
 const SeekerWork = () => {
   useEffect(() => {
     cleanData();
-  }, []);
+  });
   const [zipcode, setZip] = useState("");
   const history = useHistory();
   // const [isLoading, setIsLoading] = useState(false);

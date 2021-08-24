@@ -6,7 +6,6 @@ import seekerIcon from '../../assets/images/homepage/seeker-icon.png';
 import EmptyDashboard from '../../components/dashboard/emptyDashboard';
 import VehicleList from '../../components/dashboard/vehicleList';
 import DriverList from '../../components/dashboard/driverList';
-import AgentList from "../../components/dashboard/agentList";
 
 
 interface Props {

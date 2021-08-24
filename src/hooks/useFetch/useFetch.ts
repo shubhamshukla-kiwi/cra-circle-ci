@@ -59,6 +59,7 @@ export const useFetch = <T = any>(
         if (onError) onError(error);
       }
     },
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     [request, onError],
   ) as Fetch;
 
@@ -73,12 +74,14 @@ export const useFetch = <T = any>(
         if (onError) onError(error);
       }
     },
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     [request, onError],
   ) as Fetch;
 
   useEffect(() => {
     if (defer) return;
     fetchData();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [defer, ...dependencies]);
 
   return {

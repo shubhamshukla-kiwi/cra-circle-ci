@@ -34,6 +34,7 @@ export const Provider: FC = (props) => {
       setData(data);
 
       return data;
+      // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []),
   });
   const isZipCodeValid = data ? data.places?.length > 0 : false;
@@ -42,6 +43,7 @@ export const Provider: FC = (props) => {
 
   const cleanData = useCallback(() => {
     setData(null);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const value = useMemo(

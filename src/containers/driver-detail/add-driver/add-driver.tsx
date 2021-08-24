@@ -43,6 +43,7 @@ const AddDriver = (props: Props) => {
                 history.push('/new-quote/vehicles')
             }
         }
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [driverViolations, enableSetData]);
 
 
@@ -86,7 +87,9 @@ const AddDriver = (props: Props) => {
 }
 
 const mapStateToProps = () => {
-    return {}
+    return {
+
+    }
 }
 
 export default connect(mapStateToProps)(AddDriver)

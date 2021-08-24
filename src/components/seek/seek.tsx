@@ -11,7 +11,7 @@ import {ZipCodeContext} from '../../contexts/ZipCodeContext/ZipCodeContext'
 const Seek = () => {
   useEffect(() => {
     cleanData();
-  }, []);
+  });
   const [zipcode, setZip] = useState("");
   const history = useHistory();
   const {

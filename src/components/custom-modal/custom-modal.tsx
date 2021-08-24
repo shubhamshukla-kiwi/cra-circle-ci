@@ -15,11 +15,6 @@ interface Props {
     planData: T,
     setCoveragePlan: Function
 }
-let navigation = false;
-
-const setNavigation = (flag) => {
-    navigation = flag;
-}
 const options = [{label: '100$/ 250$', value: '100$/ 250$'}, {label: '200$', value: '200$'}]
 
 const  CustomModal= (props: Props) => {

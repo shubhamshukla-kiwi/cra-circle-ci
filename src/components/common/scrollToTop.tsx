@@ -14,8 +14,7 @@ const ScrollToTop = ({history}: Props) => {
         return () => {
           unlisten();
         }
-      }, []);
-    
+      });
       return (null);
 }
 

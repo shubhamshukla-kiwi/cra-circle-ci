@@ -10,6 +10,7 @@ const VehicleList = (props: Props) => {
             <h4 className="user-title">2 vehicles added</h4>
             <ul className="user-list">
                 <li>
+                    {/* eslint-disable-next-line */}
                     <a className="user-link">
                         <img alt="Brand icon" src={userDefaultIcon} />
                         <div className="profile-content">
@@ -19,6 +20,7 @@ const VehicleList = (props: Props) => {
                     </a>
                 </li>
                 <li>
+                    {/* eslint-disable-next-line */}
                     <a className="user-link">
                         <img alt="Brand icon" src={userDefaultIcon} />
                         <div className="profile-content">

@@ -5,15 +5,12 @@ import InputMask from 'react-input-mask'
 import zipIcon from './../../assets/images/homepage/location.svg'
 import heroBgImg from './../../assets/images/homepage/home-banner.png'
 import {ZipCodeContext} from '../../contexts/ZipCodeContext/ZipCodeContext'
-
-
-import Loading from '../loading2/loading'
 import { useHistory } from "react-router-dom"
 
 const Hero = (props) => {
   useEffect(() => {
     cleanData();
-  }, []);
+  });
   const [zipcode, setZip] = useState("");
   const history = useHistory();
   const {

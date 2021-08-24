@@ -88,6 +88,7 @@ class Header extends Component {
                                             })
                                             this.handleEditOpenModal()
                                         }}>
+                                            {/* eslint-disable-next-line */}
                                             <a href="#">Edit Profile</a>
                                         </li>
                                         {!this.state.isClientUser && <li onClick={() => {
@@ -96,6 +97,7 @@ class Header extends Component {
                                             })
                                             this.handleOpenModal()
                                         }}>
+                                            {/* eslint-disable-next-line */}
                                             <a href="#">Add Card</a>
                                         </li>}
                                         {!this.state.isClientUser && <li>
@@ -105,6 +107,7 @@ class Header extends Component {
                                         <Link to="/privacy" target={"_blank"}>Privacy Policy</Link>
                                         </li>
                                         <li onClick={this.logout} className="sign-out cursor-pointer">
+                                            {/* eslint-disable-next-line */}
                                             <a>Sign out</a>
                                         </li>
                                     </ul>
@@ -164,6 +167,7 @@ class Header extends Component {
                             />
                         </div>
                         <div className="footer-modal">
+                            {/* eslint-disable-next-line */}
                             <a href="#" className="delete-btn">Delete</a>
                             <button className="button-primary">Update</button>
                         </div>
@@ -194,9 +198,11 @@ class Header extends Component {
                                 <div className="dropdown">
                                     <ul>
                                         <li>
+                                            {/* eslint-disable-next-line */}
                                             <a href="#">Available</a>
                                         </li>
                                         <li>
+                                            {/* eslint-disable-next-line */}
                                             <a href="#">Offline, on Vacation</a>
                                         </li>
                                     </ul>
@@ -288,6 +294,7 @@ class Header extends Component {
                         </form>
                     </div>
                     <div className="modal-footer">
+                        {/* eslint-disable-next-line */}
                         <a href="#" className="cancel-btn"  onClick={this.handleEditCloseModal}>Cancel</a>
                         <button className="button-primary">Update</button>
                     </div>
