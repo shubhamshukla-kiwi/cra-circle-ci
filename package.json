@@ -63,7 +63,7 @@
     "eject": "react-scripts eject",
     "build:staging": "env-cmd -f .env.staging npm run-script build",
     "build:qa": "env-cmd -f .env.qa npm run-script build",
-    "build:dev": "env-cmd -f .env.dev npm run build-css && react-scripts build"
+    "build:dev": "env-cmd -f .env.dev npm run-script build"
   },
   "eslintConfig": {
     "extends": "react-app"

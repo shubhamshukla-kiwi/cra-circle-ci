@@ -19,8 +19,6 @@ import './App.css';
 import ScrollToTop from './components/common/scrollToTop';
 import { MuiThemeProvider, createTheme } from '@material-ui/core';
 import ProtectedRoute from './components/common/protectedRoute';
-import PublicRoute from './components/common/publicRoute';
-
 const childFactoryCreator = (classNames: string) => (child: React.ReactElement) =>
   React.cloneElement(child, {
     classNames,
@@ -87,11 +85,11 @@ class AgentApp extends Component<IRecipeProps, IRecipeState> {
               {this.validateRoutes()}
               <ScrollToTop />
               <Switch location={this.props.location}>
-                <ProtectedRoute path="/agent/agent-add-card" component={AgentAddCard} />
+                <Route path="/agent/agent-add-card" component={AgentAddCard} />
                 <Route exact path="/agent" component={AgentSignUp} />
                 <Route path="/agent/login" component={Login} />
                 <ProtectedRoute path="/agent/agent-dashboard" component={AgentDashboard} />
-                <ProtectedRoute path="/agent/agent-payment" component={AgentPayment} />
+                <Route path="/agent/agent-payment" component={AgentPayment} />
                 </Switch>
             </div>
           </CSSTransition>
